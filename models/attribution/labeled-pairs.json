@@ -1,0 +1,5642 @@
+[
+  {
+    "pairId": "pair_validation_1",
+    "entityA": {
+      "id": "forum_user_2",
+      "name": "Kimble",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_5",
+      "name": "Kimble",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8069,
+      0.7693,
+      0.7292,
+      0.847,
+      0.2614,
+      0.2238
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 0,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 0 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_2",
+    "entityA": {
+      "id": "forum_user_3",
+      "name": "Verto",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_1",
+      "name": "Verto",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8465,
+      0.8174,
+      0.7842,
+      0.8797,
+      0.3387,
+      0.3097
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 1,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 1 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_3",
+    "entityA": {
+      "id": "forum_user_5",
+      "name": "interceptor",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_10",
+      "name": "interceptor",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7814,
+      0.7382,
+      0.6936,
+      0.8259,
+      0.2113,
+      0.1682
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 2,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 2 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_4",
+    "entityA": {
+      "id": "forum_user_7",
+      "name": "iSellPizza",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_16",
+      "name": "iSellPizza",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9374,
+      0.9281,
+      0.9107,
+      0.9548,
+      0.5166,
+      0.5073
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 3,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 3 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_5",
+    "entityA": {
+      "id": "forum_user_8",
+      "name": "ENZO",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_18",
+      "name": "ENZO",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7817,
+      0.7386,
+      0.6941,
+      0.8262,
+      0.212,
+      0.1689
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 4,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 4 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_6",
+    "entityA": {
+      "id": "forum_user_9",
+      "name": "d33poutside",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_12",
+      "name": "d33poutside",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8566,
+      0.8298,
+      0.7984,
+      0.8881,
+      0.3586,
+      0.3318
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 5,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.994Z"
+    },
+    "notes": "Verified ground-truth match_id 5 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_7",
+    "entityA": {
+      "id": "forum_user_11",
+      "name": "BooMstick",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_24",
+      "name": "BooMstick",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9143,
+      0.9,
+      0.8786,
+      0.9357,
+      0.4714,
+      0.4571
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 6,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 6 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_8",
+    "entityA": {
+      "id": "forum_user_12",
+      "name": "LudoTilMortem",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_28",
+      "name": "LudoTilMortem",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8684,
+      0.8442,
+      0.8148,
+      0.8978,
+      0.3817,
+      0.3574
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 7,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 7 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_9",
+    "entityA": {
+      "id": "forum_user_13",
+      "name": "Bigmeesh",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_30",
+      "name": "Bigmeesh",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7574,
+      0.709,
+      0.6603,
+      0.8061,
+      0.1645,
+      0.1161
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 8,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 8 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_10",
+    "entityA": {
+      "id": "forum_user_14",
+      "name": "MrMouse",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_26",
+      "name": "MrMouse",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8019,
+      0.7632,
+      0.7222,
+      0.8429,
+      0.2515,
+      0.2128
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 9,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 9 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_11",
+    "entityA": {
+      "id": "forum_user_15",
+      "name": "WhenInDoubt",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_25",
+      "name": "WhenInDoubt",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9107,
+      0.8956,
+      0.8736,
+      0.9327,
+      0.4644,
+      0.4493
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 10,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 10 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_12",
+    "entityA": {
+      "id": "forum_user_17",
+      "name": "yummy5656",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_44",
+      "name": "yummy5656",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8871,
+      0.8669,
+      0.8407,
+      0.9133,
+      0.4182,
+      0.398
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 11,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 11 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_13",
+    "entityA": {
+      "id": "forum_user_27",
+      "name": "TheDearthStar",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_57",
+      "name": "TheDearthStar",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9543,
+      0.9487,
+      0.9343,
+      0.9688,
+      0.5497,
+      0.5442
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 12,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 12 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_14",
+    "entityA": {
+      "id": "forum_user_36",
+      "name": "unknownfame",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_71",
+      "name": "unknownfame",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8966,
+      0.8785,
+      0.854,
+      0.9211,
+      0.4368,
+      0.4187
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 13,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 13 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_15",
+    "entityA": {
+      "id": "forum_user_38",
+      "name": "SuperRyanSmith33",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_77",
+      "name": "SuperRyanSmith33",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8781,
+      0.8559,
+      0.8282,
+      0.9058,
+      0.4006,
+      0.3785
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 14,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 14 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_16",
+    "entityA": {
+      "id": "forum_user_44",
+      "name": "themostseekrit",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_90",
+      "name": "themostseekrit",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7961,
+      0.7561,
+      0.7141,
+      0.838,
+      0.2401,
+      0.2001
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 15,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 15 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_17",
+    "entityA": {
+      "id": "forum_user_50",
+      "name": "plasticA",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_105",
+      "name": "plasticA",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9476,
+      0.9405,
+      0.9249,
+      0.9632,
+      0.5365,
+      0.5295
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 16,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 16 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_18",
+    "entityA": {
+      "id": "forum_user_51",
+      "name": "nun1zz",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_96",
+      "name": "nun1zz",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7984,
+      0.7589,
+      0.7173,
+      0.84,
+      0.2447,
+      0.2052
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 17,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 17 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_19",
+    "entityA": {
+      "id": "forum_user_65",
+      "name": "Johnhunt",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_127",
+      "name": "Johnhunt",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9766,
+      0.9759,
+      0.9653,
+      0.9872,
+      0.5934,
+      0.5926
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 18,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 18 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_20",
+    "entityA": {
+      "id": "forum_user_72",
+      "name": "obelix",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_139",
+      "name": "obelix",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8695,
+      0.8455,
+      0.8163,
+      0.8987,
+      0.3839,
+      0.3598
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 19,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 19 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_21",
+    "entityA": {
+      "id": "forum_user_77",
+      "name": "Anonamouse",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_142",
+      "name": "Anonamouse",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8728,
+      0.8495,
+      0.8208,
+      0.9014,
+      0.3902,
+      0.3669
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 20,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 20 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_22",
+    "entityA": {
+      "id": "forum_user_81",
+      "name": "Scattermind",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_152",
+      "name": "Scattermind",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9126,
+      0.8979,
+      0.8762,
+      0.9343,
+      0.4681,
+      0.4534
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 21,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 21 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_23",
+    "entityA": {
+      "id": "forum_user_84",
+      "name": "Mammon",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_160",
+      "name": "Mammon",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8021,
+      0.7634,
+      0.7225,
+      0.8431,
+      0.252,
+      0.2133
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 22,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 22 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_24",
+    "entityA": {
+      "id": "forum_user_91",
+      "name": "DanAnon",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_179",
+      "name": "DanAnon",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9677,
+      0.965,
+      0.9528,
+      0.9798,
+      0.5759,
+      0.5732
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 23,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 23 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_25",
+    "entityA": {
+      "id": "forum_user_105",
+      "name": "greenpercent",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_206",
+      "name": "greenpercent",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8317,
+      0.7994,
+      0.7636,
+      0.8675,
+      0.3098,
+      0.2775
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 24,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 24 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_26",
+    "entityA": {
+      "id": "forum_user_108",
+      "name": "rrelite",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_213",
+      "name": "rrelite",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.964,
+      0.9606,
+      0.9478,
+      0.9768,
+      0.5688,
+      0.5653
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 25,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 25 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_27",
+    "entityA": {
+      "id": "forum_user_110",
+      "name": "makikaki",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_218",
+      "name": "makikaki",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7546,
+      0.7056,
+      0.6565,
+      0.8038,
+      0.1591,
+      0.1101
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 26,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 26 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_28",
+    "entityA": {
+      "id": "forum_user_115",
+      "name": "prozac",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_230",
+      "name": "prozac",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7812,
+      0.738,
+      0.6934,
+      0.8258,
+      0.2111,
+      0.1678
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 27,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 27 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_29",
+    "entityA": {
+      "id": "forum_user_123",
+      "name": "anonbearzinho",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_244",
+      "name": "anonbearzinho",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9124,
+      0.8977,
+      0.8759,
+      0.9341,
+      0.4677,
+      0.453
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 28,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 28 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_30",
+    "entityA": {
+      "id": "forum_user_128",
+      "name": "IronHeart",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_222",
+      "name": "IronHeart",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9162,
+      0.9024,
+      0.8813,
+      0.9373,
+      0.4752,
+      0.4614
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 29,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 29 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_31",
+    "entityA": {
+      "id": "forum_user_139",
+      "name": "Brick",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_267",
+      "name": "Brick",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8837,
+      0.8628,
+      0.836,
+      0.9105,
+      0.4116,
+      0.3907
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 30,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 30 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_32",
+    "entityA": {
+      "id": "forum_user_143",
+      "name": "anony",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_274",
+      "name": "anony",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9673,
+      0.9645,
+      0.9523,
+      0.9795,
+      0.5751,
+      0.5723
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 31,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 31 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_33",
+    "entityA": {
+      "id": "forum_user_144",
+      "name": "bestamazonaccts",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_281",
+      "name": "bestamazonaccts",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8034,
+      0.765,
+      0.7243,
+      0.8441,
+      0.2544,
+      0.216
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 32,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 32 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_34",
+    "entityA": {
+      "id": "forum_user_148",
+      "name": "auntym",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_289",
+      "name": "auntym",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7824,
+      0.7394,
+      0.6951,
+      0.8268,
+      0.2134,
+      0.1704
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 33,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 33 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_35",
+    "entityA": {
+      "id": "forum_user_153",
+      "name": "andigatel",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_299",
+      "name": "andigatel",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8781,
+      0.8559,
+      0.8282,
+      0.9058,
+      0.4005,
+      0.3784
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 34,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 34 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_36",
+    "entityA": {
+      "id": "forum_user_157",
+      "name": "alpha02",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_307",
+      "name": "alpha02",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.816,
+      0.7804,
+      0.7419,
+      0.8545,
+      0.2792,
+      0.2435
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 35,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 35 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_37",
+    "entityA": {
+      "id": "forum_user_159",
+      "name": "amando",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_303",
+      "name": "amando",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9795,
+      0.9794,
+      0.9693,
+      0.9896,
+      0.5991,
+      0.5989
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 36,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 36 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_38",
+    "entityA": {
+      "id": "forum_user_160",
+      "name": "SniperFox",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_309",
+      "name": "SniperFox",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9771,
+      0.9765,
+      0.966,
+      0.9876,
+      0.5944,
+      0.5938
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 37,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 37 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_39",
+    "entityA": {
+      "id": "forum_user_163",
+      "name": "thaiii",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_316",
+      "name": "thaiii",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7721,
+      0.7269,
+      0.6807,
+      0.8182,
+      0.1932,
+      0.148
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 38,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 38 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_40",
+    "entityA": {
+      "id": "forum_user_167",
+      "name": "Easy_B",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_327",
+      "name": "Easy_B",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8179,
+      0.7826,
+      0.7444,
+      0.8561,
+      0.2828,
+      0.2475
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 39,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 39 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_41",
+    "entityA": {
+      "id": "forum_user_169",
+      "name": "jokowi",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_329",
+      "name": "jokowi",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8577,
+      0.8311,
+      0.7998,
+      0.889,
+      0.3607,
+      0.3341
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 40,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 40 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_42",
+    "entityA": {
+      "id": "forum_user_171",
+      "name": "sillyrascal",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_338",
+      "name": "sillyrascal",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9069,
+      0.891,
+      0.8683,
+      0.9296,
+      0.457,
+      0.4411
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 41,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 41 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_43",
+    "entityA": {
+      "id": "forum_user_178",
+      "name": "ray-mon",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_337",
+      "name": "ray-mon",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9115,
+      0.8966,
+      0.8747,
+      0.9334,
+      0.466,
+      0.4511
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 42,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 42 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_44",
+    "entityA": {
+      "id": "forum_user_183",
+      "name": "Xperia",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_164",
+      "name": "Xperia",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9722,
+      0.9705,
+      0.9591,
+      0.9835,
+      0.5847,
+      0.5829
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 43,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 43 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_45",
+    "entityA": {
+      "id": "forum_user_185",
+      "name": "fake",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_363",
+      "name": "fake",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9313,
+      0.9208,
+      0.9023,
+      0.9498,
+      0.5048,
+      0.4942
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 44,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 44 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_46",
+    "entityA": {
+      "id": "forum_user_187",
+      "name": "ucard",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_364",
+      "name": "ucard",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9026,
+      0.8858,
+      0.8623,
+      0.9261,
+      0.4486,
+      0.4317
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 45,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 45 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_47",
+    "entityA": {
+      "id": "forum_user_192",
+      "name": "psyclerdude",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_381",
+      "name": "psyclerdude",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7968,
+      0.757,
+      0.7151,
+      0.8387,
+      0.2415,
+      0.2017
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 46,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 46 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_48",
+    "entityA": {
+      "id": "forum_user_11638",
+      "name": "psyclerdude",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_381",
+      "name": "psyclerdude",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7968,
+      0.757,
+      0.7151,
+      0.8387,
+      0.2415,
+      0.2017
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 46,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 46 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_49",
+    "entityA": {
+      "id": "forum_user_199",
+      "name": "Gold",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_409",
+      "name": "Gold",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8482,
+      0.8196,
+      0.7867,
+      0.8811,
+      0.3422,
+      0.3135
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 47,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 47 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_50",
+    "entityA": {
+      "id": "forum_user_23418",
+      "name": "Gold",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_409",
+      "name": "Gold",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8482,
+      0.8196,
+      0.7867,
+      0.8811,
+      0.3422,
+      0.3135
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 47,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 47 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_51",
+    "entityA": {
+      "id": "forum_user_204",
+      "name": "TitusPullo",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_341",
+      "name": "TitusPullo",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9671,
+      0.9643,
+      0.9521,
+      0.9794,
+      0.5748,
+      0.572
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 48,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 48 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_52",
+    "entityA": {
+      "id": "forum_user_207",
+      "name": "afsr",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_420",
+      "name": "afsr",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9334,
+      0.9233,
+      0.9052,
+      0.9515,
+      0.5089,
+      0.4987
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 49,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 49 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_53",
+    "entityA": {
+      "id": "forum_user_211",
+      "name": "450braiseit",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_429",
+      "name": "450braiseit",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8096,
+      0.7726,
+      0.733,
+      0.8493,
+      0.2667,
+      0.2296
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 50,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 50 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_54",
+    "entityA": {
+      "id": "forum_user_226",
+      "name": "GH0ST0WL",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_458",
+      "name": "GH0ST0WL",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8629,
+      0.8375,
+      0.8071,
+      0.8933,
+      0.3709,
+      0.3455
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 51,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 51 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_55",
+    "entityA": {
+      "id": "forum_user_230",
+      "name": "LaDeeGsus",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_482",
+      "name": "LaDeeGsus",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8359,
+      0.8046,
+      0.7695,
+      0.871,
+      0.3181,
+      0.2867
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 52,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 52 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_test_56",
+    "entityA": {
+      "id": "forum_user_231",
+      "name": "HSCOWHJ",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_465",
+      "name": "HSCOWHJ",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7966,
+      0.7567,
+      0.7148,
+      0.8385,
+      0.2411,
+      0.2012
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 53,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 53 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_57",
+    "entityA": {
+      "id": "forum_user_234",
+      "name": "The_Real-PF",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_493",
+      "name": "The_Real-PF",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.7732,
+      0.7282,
+      0.6823,
+      0.8192,
+      0.1954,
+      0.1504
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 54,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 54 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_58",
+    "entityA": {
+      "id": "forum_user_240",
+      "name": "Bullionaire",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_512",
+      "name": "Bullionaire",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.8478,
+      0.8191,
+      0.7861,
+      0.8808,
+      0.3414,
+      0.3127
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 55,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 55 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_train_59",
+    "entityA": {
+      "id": "forum_user_243",
+      "name": "Johnathanbates",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_519",
+      "name": "Johnathanbates",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9101,
+      0.8949,
+      0.8727,
+      0.9322,
+      0.4632,
+      0.448
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 56,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 56 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_60",
+    "entityA": {
+      "id": "forum_user_248",
+      "name": "jokr",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_525",
+      "name": "jokr",
+      "type": "VENDOR"
+    },
+    "label": "SAME_ACTOR",
+    "numericLabel": 1,
+    "pairType": "POSITIVE_GROUND_TRUTH_MATCH",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.9369,
+      0.9275,
+      0.91,
+      0.9544,
+      0.5157,
+      0.5063
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 57,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Verified ground-truth match_id 57 in forum-market/user-matching.tsv"
+  },
+  {
+    "pairId": "pair_validation_61",
+    "entityA": {
+      "id": "evo_vendor_5",
+      "name": "Kimble",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_1",
+      "name": "Verto",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2972,
+      0.2066,
+      0.2661,
+      0.7877,
+      0.0151,
+      0.0094
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 0,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (0 vs 1) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_62",
+    "entityA": {
+      "id": "evo_vendor_10",
+      "name": "interceptor",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_16",
+      "name": "iSellPizza",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2952,
+      0.2043,
+      0.2633,
+      0.7862,
+      0.0145,
+      0.009
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 2,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (2 vs 3) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_63",
+    "entityA": {
+      "id": "evo_vendor_18",
+      "name": "ENZO",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_12",
+      "name": "d33poutside",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4492,
+      0.3891,
+      0.4789,
+      0.9094,
+      0.0638,
+      0.0398
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 4,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (4 vs 5) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_64",
+    "entityA": {
+      "id": "evo_vendor_24",
+      "name": "BooMstick",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_28",
+      "name": "LudoTilMortem",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2721,
+      0.1766,
+      0.231,
+      0.7677,
+      0.0071,
+      0.0044
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 6,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (6 vs 7) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_65",
+    "entityA": {
+      "id": "evo_vendor_30",
+      "name": "Bigmeesh",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_26",
+      "name": "MrMouse",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4549,
+      0.3959,
+      0.4869,
+      0.914,
+      0.0656,
+      0.041
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 8,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (8 vs 9) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_66",
+    "entityA": {
+      "id": "evo_vendor_25",
+      "name": "WhenInDoubt",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_44",
+      "name": "yummy5656",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.401,
+      0.3312,
+      0.4114,
+      0.8708,
+      0.0483,
+      0.0302
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 10,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (10 vs 11) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_67",
+    "entityA": {
+      "id": "evo_vendor_57",
+      "name": "TheDearthStar",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_71",
+      "name": "unknownfame",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4885,
+      0.4362,
+      0.5339,
+      0.9408,
+      0.0763,
+      0.0477
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 12,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (12 vs 13) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_68",
+    "entityA": {
+      "id": "evo_vendor_77",
+      "name": "SuperRyanSmith33",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_90",
+      "name": "themostseekrit",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4319,
+      0.3683,
+      0.4547,
+      0.8955,
+      0.0582,
+      0.0364
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 14,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (14 vs 15) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_69",
+    "entityA": {
+      "id": "evo_vendor_105",
+      "name": "plasticA",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_96",
+      "name": "nun1zz",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2596,
+      0.1615,
+      0.2134,
+      0.7577,
+      0.0031,
+      0.0019
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 16,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (16 vs 17) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_70",
+    "entityA": {
+      "id": "evo_vendor_127",
+      "name": "Johnhunt",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_139",
+      "name": "obelix",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3739,
+      0.2987,
+      0.3734,
+      0.8491,
+      0.0396,
+      0.0248
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 18,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (18 vs 19) with shared product market domain"
+  },
+  {
+    "pairId": "pair_validation_71",
+    "entityA": {
+      "id": "evo_vendor_142",
+      "name": "Anonamouse",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_152",
+      "name": "Scattermind",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2867,
+      0.1941,
+      0.2514,
+      0.7794,
+      0.0117,
+      0.0073
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 20,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (20 vs 21) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_72",
+    "entityA": {
+      "id": "evo_vendor_160",
+      "name": "Mammon",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_179",
+      "name": "DanAnon",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2933,
+      0.2019,
+      0.2606,
+      0.7846,
+      0.0138,
+      0.0087
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 22,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (22 vs 23) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_73",
+    "entityA": {
+      "id": "evo_vendor_206",
+      "name": "greenpercent",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_213",
+      "name": "rrelite",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4102,
+      0.3422,
+      0.4243,
+      0.8782,
+      0.0513,
+      0.032
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 24,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (24 vs 25) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_74",
+    "entityA": {
+      "id": "evo_vendor_218",
+      "name": "makikaki",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_230",
+      "name": "prozac",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4023,
+      0.3328,
+      0.4133,
+      0.8719,
+      0.0488,
+      0.0305
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 26,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (26 vs 27) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_75",
+    "entityA": {
+      "id": "evo_vendor_244",
+      "name": "anonbearzinho",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_222",
+      "name": "IronHeart",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2505,
+      0.1506,
+      0.2007,
+      0.7504,
+      0.0002,
+      0.0001
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 28,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (28 vs 29) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_76",
+    "entityA": {
+      "id": "evo_vendor_267",
+      "name": "Brick",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_274",
+      "name": "anony",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3124,
+      0.2248,
+      0.2873,
+      0.7999,
+      0.02,
+      0.0125
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 30,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (30 vs 31) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_77",
+    "entityA": {
+      "id": "evo_vendor_281",
+      "name": "bestamazonaccts",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_289",
+      "name": "auntym",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2834,
+      0.1901,
+      0.2467,
+      0.7767,
+      0.0107,
+      0.0067
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 32,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (32 vs 33) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_78",
+    "entityA": {
+      "id": "evo_vendor_299",
+      "name": "andigatel",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_307",
+      "name": "alpha02",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4413,
+      0.3795,
+      0.4678,
+      0.903,
+      0.0612,
+      0.0383
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 34,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (34 vs 35) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_79",
+    "entityA": {
+      "id": "evo_vendor_303",
+      "name": "amando",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_309",
+      "name": "SniperFox",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4405,
+      0.3786,
+      0.4668,
+      0.9024,
+      0.061,
+      0.0381
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 36,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (36 vs 37) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_80",
+    "entityA": {
+      "id": "evo_vendor_316",
+      "name": "thaiii",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_327",
+      "name": "Easy_B",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.349,
+      0.2688,
+      0.3386,
+      0.8292,
+      0.0317,
+      0.0198
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 38,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (38 vs 39) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_81",
+    "entityA": {
+      "id": "evo_vendor_329",
+      "name": "jokowi",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_338",
+      "name": "sillyrascal",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2909,
+      0.1991,
+      0.2573,
+      0.7827,
+      0.0131,
+      0.0082
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 40,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (40 vs 41) with shared product market domain"
+  },
+  {
+    "pairId": "pair_validation_82",
+    "entityA": {
+      "id": "evo_vendor_337",
+      "name": "ray-mon",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_164",
+      "name": "Xperia",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3668,
+      0.2902,
+      0.3636,
+      0.8435,
+      0.0374,
+      0.0234
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 42,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (42 vs 43) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_83",
+    "entityA": {
+      "id": "evo_vendor_363",
+      "name": "fake",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_364",
+      "name": "ucard",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2771,
+      0.1825,
+      0.238,
+      0.7717,
+      0.0087,
+      0.0054
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 44,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (44 vs 45) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_84",
+    "entityA": {
+      "id": "evo_vendor_381",
+      "name": "psyclerdude",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_381",
+      "name": "psyclerdude",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2504,
+      0.1505,
+      0.2006,
+      0.7503,
+      0.0001,
+      0.0001
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 46,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (46 vs 46) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_85",
+    "entityA": {
+      "id": "evo_vendor_409",
+      "name": "Gold",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_409",
+      "name": "Gold",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2541,
+      0.1549,
+      0.2057,
+      0.7533,
+      0.0013,
+      0.0008
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 47,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (47 vs 47) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_86",
+    "entityA": {
+      "id": "evo_vendor_341",
+      "name": "TitusPullo",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_420",
+      "name": "afsr",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2607,
+      0.1629,
+      0.215,
+      0.7586,
+      0.0034,
+      0.0021
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 48,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (48 vs 49) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_87",
+    "entityA": {
+      "id": "evo_vendor_429",
+      "name": "450braiseit",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_458",
+      "name": "GH0ST0WL",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3452,
+      0.2642,
+      0.3333,
+      0.8261,
+      0.0305,
+      0.019
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 50,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (50 vs 51) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_88",
+    "entityA": {
+      "id": "evo_vendor_482",
+      "name": "LaDeeGsus",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_465",
+      "name": "HSCOWHJ",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3489,
+      0.2687,
+      0.3384,
+      0.8291,
+      0.0316,
+      0.0198
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 52,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (52 vs 53) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_89",
+    "entityA": {
+      "id": "evo_vendor_493",
+      "name": "The_Real-PF",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_512",
+      "name": "Bullionaire",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4269,
+      0.3623,
+      0.4477,
+      0.8915,
+      0.0566,
+      0.0354
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 54,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.995Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (54 vs 55) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_90",
+    "entityA": {
+      "id": "evo_vendor_519",
+      "name": "Johnathanbates",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_525",
+      "name": "jokr",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4532,
+      0.3938,
+      0.4844,
+      0.9125,
+      0.065,
+      0.0406
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 56,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (56 vs 57) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_91",
+    "entityA": {
+      "id": "evo_vendor_278",
+      "name": "luxo",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_545",
+      "name": "cardiedavid",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2672,
+      0.1706,
+      0.224,
+      0.7637,
+      0.0055,
+      0.0034
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 58,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (58 vs 59) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_92",
+    "entityA": {
+      "id": "evo_vendor_541",
+      "name": "secret_hash",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_527",
+      "name": "Evolution",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4576,
+      0.3992,
+      0.4907,
+      0.9161,
+      0.0664,
+      0.0415
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 60,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (60 vs 61) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_93",
+    "entityA": {
+      "id": "evo_vendor_61",
+      "name": "ibuy456",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_568",
+      "name": "DoubleT",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2818,
+      0.1882,
+      0.2446,
+      0.7755,
+      0.0102,
+      0.0064
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 62,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (62 vs 63) with shared product market domain"
+  },
+  {
+    "pairId": "pair_test_94",
+    "entityA": {
+      "id": "evo_vendor_573",
+      "name": "forsaken103",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_576",
+      "name": "susp3kt",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.3721,
+      0.2965,
+      0.3709,
+      0.8477,
+      0.0391,
+      0.0244
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 64,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (64 vs 65) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_95",
+    "entityA": {
+      "id": "evo_vendor_138",
+      "name": "LUIGiTheGreat",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_602",
+      "name": "howlingmonkey",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.353,
+      0.2737,
+      0.3443,
+      0.8324,
+      0.033,
+      0.0206
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 66,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (66 vs 67) with shared product market domain"
+  },
+  {
+    "pairId": "pair_train_96",
+    "entityA": {
+      "id": "evo_vendor_636",
+      "name": "pepero",
+      "type": "VENDOR"
+    },
+    "entityB": {
+      "id": "evo_vendor_639",
+      "name": "FliP",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_HARD_CATEGORY_OVERLAP",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.4901,
+      0.4381,
+      0.5361,
+      0.9421,
+      0.0768,
+      0.048
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 68,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Hard negative pair: distinct match IDs (68 vs 69) with shared product market domain"
+  },
+  {
+    "pairId": "pair_validation_97",
+    "entityA": {
+      "id": "forum_user_2",
+      "name": "Kimble",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_16",
+      "name": "iSellPizza",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2908,
+      0.2408,
+      0.2708,
+      0.1931,
+      0.0191,
+      0.0191
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 0,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (0 vs 3)"
+  },
+  {
+    "pairId": "pair_train_98",
+    "entityA": {
+      "id": "forum_user_3",
+      "name": "Verto",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_25",
+      "name": "WhenInDoubt",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1393,
+      0.0893,
+      0.1193,
+      0.0795,
+      0.0039,
+      0.0039
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 1,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (1 vs 10)"
+  },
+  {
+    "pairId": "pair_train_99",
+    "entityA": {
+      "id": "forum_user_5",
+      "name": "interceptor",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_96",
+      "name": "nun1zz",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1145,
+      0.0645,
+      0.0945,
+      0.0609,
+      0.0015,
+      0.0015
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 2,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (2 vs 17)"
+  },
+  {
+    "pairId": "pair_train_100",
+    "entityA": {
+      "id": "forum_user_7",
+      "name": "iSellPizza",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_206",
+      "name": "greenpercent",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1499,
+      0.0999,
+      0.1299,
+      0.0875,
+      0.005,
+      0.005
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 3,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (3 vs 24)"
+  },
+  {
+    "pairId": "pair_train_101",
+    "entityA": {
+      "id": "forum_user_8",
+      "name": "ENZO",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_274",
+      "name": "anony",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1387,
+      0.0887,
+      0.1187,
+      0.0791,
+      0.0039,
+      0.0039
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 4,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (4 vs 31)"
+  },
+  {
+    "pairId": "pair_train_102",
+    "entityA": {
+      "id": "forum_user_9",
+      "name": "d33poutside",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_316",
+      "name": "thaiii",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.119,
+      0.069,
+      0.099,
+      0.0643,
+      0.0019,
+      0.0019
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 5,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (5 vs 38)"
+  },
+  {
+    "pairId": "pair_test_103",
+    "entityA": {
+      "id": "forum_user_11",
+      "name": "BooMstick",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_364",
+      "name": "ucard",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2183,
+      0.1683,
+      0.1983,
+      0.1388,
+      0.0118,
+      0.0118
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 6,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (6 vs 45)"
+  },
+  {
+    "pairId": "pair_train_104",
+    "entityA": {
+      "id": "forum_user_12",
+      "name": "LudoTilMortem",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_429",
+      "name": "450braiseit",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2365,
+      0.1865,
+      0.2165,
+      0.1524,
+      0.0137,
+      0.0137
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 7,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (7 vs 50)"
+  },
+  {
+    "pairId": "pair_test_105",
+    "entityA": {
+      "id": "forum_user_13",
+      "name": "Bigmeesh",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_525",
+      "name": "jokr",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1566,
+      0.1066,
+      0.1366,
+      0.0925,
+      0.0057,
+      0.0057
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 8,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (8 vs 57)"
+  },
+  {
+    "pairId": "pair_validation_106",
+    "entityA": {
+      "id": "forum_user_14",
+      "name": "MrMouse",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_573",
+      "name": "forsaken103",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1354,
+      0.0854,
+      0.1154,
+      0.0766,
+      0.0035,
+      0.0035
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 9,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (9 vs 64)"
+  },
+  {
+    "pairId": "pair_train_107",
+    "entityA": {
+      "id": "forum_user_15",
+      "name": "WhenInDoubt",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_658",
+      "name": "3dollar",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1167,
+      0.0667,
+      0.0967,
+      0.0625,
+      0.0017,
+      0.0017
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 10,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (10 vs 71)"
+  },
+  {
+    "pairId": "pair_train_108",
+    "entityA": {
+      "id": "forum_user_17",
+      "name": "yummy5656",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_687",
+      "name": "frapedaki12",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2848,
+      0.2348,
+      0.2648,
+      0.1886,
+      0.0185,
+      0.0185
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 11,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (11 vs 78)"
+  },
+  {
+    "pairId": "pair_train_109",
+    "entityA": {
+      "id": "forum_user_27",
+      "name": "TheDearthStar",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_653",
+      "name": "CowBe11s",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1864,
+      0.1364,
+      0.1664,
+      0.1148,
+      0.0086,
+      0.0086
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 12,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (12 vs 85)"
+  },
+  {
+    "pairId": "pair_validation_110",
+    "entityA": {
+      "id": "forum_user_36",
+      "name": "unknownfame",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_18",
+      "name": "ENZO",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1433,
+      0.0933,
+      0.1233,
+      0.0825,
+      0.0043,
+      0.0043
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 13,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (13 vs 4)"
+  },
+  {
+    "pairId": "pair_train_111",
+    "entityA": {
+      "id": "forum_user_38",
+      "name": "SuperRyanSmith33",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_44",
+      "name": "yummy5656",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1148,
+      0.0648,
+      0.0948,
+      0.0611,
+      0.0015,
+      0.0015
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 14,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (14 vs 11)"
+  },
+  {
+    "pairId": "pair_validation_112",
+    "entityA": {
+      "id": "forum_user_44",
+      "name": "themostseekrit",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_127",
+      "name": "Johnhunt",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1483,
+      0.0983,
+      0.1283,
+      0.0862,
+      0.0048,
+      0.0048
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 15,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (15 vs 18)"
+  },
+  {
+    "pairId": "pair_train_113",
+    "entityA": {
+      "id": "forum_user_50",
+      "name": "plasticA",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_213",
+      "name": "rrelite",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2821,
+      0.2321,
+      0.2621,
+      0.1866,
+      0.0182,
+      0.0182
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 16,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (16 vs 25)"
+  },
+  {
+    "pairId": "pair_test_114",
+    "entityA": {
+      "id": "forum_user_51",
+      "name": "nun1zz",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_281",
+      "name": "bestamazonaccts",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2582,
+      0.2082,
+      0.2382,
+      0.1687,
+      0.0158,
+      0.0158
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 17,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (17 vs 32)"
+  },
+  {
+    "pairId": "pair_test_115",
+    "entityA": {
+      "id": "forum_user_65",
+      "name": "Johnhunt",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_327",
+      "name": "Easy_B",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TEST",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.113,
+      0.063,
+      0.093,
+      0.0597,
+      0.0013,
+      0.0013
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 18,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (18 vs 39)"
+  },
+  {
+    "pairId": "pair_validation_116",
+    "entityA": {
+      "id": "forum_user_72",
+      "name": "obelix",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_381",
+      "name": "psyclerdude",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2459,
+      0.1959,
+      0.2259,
+      0.1594,
+      0.0146,
+      0.0146
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 19,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (19 vs 46)"
+  },
+  {
+    "pairId": "pair_validation_117",
+    "entityA": {
+      "id": "forum_user_77",
+      "name": "Anonamouse",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_458",
+      "name": "GH0ST0WL",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1525,
+      0.1025,
+      0.1325,
+      0.0894,
+      0.0053,
+      0.0053
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 20,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (20 vs 51)"
+  },
+  {
+    "pairId": "pair_train_118",
+    "entityA": {
+      "id": "forum_user_81",
+      "name": "Scattermind",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_278",
+      "name": "luxo",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2173,
+      0.1673,
+      0.1973,
+      0.138,
+      0.0117,
+      0.0117
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 21,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (21 vs 58)"
+  },
+  {
+    "pairId": "pair_train_119",
+    "entityA": {
+      "id": "forum_user_84",
+      "name": "Mammon",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_576",
+      "name": "susp3kt",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "TRAIN",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.1814,
+      0.1314,
+      0.1614,
+      0.1111,
+      0.0081,
+      0.0081
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 22,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (22 vs 65)"
+  },
+  {
+    "pairId": "pair_validation_120",
+    "entityA": {
+      "id": "forum_user_91",
+      "name": "DanAnon",
+      "type": "USER"
+    },
+    "entityB": {
+      "id": "evo_vendor_663",
+      "name": "Ideal",
+      "type": "VENDOR"
+    },
+    "label": "DIFFERENT_ACTOR",
+    "numericLabel": 0,
+    "pairType": "NEGATIVE_RANDOM",
+    "labelSource": "Evolution Zenodo 10156522: forum-market/user-matching.tsv",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "split": "VALIDATION",
+    "featureVersion": "1.0.0",
+    "features": [
+      0.2254,
+      0.1754,
+      0.2054,
+      0.1441,
+      0.0125,
+      0.0125
+    ],
+    "featureNames": [
+      "behavior_activity_js",
+      "behavior_inter_event_log_ratio",
+      "behavior_cadence_weekly_ratio",
+      "behavior_category_cosine",
+      "graph_jaccard",
+      "graph_adamic_adar_norm"
+    ],
+    "provenance": {
+      "matchId": 23,
+      "sourceFiles": [
+        "forum-market/user-matching.tsv",
+        "market/vendors.tsv",
+        "forum/user.tsv"
+      ],
+      "createdAt": "2026-08-22T17:23:01.996Z"
+    },
+    "notes": "Random negative pair: distinct match IDs (23 vs 72)"
+  }
+]

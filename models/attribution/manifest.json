@@ -1,0 +1,28 @@
+{
+  "modelId": "wolverine-attribution-model",
+  "modelVersion": "1.0.0-attribution",
+  "featureVersion": "1.0.0",
+  "modelType": "PROBABILISTIC_LOGISTIC_CLASSIFIER",
+  "description": "Scientifically defensible supervised cross-actor probabilistic attribution model using real Evolution ground-truth linkages with L2 regularization and Platt scaling calibration.",
+  "task": "CROSS_ACTOR_ATTRIBUTION",
+  "classificationTarget": "P(SAME_ACTOR | EVIDENCE)",
+  "evidenceClass": "STATISTICAL_MATCH",
+  "sourceDataset": {
+    "id": "evolution-2014-2015",
+    "version": "1.0.0",
+    "doi": "10.5281/zenodo.10156522",
+    "groundTruthMappingFile": "forum-market/user-matching.tsv"
+  },
+  "featureDimensions": 6,
+  "featureOrdering": [
+    "behavior_activity_js",
+    "behavior_inter_event_log_ratio",
+    "behavior_cadence_weekly_ratio",
+    "behavior_category_cosine",
+    "graph_jaccard",
+    "graph_adamic_adar_norm"
+  ],
+  "calibrationMethod": "Platt Scaling (Fitted on Validation Split)",
+  "evaluationSplit": "TEST_SPLIT_ONLY",
+  "created_at": "2026-08-22T17:20:00.000Z"
+}

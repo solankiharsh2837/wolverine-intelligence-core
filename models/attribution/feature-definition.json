@@ -1,0 +1,47 @@
+{
+  "featureVersion": "1.0.0",
+  "features": [
+    {
+      "name": "behavior_activity_js",
+      "type": "PROBABILITY_SIMILARITY",
+      "bounds": [0.0, 1.0],
+      "formula": "S_JS = 1.0 - sqrt(JSD(P, Q))",
+      "description": "Jensen-Shannon similarity between 24-hour UTC activity probability distributions"
+    },
+    {
+      "name": "behavior_inter_event_log_ratio",
+      "type": "INTERVAL_SIMILARITY",
+      "bounds": [0.0, 1.0],
+      "formula": "S_inter = exp(-|ln(mu_A) - ln(mu_B)| / sigma_ref)",
+      "description": "Log-ratio similarity between mean inter-event activity intervals (sigma_ref = 2.0)"
+    },
+    {
+      "name": "behavior_cadence_weekly_ratio",
+      "type": "CADENCE_SIMILARITY",
+      "bounds": [0.0, 1.0],
+      "formula": "S_cadence = min(C_A, C_B) / max(C_A, C_B)",
+      "description": "Ratio of weekly posting/listing cadences per active calendar week"
+    },
+    {
+      "name": "behavior_category_cosine",
+      "type": "SPARSE_COSINE_SIMILARITY",
+      "bounds": [0.0, 1.0],
+      "formula": "cos(C_A, C_B) = (C_A . C_B) / (||C_A|| * ||C_B||)",
+      "description": "Cosine similarity across normalized product category vectors"
+    },
+    {
+      "name": "graph_jaccard",
+      "type": "SET_SIMILARITY",
+      "bounds": [0.0, 1.0],
+      "formula": "J(Gamma_A, Gamma_B) = |Gamma_A cap Gamma_B| / |Gamma_A cup Gamma_B|",
+      "description": "Jaccard coefficient of shared counterparties in the communication network"
+    },
+    {
+      "name": "graph_adamic_adar_norm",
+      "type": "NORMALIZED_TOPOLOGY_INDEX",
+      "bounds": [0.0, 1.0],
+      "formula": "tanh(AA / 2.0) where AA = sum_{z in Gamma_A cap Gamma_B, deg(z)>1} 1/ln(deg(z))",
+      "description": "Exact Adamic-Adar common neighbor index normalized via hyperbolic tangent; unobserved degrees are strictly skipped"
+    }
+  ]
+}

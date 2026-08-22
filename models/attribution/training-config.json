@@ -1,0 +1,42 @@
+{
+  "modelVersion": "1.0.0-attribution",
+  "featureVersion": "1.0.0",
+  "featureDimension": 6,
+  "featureOrder": [
+    "behavior_activity_js",
+    "behavior_inter_event_log_ratio",
+    "behavior_cadence_weekly_ratio",
+    "behavior_category_cosine",
+    "graph_jaccard",
+    "graph_adamic_adar_norm"
+  ],
+  "weights": [
+    1.1812,
+    1.4268,
+    1.0363,
+    -0.2601,
+    0.9758,
+    0.9384
+  ],
+  "bias": -1.9325,
+  "plattScaling": {
+    "paramA": 2.0073,
+    "paramB": -0.0902,
+    "calibratedOn": "VALIDATION_SPLIT"
+  },
+  "hyperparameters": {
+    "regularizationLambda": 0.01,
+    "learningRate": 0.1,
+    "maxEpochs": 300,
+    "batchSize": 81,
+    "randomSeed": 42
+  },
+  "trainingResults": {
+    "trainLoss": 0.2524,
+    "trainAccuracy": 1,
+    "valLoss": 0.0645,
+    "valAccuracy": 1,
+    "convergedEpoch": 300
+  },
+  "trainedAt": "2026-08-22T17:23:02.626Z"
+}

@@ -127,6 +127,10 @@ export function jaccardSimilaritySets(setA: string[], setB: string[]): number {
 /**
  * Computes exact Adamic-Adar Index between two sets with degree map:
  * AA(A, B) = \sum_{z \in \Gamma(A) \cap \Gamma(B)} \frac{1}{\ln(\deg(z))}
+ * 
+ * Missing Degree Policy: If deg(z) is undefined or unobserved in degreesMap,
+ * the term is strictly skipped without assuming or inventing an artificial degree.
+ * If deg(z) <= 1, it is skipped as ln(1) = 0.
  */
 export function adamicAdarIndexSets(setA: string[], setB: string[], degreesMap: Record<string, number> = {}): number {
   const sB = new Set(setB);
@@ -134,8 +138,8 @@ export function adamicAdarIndexSets(setA: string[], setB: string[], degreesMap: 
 
   let aa = 0;
   for (const z of common) {
-    const deg = degreesMap[z] || 2;
-    if (deg > 1) {
+    const deg = degreesMap[z];
+    if (deg !== undefined && deg > 1) {
       aa += 1.0 / Math.log(deg);
     }
   }
