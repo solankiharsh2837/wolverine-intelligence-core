@@ -1,0 +1,611 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ============================================================
+// ENUMERATIONS (Exact specification from docs/DATA-MODEL.md)
+// ============================================================
+
+enum NetworkType {
+  TOR
+  I2P
+  ZERONET
+  FREENET
+  CLEARNET
+}
+
+enum IdentifierType {
+  HANDLE
+  PGP_KEY
+  WALLET
+  EMAIL
+  CRYPTO_ADDRESS
+  PUBLISHER_KEY
+  SITE_IDENTITY
+  DOMAIN
+  CERTIFICATE
+  OTHER
+}
+
+enum ObservationType {
+  POST
+  LISTING
+  MESSAGE
+  PROFILE_UPDATE
+  TRANSACTION
+  REVIEW
+  HEARTBEAT
+  KEY_EVENT
+  MIGRATION
+  SCAN_RESULT
+}
+
+enum RelationshipType {
+  AUTHORED
+  POSTED
+  REPLIED_TO
+  MESSAGED
+  LISTED
+  BOUGHT_FROM
+  SOLD_TO
+  REPUTATION_FOR
+  VOUCHED_FOR
+  USES_ACCOUNT
+  HAS_ALIAS
+  USES_WALLET
+  USES_PGP_KEY
+  POSSIBLE_SAME_AS
+  MIGRATED_TO
+  SHARES_INFRASTRUCTURE
+  SHARES_FINGERPRINT
+  SHARES_COUNTERPARTY
+  TEMPORALLY_CORRELATED
+  COMMUNITY_OVERLAP
+  INSTRUMENTED_BY
+}
+
+enum RelationshipClass {
+  OBSERVED
+  DETERMINISTIC_MATCH
+  STATISTICAL_MATCH
+  AI_HYPOTHESIS
+  ATTRIBUTION_CANDIDATE
+}
+
+enum RelationshipStatus {
+  PROPOSED
+  VALIDATED
+  ACTIVE
+  SUPERSEDED
+  RETRACTED
+}
+
+enum FindingType {
+  EXPOSURE
+  VULNERABILITY
+  FINGERPRINT
+  MISCONFIGURATION
+}
+
+enum EvidenceClass {
+  OBSERVED
+  DETERMINISTIC_MATCH
+  STATISTICAL_MATCH
+  AI_HYPOTHESIS
+  CRYPTOGRAPHIC_PROOF
+}
+
+enum HypothesisType {
+  SUMMARIZATION
+  HYPOTHESIS
+  NARRATIVE
+  PATTERN
+}
+
+enum HypothesisStatus {
+  GENERATED
+  REVIEWED
+  ACCEPTED
+  REJECTED
+}
+
+enum DatasetUsage {
+  TRAINING
+  VALIDATION
+  TEST
+  FEATURE_ENGINEERING
+  SYNTHETIC_CALIBRATION
+  REFERENCE_ONLY
+}
+
+// ============================================================
+// CANONICAL MODELS
+// ============================================================
+
+/// 1. Network: A supported overlay or clearnet network
+model Network {
+  id            String         @id @default(uuid()) @db.Uuid
+  name          String         @unique
+  type          NetworkType
+  description   String?
+  createdAt     DateTime       @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  portals       Portal[]
+  identifiers   Identifier[]
+  observations  Observation[]
+
+  @@map("networks")
+}
+
+/// 2. Portal: A specific service/site/marketplace/forum on a network
+model Portal {
+  id            String         @id @default(uuid()) @db.Uuid
+  networkId     String         @db.Uuid
+  network       Network        @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  address       String
+  status        String
+  discoveredAt  DateTime       @db.Timestamptz(6)
+  createdAt     DateTime       @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  assets        Asset[]
+  accounts      Account[]
+  personas      Persona[]
+  identifiers   Identifier[]
+  observations  Observation[]
+  scans         Scan[]
+
+  @@index([networkId])
+  @@index([address])
+  @@map("portals")
+}
+
+/// 3. Asset: A piece of infrastructure (server, domain, certificate, service)
+model Asset {
+  id            String                    @id @default(uuid()) @db.Uuid
+  portalId      String?                   @db.Uuid
+  portal        Portal?                   @relation(fields: [portalId], references: [id], onDelete: SetNull)
+  assetType     String
+  value         String
+  firstSeen     DateTime                  @db.Timestamptz(6)
+  createdAt     DateTime                  @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  indicators    InfrastructureIndicator[]
+
+  @@index([portalId])
+  @@index([value])
+  @@map("assets")
+}
+
+/// 4. Actor: A resolved real-world entity (possibly unknown identity)
+model Actor {
+  id            String    @id @default(uuid()) @db.Uuid
+  threatLevel   Float?
+  confidence    Float
+  notes         String?
+  createdAt     DateTime  @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  personas      Persona[]
+
+  @@map("actors")
+}
+
+/// 5. Persona: A specific identity presentation by an actor on a portal
+model Persona {
+  id                  String               @id @default(uuid()) @db.Uuid
+  actorId             String?              @db.Uuid
+  actor               Actor?               @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  name                String
+  portalId            String               @db.Uuid
+  portal              Portal               @relation(fields: [portalId], references: [id], onDelete: Cascade)
+  createdAt           DateTime             @default(now()) @db.Timestamptz(6)
+  createdBy           String
+  sourceVersion       String
+  accounts            Account[]
+  behaviorProfiles    BehaviorProfile[]
+  stylometricProfiles StylometricProfile[]
+
+  @@index([actorId])
+  @@index([portalId])
+  @@index([name])
+  @@map("personas")
+}
+
+/// 6. Account: A registered account on a portal
+model Account {
+  id            String    @id @default(uuid()) @db.Uuid
+  personaId     String    @db.Uuid
+  persona       Persona   @relation(fields: [personaId], references: [id], onDelete: Cascade)
+  portalId      String    @db.Uuid
+  portal        Portal    @relation(fields: [portalId], references: [id], onDelete: Cascade)
+  accountId     String
+  registeredAt  DateTime? @db.Timestamptz(6)
+  createdAt     DateTime  @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@unique([portalId, accountId])
+  @@index([personaId])
+  @@index([portalId])
+  @@map("accounts")
+}
+
+/// 7. Identifier: A typed identifier (HANDLE, PGP_KEY, WALLET, EMAIL, etc.)
+model Identifier {
+  id             String         @id @default(uuid()) @db.Uuid
+  type           IdentifierType
+  value          String
+  networkId      String         @db.Uuid
+  network        Network        @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  portalId       String?        @db.Uuid
+  portal         Portal?        @relation(fields: [portalId], references: [id], onDelete: SetNull)
+  firstSeen      DateTime       @db.Timestamptz(6)
+  lastSeen       DateTime       @db.Timestamptz(6)
+  source         String
+  observationIds String[]       @default([])
+  createdAt      DateTime       @default(now()) @db.Timestamptz(6)
+  createdBy      String
+  sourceVersion  String
+
+  @@index([networkId])
+  @@index([portalId])
+  @@index([type, value])
+  @@map("identifiers")
+}
+
+/// 8. Artifact: The raw/serialized thing observed
+model Artifact {
+  id            String        @id @default(uuid()) @db.Uuid
+  rawData       Bytes
+  hash          String        @unique
+  collectedAt   DateTime      @db.Timestamptz(6)
+  mimeType      String
+  createdAt     DateTime      @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  observations  Observation[]
+
+  @@index([hash])
+  @@map("artifacts")
+}
+
+/// 9. Observation: A normalized statement derived from an artifact
+model Observation {
+  id                   String              @id @default(uuid()) @db.Uuid
+  networkId            String              @db.Uuid
+  network              Network             @relation(fields: [networkId], references: [id], onDelete: Cascade)
+  portalId             String              @db.Uuid
+  portal               Portal              @relation(fields: [portalId], references: [id], onDelete: Cascade)
+  sourceLocator        String
+  sourceRecordId       String?
+  artifactId           String              @db.Uuid
+  artifact             Artifact            @relation(fields: [artifactId], references: [id], onDelete: Cascade)
+  observationType      ObservationType
+  observedAt           DateTime            @db.Timestamptz(6)
+  collectedAt          DateTime            @db.Timestamptz(6)
+  collectorVersion     String
+  rawArtifactReference String
+  canonicalPayloadHash String              @unique
+  datasetId            String?             @db.Uuid
+  dataset              Dataset?            @relation(fields: [datasetId], references: [id], onDelete: SetNull)
+  scanId               String?             @db.Uuid
+  scan                 Scan?               @relation(fields: [scanId], references: [id], onDelete: SetNull)
+  confidence           Float
+  provenance           Json
+  createdAt            DateTime            @default(now()) @db.Timestamptz(6)
+  createdBy            String
+  sourceVersion        String
+  wolverineEvidences   WolverineEvidence[]
+
+  @@index([networkId])
+  @@index([portalId])
+  @@index([artifactId])
+  @@index([datasetId])
+  @@index([scanId])
+  @@index([observedAt])
+  @@index([collectedAt])
+  @@map("observations")
+}
+
+/// 10. Relationship: A graph edge between two entities
+model Relationship {
+  id                   String                 @id @default(uuid()) @db.Uuid
+  sourceId             String
+  targetId             String
+  type                 RelationshipType
+  class                RelationshipClass
+  observedAt           DateTime?              @db.Timestamptz(6)
+  confidence           Float
+  status               RelationshipStatus     @default(PROPOSED)
+  validFrom            DateTime?              @db.Timestamptz(6)
+  validTo              DateTime?              @db.Timestamptz(6)
+  sourceObservationIds String[]               @default([])
+  evidenceIds          String[]               @default([])
+  modelVersion         String?
+  createdAt            DateTime               @default(now()) @db.Timestamptz(6)
+  createdBy            String
+  sourceVersion        String
+  evidences            RelationshipEvidence[]
+
+  @@index([sourceId])
+  @@index([targetId])
+  @@index([type])
+  @@index([class])
+  @@index([confidence])
+  @@map("relationships")
+}
+
+/// 11. RelationshipEvidence: Supporting evidence for a relationship
+model RelationshipEvidence {
+  id             String        @id @default(uuid()) @db.Uuid
+  relationshipId String        @db.Uuid
+  relationship   Relationship  @relation(fields: [relationshipId], references: [id], onDelete: Cascade)
+  evidenceClass  EvidenceClass
+  referenceId    String
+  createdAt      DateTime      @default(now()) @db.Timestamptz(6)
+  createdBy      String
+  sourceVersion  String
+
+  @@index([relationshipId])
+  @@index([referenceId])
+  @@map("relationship_evidence")
+}
+
+/// 12. InfrastructureIndicator: A discovered infrastructure characteristic
+model InfrastructureIndicator {
+  id            String   @id @default(uuid()) @db.Uuid
+  assetId       String   @db.Uuid
+  asset         Asset    @relation(fields: [assetId], references: [id], onDelete: Cascade)
+  key           String
+  value         Json
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([assetId])
+  @@index([key])
+  @@map("infrastructure_indicators")
+}
+
+/// 13. Scan: A scanner execution record
+model Scan {
+  id            String        @id @default(uuid()) @db.Uuid
+  portalId      String?       @db.Uuid
+  portal        Portal?       @relation(fields: [portalId], references: [id], onDelete: SetNull)
+  startedAt     DateTime      @db.Timestamptz(6)
+  finishedAt    DateTime?     @db.Timestamptz(6)
+  version       String
+  createdAt     DateTime      @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  findings      Finding[]
+  observations  Observation[]
+
+  @@index([portalId])
+  @@map("scans")
+}
+
+/// 14. Finding: A specific scanner finding
+model Finding {
+  id            String      @id @default(uuid()) @db.Uuid
+  scanId        String      @db.Uuid
+  scan          Scan        @relation(fields: [scanId], references: [id], onDelete: Cascade)
+  type          FindingType
+  details       Json
+  createdAt     DateTime    @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([scanId])
+  @@index([type])
+  @@map("findings")
+}
+
+/// 15. AttributionCandidate: A potential link between two entities with scoring
+model AttributionCandidate {
+  id            String                @id @default(uuid()) @db.Uuid
+  entityA       String
+  entityB       String
+  score         Float
+  modelVersion  String
+  createdAt     DateTime              @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  features      AttributionFeature[]
+  evidences     AttributionEvidence[]
+
+  @@index([entityA])
+  @@index([entityB])
+  @@index([score])
+  @@map("attribution_candidates")
+}
+
+/// 16. AttributionEvidence: Evidence supporting an attribution candidate
+model AttributionEvidence {
+  id            String               @id @default(uuid()) @db.Uuid
+  candidateId   String               @db.Uuid
+  candidate     AttributionCandidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  evidenceClass EvidenceClass
+  referenceId   String
+  score         Float?
+  createdAt     DateTime             @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([candidateId])
+  @@index([referenceId])
+  @@map("attribution_evidences")
+}
+
+/// 17. AttributionFeature: Individual feature values for an attribution candidate
+model AttributionFeature {
+  id            String               @id @default(uuid()) @db.Uuid
+  candidateId   String               @db.Uuid
+  candidate     AttributionCandidate @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  featureName   String
+  value         Float
+  createdAt     DateTime             @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([candidateId])
+  @@index([featureName])
+  @@map("attribution_features")
+}
+
+/// 18. BehaviorProfile: Behavioral characteristics of a persona/actor
+model BehaviorProfile {
+  id            String   @id @default(uuid()) @db.Uuid
+  personaId     String   @db.Uuid
+  persona       Persona  @relation(fields: [personaId], references: [id], onDelete: Cascade)
+  timezone      String?
+  activeHours   Json?
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([personaId])
+  @@map("behavior_profiles")
+}
+
+/// 19. StylometricProfile: Writing style characteristics
+model StylometricProfile {
+  id            String   @id @default(uuid()) @db.Uuid
+  personaId     String   @db.Uuid
+  persona       Persona  @relation(fields: [personaId], references: [id], onDelete: Cascade)
+  wordFreq      Json
+  grammarPats   Json
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([personaId])
+  @@map("stylometric_profiles")
+}
+
+/// 20. TimelineEvent: A time-stamped event for timeline reconstruction
+model TimelineEvent {
+  id            String   @id @default(uuid()) @db.Uuid
+  entityId      String
+  eventType     String
+  eventTime     DateTime @db.Timestamptz(6)
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([entityId])
+  @@index([eventTime])
+  @@map("timeline_events")
+}
+
+/// 21. Dataset: A registered external dataset
+model Dataset {
+  id            String          @id @default(uuid()) @db.Uuid
+  name          String          @unique
+  sourceUrl     String?
+  hash          String
+  usage         DatasetUsage    @default(REFERENCE_ONLY)
+  description   String?
+  license       String?
+  modality      String?
+  recordCount   Int?
+  createdAt     DateTime        @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  records       DatasetRecord[]
+  observations  Observation[]
+
+  @@index([name])
+  @@map("datasets")
+}
+
+/// 22. DatasetRecord: A record mapping from dataset to canonical model
+model DatasetRecord {
+  id            String   @id @default(uuid()) @db.Uuid
+  datasetId     String   @db.Uuid
+  dataset       Dataset  @relation(fields: [datasetId], references: [id], onDelete: Cascade)
+  rawRecord     Json
+  createdAt     DateTime @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([datasetId])
+  @@map("dataset_records")
+}
+
+/// 23. ModelVersion: A registered ML model version with metadata
+model ModelVersion {
+  id            String         @id @default(uuid()) @db.Uuid
+  modelName     String
+  versionTag    String
+  parameters    Json?
+  createdAt     DateTime       @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  aiHypotheses  AIHypothesis[]
+
+  @@unique([modelName, versionTag])
+  @@map("model_versions")
+}
+
+/// 24. AIHypothesis: An AI-generated hypothesis with references
+model AIHypothesis {
+  id                  String           @id @default(uuid()) @db.Uuid
+  summary             String
+  modelId             String           @db.Uuid
+  model               ModelVersion     @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  status              HypothesisStatus @default(GENERATED)
+  type                HypothesisType   @default(HYPOTHESIS)
+  referencedEntityIds String[]         @default([])
+  confidence          Float?
+  createdAt           DateTime         @default(now()) @db.Timestamptz(6)
+  createdBy           String
+  sourceVersion       String
+
+  @@index([modelId])
+  @@index([status])
+  @@map("ai_hypotheses")
+}
+
+/// 25. WolverineEvidence: A cryptographic evidence record
+model WolverineEvidence {
+  id            String         @id @default(uuid()) @db.Uuid
+  observationId String         @db.Uuid
+  observation   Observation    @relation(fields: [observationId], references: [id], onDelete: Cascade)
+  signature     String
+  merkleRoot    String?
+  createdAt     DateTime       @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+  trustReceipts TrustReceipt[]
+
+  @@index([observationId])
+  @@index([merkleRoot])
+  @@map("wolverine_evidence")
+}
+
+/// 26. TrustReceipt: A Besu-anchored trust receipt
+model TrustReceipt {
+  id            String            @id @default(uuid()) @db.Uuid
+  evidenceId    String            @db.Uuid
+  evidence      WolverineEvidence @relation(fields: [evidenceId], references: [id], onDelete: Cascade)
+  blockHash     String
+  transactionId String            @unique
+  blockNumber   Int?
+  network       String            @default("BESU_LOCAL")
+  createdAt     DateTime          @default(now()) @db.Timestamptz(6)
+  createdBy     String
+  sourceVersion String
+
+  @@index([evidenceId])
+  @@index([transactionId])
+  @@map("trust_receipts")
+}

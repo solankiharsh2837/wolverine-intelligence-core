@@ -1,0 +1,44 @@
+{
+  "name": "wolverine-intelligence-core",
+  "version": "0.1.0",
+  "description": "Wolverine Intelligence Core — Canonical Data Model, Prisma Schema, Dataset Registry, and Storage Contracts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:generate": "prisma generate",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "db:inspect": "tsx scripts/db_inspect.ts",
+    "db:backup": "powershell -ExecutionPolicy Bypass -File scripts/db_backup.ps1",
+    "db:restore": "powershell -ExecutionPolicy Bypass -File scripts/db_restore.ps1",
+    "db:test": "tsx --test --test-concurrency=1 tests/database/*.test.ts",
+    "test": "npm run db:test",
+    "build": "tsc"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "keywords": [
+    "threat-intelligence",
+    "darknet",
+    "attribution",
+    "prisma",
+    "wolverine"
+  ],
+  "author": "Google DeepMind Advanced Agentic Coding",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  }
+}
