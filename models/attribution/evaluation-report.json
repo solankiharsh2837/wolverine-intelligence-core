@@ -1,22 +1,22 @@
 {
   "evaluationVersion": "1.0.0-attribution",
   "datasetSplit": "TEST_SPLIT_ONLY",
-  "evaluatedAt": "2026-08-22T17:45:25.479Z",
+  "evaluatedAt": "2026-08-22T18:00:22.650Z",
   "sampleCounts": {
-    "totalTestPairs": 77,
-    "positivePairs": 5,
-    "negativePairs": 72,
-    "hardNegativePairs": 6
+    "totalTestPairs": 120,
+    "positivePairs": 4,
+    "negativePairs": 116,
+    "hardNegativePairs": 85
   },
   "metrics": {
-    "rocAuc": 1,
-    "prAuc": 1,
-    "brierScore": 0.0392,
+    "rocAuc": 0.5345,
+    "prAuc": 0.1257,
+    "brierScore": 0.0322,
     "precision": 0,
     "recall": 0,
     "f1Score": 0,
-    "accuracy": 0.9351,
-    "naivePriorBaselineBrier": 0.0607,
+    "accuracy": 0.9667,
+    "naivePriorBaselineBrier": 0.0322,
     "naivePriorBaselineRocAuc": 0.5
   },
   "operatingPoints": [
@@ -45,17 +45,17 @@
   "confusionMatrix": {
     "tp": 0,
     "fp": 0,
-    "tn": 72,
-    "fn": 5
+    "tn": 116,
+    "fn": 4
   },
   "bootstrapConfidenceIntervals95": {
     "rocAuc": [
-      1,
-      1
+      0,
+      0.9748
     ],
     "prAuc": [
-      1,
-      1
+      0.0083,
+      0.5476
     ],
     "f1Score": [
       0,
@@ -64,7 +64,7 @@
     "resamplesCount": 1000
   },
   "calibration": {
-    "brierScore": 0.0392,
-    "expectedCalibrationError": 0.0824
+    "brierScore": 0.0322,
+    "expectedCalibrationError": 0.0034
   }
 }

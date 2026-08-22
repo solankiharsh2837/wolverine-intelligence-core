@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import readline from 'node:readline';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import assert from 'node:assert/strict';
 import { AttributionPair, PairSplit, PairType } from './types.js';
 import { ATTRIBUTION_FEATURE_ORDER, extractAttributionFeatures } from './feature_extractor.js';
 import { EvolutionBehaviorProfiler } from '../behavior/profiler.js';
@@ -37,7 +38,7 @@ export class AttributionPairGenerator {
   /**
    * Loads verified ground-truth match records from forum-market/user-matching.tsv.
    */
-  public async loadGroundTruthMatches(limit: number = 200): Promise<RawMatchRecord[]> {
+  public async loadGroundTruthMatches(limit: number = 300): Promise<RawMatchRecord[]> {
     const matchPath = path.join(this.extractedDir, 'forum-market', 'user-matching.tsv');
     const matches: RawMatchRecord[] = [];
 
@@ -70,28 +71,35 @@ export class AttributionPairGenerator {
   }
 
   /**
-   * Constructs balanced labeled attribution dataset with REAL features extracted
-   * directly from the Evolution dataset using EvolutionBehaviorProfiler.
+   * Constructs genuine cross-subsystem attribution pairs (Forum User UID <-> Marketplace Vendor VID)
+   * with ZERO self-pairs (entityA.id !== entityB.id).
    */
   public async generatePairsDataset(
-    maxEntitiesToProfile: number = 25
+    targetMatchesToProfile: number = 40
   ): Promise<{ pairs: AttributionPair[]; insufficientDataCount: number }> {
-    const rawMatches = await this.loadGroundTruthMatches(maxEntitiesToProfile * 2);
+    const rawMatches = await this.loadGroundTruthMatches(targetMatchesToProfile * 3);
     const pairs: AttributionPair[] = [];
     const seenPairs = new Set<string>();
     let insufficientDataCount = 0;
 
-    // 1. Profile real active entities from the dataset
-    const profiledEntities: { match: RawMatchRecord; profile: BehaviorProfileData }[] = [];
+    // 1. Profile both the Forum Persona and Vendor Persona for each ground-truth match
+    const validMatches: {
+      match: RawMatchRecord;
+      forumProfile: BehaviorProfileData;
+      vendorProfile: BehaviorProfileData;
+    }[] = [];
 
-    console.log(`[AttributionPairGenerator] Profiling active entities directly from source files...`);
+    console.log(`[AttributionPairGenerator] Extracting cross-subsystem profiles (Forum UID <-> Market VID)...`);
+
     for (const match of rawMatches) {
-      if (profiledEntities.length >= maxEntitiesToProfile) break;
+      if (validMatches.length >= targetMatchesToProfile) break;
       try {
-        const prof = await this.profiler.profileVendor(match.vid);
-        if (prof.status === 'VALID_PROFILE') {
-          profiledEntities.push({ match, profile: prof });
-          console.log(`  ✔ Profiled ${prof.entityName} (VID ${match.vid}): ${prof.cadence.totalEvents} events, ${prof.cadence.activeDaysCount} active days`);
+        const forumProf = await this.profiler.profileForumUser(match.uid);
+        const vendorProf = await this.profiler.profileVendor(match.vid);
+
+        if (forumProf.status === 'VALID_PROFILE' && vendorProf.status === 'VALID_PROFILE') {
+          validMatches.push({ match, forumProfile: forumProf, vendorProfile: vendorProf });
+          console.log(`  ✔ Cross-subsystem match ${match.matchId} (${match.username}): Forum UID ${match.uid} (${forumProf.cadence.totalEvents} posts) <-> Vendor VID ${match.vid} (${vendorProf.cadence.totalEvents} listings)`);
         } else {
           insufficientDataCount++;
         }
@@ -100,7 +108,7 @@ export class AttributionPairGenerator {
       }
     }
 
-    console.log(`[AttributionPairGenerator] Successfully profiled ${profiledEntities.length} valid entities (${insufficientDataCount} sparse entities skipped).`);
+    console.log(`[AttributionPairGenerator] Profiled ${validMatches.length} valid cross-subsystem match pairs (${insufficientDataCount} sparse pairs skipped).`);
 
     const addPair = (
       profA: BehaviorProfileData,
@@ -111,6 +119,9 @@ export class AttributionPairGenerator {
       features: number[],
       notes: string
     ) => {
+      // Invariant: ZERO self-pairs!
+      assert.notEqual(profA.entityId, profB.entityId, `Self-pairing is strictly prohibited: ${profA.entityId}`);
+
       const key1 = `${profA.entityId}:::${profB.entityId}`;
       const key2 = `${profB.entityId}:::${profA.entityId}`;
       if (seenPairs.has(key1) || seenPairs.has(key2)) return;
@@ -135,56 +146,54 @@ export class AttributionPairGenerator {
         featureNames: ATTRIBUTION_FEATURE_ORDER,
         provenance: {
           matchId: matchIdA,
-          sourceFiles: ['forum-market/user-matching.tsv', 'market/vendors.tsv', 'market/listings.tsv', 'forum/post.tsv'],
+          sourceFiles: ['forum-market/user-matching.tsv', 'forum/post.tsv', 'market/vendors.tsv', 'market/listings.tsv'],
           createdAt: new Date().toISOString(),
         },
         notes,
       });
     };
 
-    // 2. Generate Real Positive Pairs (Self / Same Ground-Truth Actor)
-    // Compare entity profile against itself or its ground-truth matched persona
-    for (const item of profiledEntities) {
-      const realFeatures = extractAttributionFeatures(item.profile, item.profile);
+    // 2. Positive Pairs (Genuine Cross-Subsystem Match: Forum UID A <-> Vendor VID B, same match_id)
+    for (const item of validMatches) {
+      const realFeatures = extractAttributionFeatures(item.forumProfile, item.vendorProfile);
       addPair(
-        item.profile,
-        item.profile,
+        item.forumProfile,
+        item.vendorProfile,
         item.match.matchId,
         true,
         'POSITIVE_GROUND_TRUTH_MATCH',
         realFeatures,
-        `Verified ground-truth match_id ${item.match.matchId} (uid ${item.match.uid} / vid ${item.match.vid})`
+        `Verified cross-subsystem match_id ${item.match.matchId} (Forum UID ${item.match.uid} <-> Market VID ${item.match.vid})`
       );
     }
 
-    const posCount = pairs.length;
-
-    // 3. Generate Real Hard Negatives & Random Negatives by measuring actual feature vectors
-    for (let i = 0; i < profiledEntities.length; i++) {
-      for (let j = i + 1; j < profiledEntities.length; j++) {
-        const itemA = profiledEntities[i];
-        const itemB = profiledEntities[j];
+    // 3. Negative Pairs (Forum UID A vs Vendor VID B, different match_id)
+    for (let i = 0; i < validMatches.length; i++) {
+      for (let j = 0; j < validMatches.length; j++) {
+        if (i === j) continue;
+        const itemA = validMatches[i];
+        const itemB = validMatches[j];
 
         if (itemA.match.matchId === itemB.match.matchId) continue;
 
-        // Calculate REAL features between distinct entities
-        const realFeatures = extractAttributionFeatures(itemA.profile, itemB.profile);
-        const categoryCosine = realFeatures[3]; // x4 is category cosine
-
-        // If real measured category similarity >= 0.40, it's a real HARD negative
-        const isHardNegative = categoryCosine >= 0.40;
-        const pairType: PairType = isHardNegative ? 'NEGATIVE_HARD_CATEGORY_OVERLAP' : 'NEGATIVE_RANDOM';
+        // Cross-subsystem comparison between different actors
+        const realFeatures = extractAttributionFeatures(itemA.forumProfile, itemB.vendorProfile);
+        const activityJS = realFeatures[0];
+        const interEventLog = realFeatures[1];
+        const categoryCosine = realFeatures[3];
+        // Measured hard negative: distinct actors with elevated behavioral/temporal or topical similarity
+        const isHardNegative = activityJS >= 0.28 || interEventLog >= 0.72 || categoryCosine >= 0.05;
 
         addPair(
-          itemA.profile,
-          itemB.profile,
+          itemA.forumProfile,
+          itemB.vendorProfile,
           itemA.match.matchId,
           false,
-          pairType,
+          isHardNegative ? 'NEGATIVE_HARD_CATEGORY_OVERLAP' : 'NEGATIVE_RANDOM',
           realFeatures,
           isHardNegative
-            ? `Measured hard negative: distinct match IDs (${itemA.match.matchId} vs ${itemB.match.matchId}) with real category cosine ${categoryCosine}`
-            : `Random negative: distinct match IDs (${itemA.match.matchId} vs ${itemB.match.matchId})`
+            ? `Measured hard negative: Forum UID ${itemA.match.uid} vs Market VID ${itemB.match.vid} (match_ids ${itemA.match.matchId} vs ${itemB.match.matchId}) with elevated behavioral/temporal correlation`
+            : `Cross-subsystem negative: Forum UID ${itemA.match.uid} vs Market VID ${itemB.match.vid} (match_ids ${itemA.match.matchId} vs ${itemB.match.matchId})`
         );
       }
     }

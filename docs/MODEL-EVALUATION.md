@@ -1,7 +1,12 @@
-# Wolverine Intelligence: Attribution Model Evaluation Methodology (MODEL-EVALUATION.md)
+# Wolverine Intelligence — ML Model Evaluation Report
 
-## 1. Real Source Data Guarantee
-1. **Zero Synthetic Generation**: All feature vectors $x \in [0, 1]^6$ are extracted dynamically from raw Evolution TSV records using `EvolutionBehaviorProfiler` and `extractAttributionFeatures`.
-2. **Untouched Test Partition**: Model evaluation metrics are strictly reported on the `TEST` split, which is never accessed during feature selection, model training, or hyperparameter tuning.
-3. **Bootstrap Confidence Intervals**: 1,000 bootstrap resamples are conducted on the test split predictions to report empirical 95% confidence bounds for ROC-AUC, PR-AUC, and F1 Score.
-4. **Data-Driven Error Analysis**: All False Positives and False Negatives inspect the actual underlying feature values to generate diagnostic explanations.
+## Attribution Model v1 Performance (Evolution 2014-2015)
+
+- **Dataset**: Evolution Cryptomarket dataset (`forum/post.tsv`, `market/vendors.tsv`, `market/listings.tsv`, `forum-market/user-matching.tsv`).
+- **Pairs Total**: 900 pairs (30 verified positive cross-subsystem pairs, 522 hard negatives, 348 random negatives).
+- **Test Set Evaluation (120 Held-Out Samples)**:
+  - **ROC-AUC**: **0.5345** (95% CI: `[0.0000, 0.9748]`)
+  - **PR-AUC**: **0.1257** (95% CI: `[0.0083, 0.5476]`)
+  - **Brier Score**: **0.0322**
+  - **Expected Calibration Error**: **0.0034**
+- **Evaluation Integrity**: Zero self-pair shortcuts, zero synthetic features, bit-for-bit reproducible deterministic training.

@@ -11,32 +11,32 @@
     "graph_adamic_adar_norm"
   ],
   "weights": [
-    -0.3294,
-    -0.3604,
-    0.1456,
-    0.8257,
-    1.1209,
+    -0.4037,
+    -1.0076,
+    -0.4929,
+    -0.0171,
+    0,
     0
   ],
-  "bias": -2.2604,
+  "bias": -1.9988,
   "plattScaling": {
-    "paramA": 1.3903,
-    "paramB": 0.0261,
+    "paramA": 1.0733,
+    "paramB": -0.0665,
     "calibratedOn": "VALIDATION_SPLIT"
   },
   "hyperparameters": {
     "regularizationLambda": 0.01,
     "learningRate": 0.1,
     "maxEpochs": 300,
-    "batchSize": 277,
+    "batchSize": 630,
     "randomSeed": 42
   },
   "trainingResults": {
-    "trainLoss": 0.1648,
-    "trainAccuracy": 0.935,
-    "valLoss": 0.1432,
-    "valAccuracy": 0.9369,
+    "trainLoss": 0.1531,
+    "trainAccuracy": 0.9667,
+    "valLoss": 0.1626,
+    "valAccuracy": 0.9667,
     "convergedEpoch": 300
   },
-  "trainedAt": "2026-08-22T17:45:24.835Z"
+  "trainedAt": "2026-08-22T18:00:21.983Z"
 }
