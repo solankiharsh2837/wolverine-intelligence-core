@@ -1,17 +1,17 @@
 {
   "evaluationVersion": "1.0.0-attribution",
   "datasetSplit": "TEST_SPLIT_ONLY",
-  "evaluatedAt": "2026-08-22T18:00:22.650Z",
+  "evaluatedAt": "2026-08-22T18:24:31.272Z",
   "sampleCounts": {
     "totalTestPairs": 120,
     "positivePairs": 4,
     "negativePairs": 116,
-    "hardNegativePairs": 85
+    "hardNegativePairs": 112
   },
   "metrics": {
-    "rocAuc": 0.5345,
-    "prAuc": 0.1257,
-    "brierScore": 0.0322,
+    "rocAuc": 0.5151,
+    "prAuc": 0.1545,
+    "brierScore": 0.032,
     "precision": 0,
     "recall": 0,
     "f1Score": 0,
@@ -51,11 +51,11 @@
   "bootstrapConfidenceIntervals95": {
     "rocAuc": [
       0,
-      0.9748
+      0.9831
     ],
     "prAuc": [
       0.0083,
-      0.5476
+      0.5701
     ],
     "f1Score": [
       0,
@@ -64,7 +64,7 @@
     "resamplesCount": 1000
   },
   "calibration": {
-    "brierScore": 0.0322,
-    "expectedCalibrationError": 0.0034
+    "brierScore": 0.032,
+    "expectedCalibrationError": 0.0022
   }
 }

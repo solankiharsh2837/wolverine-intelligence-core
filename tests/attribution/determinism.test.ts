@@ -10,13 +10,21 @@ test('12. Deterministic Repeatability with Fixed Random Seed', async (t) => {
         pairId: 'p1', entityA: { id: '1', name: 'A', type: 'VENDOR' }, entityB: { id: '2', name: 'B', type: 'USER' },
         label: 'SAME_ACTOR', numericLabel: 1, pairType: 'POSITIVE_GROUND_TRUTH_MATCH', labelSource: '',
         datasetId: 'evolution-2014-2015', datasetVersion: '1.0.0', split: 'TRAIN', featureVersion: '1.0.0',
-        features: [0.8, 0.7, 0.6, 0.9, 0.4, 0.5], featureNames: [], provenance: { sourceFiles: [], createdAt: '' }, notes: '',
+        features: [0.8, 0.7, 0.6, 0.9, 0.0, 0.0],
+        featureNames: ['x1', 'x2', 'x3', 'x4', 'x5', 'x6'],
+        featureMask: [true, true, true, true, false, false],
+        provenance: { sourceFiles: [], createdAt: '' },
+        notes: '',
       },
       {
         pairId: 'p2', entityA: { id: '3', name: 'C', type: 'VENDOR' }, entityB: { id: '4', name: 'D', type: 'VENDOR' },
         label: 'DIFFERENT_ACTOR', numericLabel: 0, pairType: 'NEGATIVE_RANDOM', labelSource: '',
         datasetId: 'evolution-2014-2015', datasetVersion: '1.0.0', split: 'TRAIN', featureVersion: '1.0.0',
-        features: [0.1, 0.2, 0.1, 0.05, 0.0, 0.0], featureNames: [], provenance: { sourceFiles: [], createdAt: '' }, notes: '',
+        features: [0.1, 0.2, 0.1, 0.05, 0.0, 0.0],
+        featureNames: ['x1', 'x2', 'x3', 'x4', 'x5', 'x6'],
+        featureMask: [true, true, true, true, false, false],
+        provenance: { sourceFiles: [], createdAt: '' },
+        notes: '',
       },
     ];
 

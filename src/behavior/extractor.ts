@@ -2,6 +2,92 @@ import fs from 'node:fs';
 import readline from 'node:readline';
 import path from 'node:path';
 
+export const CANONICAL_CATEGORIES = [
+  'Drugs',
+  'Fraud_Financial',
+  'Services_Escrow',
+  'Digital_Goods',
+  'Security_PGP',
+  'General_Other',
+] as const;
+
+export type CanonicalCategory = (typeof CANONICAL_CATEGORIES)[number];
+
+export function mapMarketCategoryToCanonical(cid: number, categoryName: string): CanonicalCategory {
+  const name = (categoryName || '').toLowerCase();
+  if (
+    cid === 2 ||
+    (cid >= 7 && cid <= 33) ||
+    name.includes('drug') ||
+    name.includes('cannabis') ||
+    name.includes('weed') ||
+    name.includes('hash') ||
+    name.includes('stimulant') ||
+    name.includes('cocaine') ||
+    name.includes('ecstasy') ||
+    name.includes('mdma') ||
+    name.includes('opioid') ||
+    name.includes('benzo') ||
+    name.includes('psychedelic') ||
+    name.includes('steroid') ||
+    name.includes('prescription') ||
+    name.includes('dissociative')
+  ) {
+    return 'Drugs';
+  }
+
+  if (
+    name.includes('fraud') ||
+    name.includes('carding') ||
+    name.includes('cvv') ||
+    name.includes('fullz') ||
+    name.includes('bank') ||
+    name.includes('counterfeit') ||
+    name.includes('paypal') ||
+    name.includes('transfer') ||
+    name.includes('dump') ||
+    name.includes('account')
+  ) {
+    return 'Fraud_Financial';
+  }
+
+  if (
+    name.includes('service') ||
+    name.includes('hosting') ||
+    name.includes('vpn') ||
+    name.includes('socks') ||
+    name.includes('escrow') ||
+    name.includes('custom')
+  ) {
+    return 'Services_Escrow';
+  }
+
+  if (
+    cid === 3 ||
+    name.includes('guide') ||
+    name.includes('tutorial') ||
+    name.includes('ebook') ||
+    name.includes('digital') ||
+    name.includes('software') ||
+    name.includes('exploit') ||
+    name.includes('data')
+  ) {
+    return 'Digital_Goods';
+  }
+
+  if (
+    name.includes('security') ||
+    name.includes('pgp') ||
+    name.includes('encrypt') ||
+    name.includes('key') ||
+    name.includes('opsec')
+  ) {
+    return 'Security_PGP';
+  }
+
+  return 'General_Other';
+}
+
 export interface InterEventStats {
   meanHours: number;
   stdHours: number;

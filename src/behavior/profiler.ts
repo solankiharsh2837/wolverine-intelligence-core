@@ -8,6 +8,9 @@ import {
   computeCadenceStats,
   loadCategoryMap,
   loadGraphEdges,
+  mapMarketCategoryToCanonical,
+  CANONICAL_CATEGORIES,
+  CanonicalCategory,
   MIN_EVENTS_THRESHOLD,
   MIN_ACTIVE_DAYS_THRESHOLD,
 } from './extractor.js';
@@ -273,32 +276,73 @@ export class EvolutionBehaviorProfiler {
     const interEventStats = computeInterEventStats(timestamps);
     const cadence = computeCadenceStats(timestamps);
 
-    const categoryCounts: Record<string, number> = {
-      Drugs: 0, Fraud: 0, Services: 0, Digital: 0, Security: 0, General: 0,
+    const categoryCounts: Record<CanonicalCategory, number> = {
+      Drugs: 0,
+      Fraud_Financial: 0,
+      Services_Escrow: 0,
+      Digital_Goods: 0,
+      Security_PGP: 0,
+      General_Other: 0,
     };
     const threadCounterparties = new Set<string>();
 
     for (const post of posts) {
       if (post.tid) threadCounterparties.add(`thread_${post.tid}`);
       const textLower = post.text.toLowerCase();
-      if (textLower.includes('weed') || textLower.includes('coke') || textLower.includes('drug') || textLower.includes('mdma') || textLower.includes('lsd') || textLower.includes('hash')) {
+      if (
+        textLower.includes('weed') ||
+        textLower.includes('coke') ||
+        textLower.includes('drug') ||
+        textLower.includes('mdma') ||
+        textLower.includes('lsd') ||
+        textLower.includes('hash') ||
+        textLower.includes('cannabis') ||
+        textLower.includes('cocaine') ||
+        textLower.includes('speed')
+      ) {
         categoryCounts.Drugs++;
-      } else if (textLower.includes('carding') || textLower.includes('cvv') || textLower.includes('fullz') || textLower.includes('bank') || textLower.includes('transfer')) {
-        categoryCounts.Fraud++;
-      } else if (textLower.includes('service') || textLower.includes('escrow') || textLower.includes('hosting')) {
-        categoryCounts.Services++;
-      } else if (textLower.includes('ebook') || textLower.includes('digital') || textLower.includes('guide') || textLower.includes('software')) {
-        categoryCounts.Digital++;
-      } else if (textLower.includes('pgp') || textLower.includes('security') || textLower.includes('encrypt') || textLower.includes('key')) {
-        categoryCounts.Security++;
+      } else if (
+        textLower.includes('carding') ||
+        textLower.includes('cvv') ||
+        textLower.includes('fullz') ||
+        textLower.includes('bank') ||
+        textLower.includes('transfer') ||
+        textLower.includes('paypal') ||
+        textLower.includes('fraud')
+      ) {
+        categoryCounts.Fraud_Financial++;
+      } else if (
+        textLower.includes('service') ||
+        textLower.includes('escrow') ||
+        textLower.includes('hosting') ||
+        textLower.includes('vpn') ||
+        textLower.includes('socks')
+      ) {
+        categoryCounts.Services_Escrow++;
+      } else if (
+        textLower.includes('ebook') ||
+        textLower.includes('digital') ||
+        textLower.includes('guide') ||
+        textLower.includes('software') ||
+        textLower.includes('tutorial')
+      ) {
+        categoryCounts.Digital_Goods++;
+      } else if (
+        textLower.includes('pgp') ||
+        textLower.includes('security') ||
+        textLower.includes('encrypt') ||
+        textLower.includes('key') ||
+        textLower.includes('opsec')
+      ) {
+        categoryCounts.Security_PGP++;
       } else {
-        categoryCounts.General++;
+        categoryCounts.General_Other++;
       }
     }
 
     const totalTopics = Object.values(categoryCounts).reduce((a, b) => a + b, 0);
     const categoryDistribution: Record<string, number> = {};
-    let maxCat = 'General';
+    let maxCat = 'General_Other';
     let maxCount = 0;
 
     for (const [cat, cnt] of Object.entries(categoryCounts)) {
@@ -371,14 +415,22 @@ export class EvolutionBehaviorProfiler {
 
     const listings = this.vendorListingsMap.get(vid) || [];
     const timestamps: Date[] = [];
-    const categoryCounts: Record<string, number> = {};
+    const categoryCounts: Record<CanonicalCategory, number> = {
+      Drugs: 0,
+      Fraud_Financial: 0,
+      Services_Escrow: 0,
+      Digital_Goods: 0,
+      Security_PGP: 0,
+      General_Other: 0,
+    };
 
     for (const item of listings) {
       if (this.scrapeDateMap.has(item.scrapeId)) {
         timestamps.push(this.scrapeDateMap.get(item.scrapeId)!);
       }
-      const catName = this.categoryMap.get(item.cid) || 'Other';
-      categoryCounts[catName] = (categoryCounts[catName] || 0) + 1;
+      const rawCatName = this.categoryMap.get(item.cid) || 'Other';
+      const canonicalCat = mapMarketCategoryToCanonical(item.cid, rawCatName);
+      categoryCounts[canonicalCat] = (categoryCounts[canonicalCat] || 0) + 1;
     }
 
     if (timestamps.length === 0) {
@@ -392,14 +444,16 @@ export class EvolutionBehaviorProfiler {
 
     const totalCategories = Object.values(categoryCounts).reduce((a, b) => a + b, 0);
     const categoryDistribution: Record<string, number> = {};
-    let primaryCategory = 'None';
+    let primaryCategory = 'General_Other';
     let maxCategoryCount = 0;
 
     for (const [cat, count] of Object.entries(categoryCounts)) {
-      categoryDistribution[cat] = parseFloat((count / (totalCategories || 1)).toFixed(4));
-      if (count > maxCategoryCount) {
-        maxCategoryCount = count;
-        primaryCategory = cat;
+      if (count > 0) {
+        categoryDistribution[cat] = parseFloat((count / (totalCategories || 1)).toFixed(4));
+        if (count > maxCategoryCount) {
+          maxCategoryCount = count;
+          primaryCategory = cat;
+        }
       }
     }
 

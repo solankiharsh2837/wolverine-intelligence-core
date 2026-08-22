@@ -28,6 +28,7 @@ export interface AttributionPair {
   featureVersion: '1.0.0';
   features: number[]; // 6-dimensional vector [x1..x6]
   featureNames: string[];
+  featureMask: boolean[]; // true = available & comparable, false = unavailable/masked
   provenance: {
     matchId?: number;
     sourceFiles: string[];
@@ -58,6 +59,7 @@ export interface AttributionCandidateResult {
   modelVersion: '1.0.0-attribution';
   featureVersion: '1.0.0';
   evaluatedAt: string;
+  featureMask: boolean[];
   decomposition: AttributionFeatureDecomposition[];
   supportingObservations: string[];
 }
@@ -145,6 +147,7 @@ export interface ErrorAnalysisItem {
   predictedProbability: number;
   errorType: 'FALSE_POSITIVE' | 'FALSE_NEGATIVE';
   dominantFeatures: string[];
+  featureMask?: boolean[];
   diagnosticReason: string;
   dataQualityCaveat: string;
 }

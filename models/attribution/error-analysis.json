@@ -4,10 +4,10 @@
     "entityA": "BooMstick",
     "entityB": "BooMstick",
     "trueLabel": "SAME_ACTOR",
-    "predictedProbability": 0.0607,
+    "predictedProbability": 0.0712,
     "errorType": "FALSE_NEGATIVE",
     "dominantFeatures": [],
-    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.1674, behavior_inter_event_log_ratio=0.3583, behavior_cadence_weekly_ratio=0.1285, behavior_category_cosine=0, graph_jaccard=0, graph_adamic_adar_norm=0].",
+    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.1674, behavior_inter_event_log_ratio=0.3583, behavior_cadence_weekly_ratio=0.1285, behavior_category_cosine=0.0016, graph_jaccard=0, graph_adamic_adar_norm=0].",
     "dataQualityCaveat": "High temporal or operational cadence variance across distinct observation partitions for the same actor."
   },
   {
@@ -15,14 +15,15 @@
     "entityA": "Bigmeesh",
     "entityB": "Bigmeesh",
     "trueLabel": "SAME_ACTOR",
-    "predictedProbability": 0.014,
+    "predictedProbability": 0.0108,
     "errorType": "FALSE_NEGATIVE",
     "dominantFeatures": [
-      "behavior_activity_js (val: 1.0000, beta: -0.4037)",
-      "behavior_inter_event_log_ratio (val: 1.0000, beta: -1.0076)",
-      "behavior_cadence_weekly_ratio (val: 1.0000, beta: -0.4929)"
+      "behavior_activity_js (val: 1.0000, beta: -0.3867)",
+      "behavior_inter_event_log_ratio (val: 1.0000, beta: -0.9341)",
+      "behavior_cadence_weekly_ratio (val: 1.0000, beta: -0.4527)",
+      "behavior_category_cosine (val: 0.9897, beta: -0.5018)"
     ],
-    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=1, behavior_inter_event_log_ratio=1, behavior_cadence_weekly_ratio=1, behavior_category_cosine=0, graph_jaccard=0, graph_adamic_adar_norm=0].",
+    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=1, behavior_inter_event_log_ratio=1, behavior_cadence_weekly_ratio=1, behavior_category_cosine=0.9897, graph_jaccard=0, graph_adamic_adar_norm=0].",
     "dataQualityCaveat": "High temporal or operational cadence variance across distinct observation partitions for the same actor."
   },
   {
@@ -30,13 +31,14 @@
     "entityA": "Johnhunt",
     "entityB": "Johnhunt",
     "trueLabel": "SAME_ACTOR",
-    "predictedProbability": 0.0297,
+    "predictedProbability": 0.0238,
     "errorType": "FALSE_NEGATIVE",
     "dominantFeatures": [
-      "behavior_inter_event_log_ratio (val: 0.8201, beta: -1.0076)",
-      "behavior_cadence_weekly_ratio (val: 0.5377, beta: -0.4929)"
+      "behavior_inter_event_log_ratio (val: 0.8201, beta: -0.9341)",
+      "behavior_cadence_weekly_ratio (val: 0.5377, beta: -0.4527)",
+      "behavior_category_cosine (val: 0.8429, beta: -0.5018)"
     ],
-    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.2356, behavior_inter_event_log_ratio=0.8201, behavior_cadence_weekly_ratio=0.5377, behavior_category_cosine=0.1579, graph_jaccard=0, graph_adamic_adar_norm=0].",
+    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.2356, behavior_inter_event_log_ratio=0.8201, behavior_cadence_weekly_ratio=0.5377, behavior_category_cosine=0.8429, graph_jaccard=0, graph_adamic_adar_norm=0].",
     "dataQualityCaveat": "High temporal or operational cadence variance across distinct observation partitions for the same actor."
   },
   {
@@ -44,10 +46,10 @@
     "entityA": "greenpercent",
     "entityB": "greenpercent",
     "trueLabel": "SAME_ACTOR",
-    "predictedProbability": 0.053,
+    "predictedProbability": 0.0583,
     "errorType": "FALSE_NEGATIVE",
     "dominantFeatures": [],
-    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.2163, behavior_inter_event_log_ratio=0.4823, behavior_cadence_weekly_ratio=0.1042, behavior_category_cosine=0, graph_jaccard=0, graph_adamic_adar_norm=0].",
+    "diagnosticReason": "False negative driven by low similarity on feature sub-vectors: [behavior_activity_js=0.2163, behavior_inter_event_log_ratio=0.4823, behavior_cadence_weekly_ratio=0.1042, behavior_category_cosine=0.1493, graph_jaccard=0, graph_adamic_adar_norm=0].",
     "dataQualityCaveat": "High temporal or operational cadence variance across distinct observation partitions for the same actor."
   }
 ]

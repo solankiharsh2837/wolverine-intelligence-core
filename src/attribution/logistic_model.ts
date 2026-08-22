@@ -107,6 +107,8 @@ export class LogisticAttributionModel {
     if (calProb >= 0.85 || calProb <= 0.15) confidenceTier = 'HIGH';
     else if (calProb >= 0.70 || calProb <= 0.30) confidenceTier = 'MEDIUM';
 
+    const mask = features.map((_, i) => i < 4); // true for x1..x4, false for x5..x6 in cross-subsystem
+
     return {
       candidateId: `cand_attr_${Date.now()}`,
       entityA: entityAName,
@@ -120,6 +122,7 @@ export class LogisticAttributionModel {
       modelVersion: '1.0.0-attribution',
       featureVersion: '1.0.0',
       evaluatedAt: new Date().toISOString(),
+      featureMask: mask,
       decomposition: decompositions,
       supportingObservations: [
         `Temporal Activity similarity: ${(features[0] * 100).toFixed(1)}%`,

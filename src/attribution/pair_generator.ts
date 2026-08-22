@@ -144,6 +144,7 @@ export class AttributionPairGenerator {
         featureVersion: '1.0.0',
         features,
         featureNames: ATTRIBUTION_FEATURE_ORDER,
+        featureMask: [true, true, true, true, false, false],
         provenance: {
           matchId: matchIdA,
           sourceFiles: ['forum-market/user-matching.tsv', 'forum/post.tsv', 'market/vendors.tsv', 'market/listings.tsv'],

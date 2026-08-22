@@ -17,14 +17,20 @@ export const ATTRIBUTION_FEATURE_ORDER = [
   'graph_adamic_adar_norm',
 ];
 
+export interface ExtractedFeatureResult {
+  features: number[];
+  featureMask: boolean[];
+  activeFeatures: { name: string; value: number }[];
+}
+
 /**
- * Extracts the canonical 6-dimensional normalized attribution feature vector x \in [0, 1]^6.
+ * Extracts the canonical 6-dimensional attribution feature vector and its semantic availability mask.
  */
-export function extractAttributionFeatures(
+export function extractAttributionFeaturesWithMask(
   profileA: BehaviorProfileData,
   profileB: BehaviorProfileData,
   degreesMap: Record<string, number> = {}
-): number[] {
+): ExtractedFeatureResult {
   // 1. Activity Hour JSD Similarity [0, 1]
   const x1 = jensenShannonSimilarity(profileA.activityHours24, profileB.activityHours24);
 
@@ -34,17 +40,43 @@ export function extractAttributionFeatures(
   // 3. Cadence Weekly Ratio [0, 1]
   const x3 = ratioSimilarity(profileA.cadence.eventsPerActiveWeek, profileB.cadence.eventsPerActiveWeek);
 
-  // 4. Category Cosine Similarity [0, 1]
+  // 4. Category Cosine Similarity [0, 1] (across canonical 6-bin category vectors)
   const x4 = cosineSimilarityMap(profileA.categoryDistribution, profileB.categoryDistribution);
 
-  // 5. Graph Counterparty Jaccard [0, 1]
-  const x5 = jaccardSimilaritySets(profileA.graph.counterparties, profileB.graph.counterparties);
+  // Cross-subsystem graph check: If comparing Forum Persona (USER) with Marketplace Vendor (VENDOR),
+  // graph namespaces are disjoint ('thread_<tid>' vs vendor VID). We mark x5 and x6 as UNAVAILABLE (false).
+  const isCrossSubsystem = profileA.entityType !== profileB.entityType;
+  const isGraphAvailable = !isCrossSubsystem;
 
-  // 6. Graph Adamic-Adar Normalized via tanh(AA / 2.0) [0, 1]
-  const rawAA = adamicAdarIndexSets(profileA.graph.counterparties, profileB.graph.counterparties, degreesMap);
-  const x6 = parseFloat(Math.tanh(rawAA / 2.0).toFixed(4));
+  let x5 = 0.0;
+  let x6 = 0.0;
 
-  return [x1, x2, x3, x4, x5, x6];
+  if (isGraphAvailable) {
+    x5 = jaccardSimilaritySets(profileA.graph.counterparties, profileB.graph.counterparties);
+    const rawAA = adamicAdarIndexSets(profileA.graph.counterparties, profileB.graph.counterparties, degreesMap);
+    x6 = parseFloat(Math.tanh(rawAA / 2.0).toFixed(4));
+  }
+
+  const featureMask = [true, true, true, true, isGraphAvailable, isGraphAvailable];
+  const features = [x1, x2, x3, x4, x5, x6];
+
+  const activeFeatures = ATTRIBUTION_FEATURE_ORDER.map((name, idx) => ({
+    name,
+    value: features[idx],
+  })).filter((_, idx) => featureMask[idx]);
+
+  return { features, featureMask, activeFeatures };
+}
+
+/**
+ * Extracts the canonical 6-dimensional normalized attribution feature vector x \in [0, 1]^6.
+ */
+export function extractAttributionFeatures(
+  profileA: BehaviorProfileData,
+  profileB: BehaviorProfileData,
+  degreesMap: Record<string, number> = {}
+): number[] {
+  return extractAttributionFeaturesWithMask(profileA, profileB, degreesMap).features;
 }
 
 /**
@@ -59,3 +91,4 @@ export function normalizeAttributionVector(rawVec: number[]): number[] {
     return parseFloat(Math.min(1.0, Math.max(0.0, val)).toFixed(4));
   });
 }
+
