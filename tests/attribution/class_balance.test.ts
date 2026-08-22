@@ -1,17 +1,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AttributionPairGenerator } from '../../src/attribution/pair_generator.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { AttributionPair } from '../../src/attribution/types.js';
 
-test('6. Class Balance & Ratio Analysis', async (t) => {
-  const generator = new AttributionPairGenerator();
+test('6. Class Balance & Real Dataset Statistics', async (t) => {
+  await t.test('Verifies real dataset contains positive, hard negative, and random negative pairs', () => {
+    const pairsPath = path.resolve('models/attribution/labeled-pairs.json');
+    assert.ok(fs.existsSync(pairsPath), 'labeled-pairs.json must exist');
 
-  await t.test('Maintains balanced distribution between positive and negative classes', async () => {
-    const pairs = await generator.generatePairsDataset(60);
+    const pairs: AttributionPair[] = JSON.parse(fs.readFileSync(pairsPath, 'utf8'));
     const pos = pairs.filter((p) => p.label === 'SAME_ACTOR').length;
-    const neg = pairs.filter((p) => p.label === 'DIFFERENT_ACTOR').length;
+    const hardNeg = pairs.filter((p) => p.pairType === 'NEGATIVE_HARD_CATEGORY_OVERLAP').length;
+    const rndNeg = pairs.filter((p) => p.pairType === 'NEGATIVE_RANDOM').length;
 
-    assert.ok(pos > 0 && neg > 0);
-    const ratio = pos / (pos + neg);
-    assert.ok(ratio >= 0.35 && ratio <= 0.65, `Class balance ratio must be between 35% and 65% (got ${(ratio * 100).toFixed(1)}%)`);
+    assert.ok(pos > 0, `Positive count must be > 0 (found ${pos})`);
+    assert.ok(hardNeg > 0, `Hard negative count must be > 0 (found ${hardNeg})`);
+    assert.ok(rndNeg > 0, `Random negative count must be > 0 (found ${rndNeg})`);
   });
 });

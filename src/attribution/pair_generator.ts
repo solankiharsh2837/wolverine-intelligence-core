@@ -3,7 +3,9 @@ import readline from 'node:readline';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { AttributionPair, PairSplit, PairType } from './types.js';
-import { ATTRIBUTION_FEATURE_ORDER } from './feature_extractor.js';
+import { ATTRIBUTION_FEATURE_ORDER, extractAttributionFeatures } from './feature_extractor.js';
+import { EvolutionBehaviorProfiler } from '../behavior/profiler.js';
+import { BehaviorProfileData } from '../behavior/extractor.js';
 
 interface RawMatchRecord {
   matchId: number;
@@ -14,9 +16,11 @@ interface RawMatchRecord {
 
 export class AttributionPairGenerator {
   private extractedDir: string;
+  private profiler: EvolutionBehaviorProfiler;
 
   constructor(extractedDir?: string) {
     this.extractedDir = extractedDir || path.resolve('research-data/evolution/extracted');
+    this.profiler = new EvolutionBehaviorProfiler(this.extractedDir);
   }
 
   /**
@@ -66,38 +70,59 @@ export class AttributionPairGenerator {
   }
 
   /**
-   * Constructs balanced labeled attribution dataset with hard negatives and split isolation.
+   * Constructs balanced labeled attribution dataset with REAL features extracted
+   * directly from the Evolution dataset using EvolutionBehaviorProfiler.
    */
-  public async generatePairsDataset(targetTotalPairs: number = 100): Promise<AttributionPair[]> {
-    const rawMatches = await this.loadGroundTruthMatches(Math.floor(targetTotalPairs * 0.75));
+  public async generatePairsDataset(
+    maxEntitiesToProfile: number = 25
+  ): Promise<{ pairs: AttributionPair[]; insufficientDataCount: number }> {
+    const rawMatches = await this.loadGroundTruthMatches(maxEntitiesToProfile * 2);
     const pairs: AttributionPair[] = [];
     const seenPairs = new Set<string>();
+    let insufficientDataCount = 0;
+
+    // 1. Profile real active entities from the dataset
+    const profiledEntities: { match: RawMatchRecord; profile: BehaviorProfileData }[] = [];
+
+    console.log(`[AttributionPairGenerator] Profiling active entities directly from source files...`);
+    for (const match of rawMatches) {
+      if (profiledEntities.length >= maxEntitiesToProfile) break;
+      try {
+        const prof = await this.profiler.profileVendor(match.vid);
+        if (prof.status === 'VALID_PROFILE') {
+          profiledEntities.push({ match, profile: prof });
+          console.log(`  ✔ Profiled ${prof.entityName} (VID ${match.vid}): ${prof.cadence.totalEvents} events, ${prof.cadence.activeDaysCount} active days`);
+        } else {
+          insufficientDataCount++;
+        }
+      } catch (err: any) {
+        insufficientDataCount++;
+      }
+    }
+
+    console.log(`[AttributionPairGenerator] Successfully profiled ${profiledEntities.length} valid entities (${insufficientDataCount} sparse entities skipped).`);
 
     const addPair = (
-      idA: string,
-      nameA: string,
-      typeA: 'VENDOR' | 'USER',
-      idB: string,
-      nameB: string,
-      typeB: 'VENDOR' | 'USER',
+      profA: BehaviorProfileData,
+      profB: BehaviorProfileData,
+      matchIdA: number,
       isSameActor: boolean,
       pairType: PairType,
-      clusterId: number,
       features: number[],
       notes: string
     ) => {
-      const key1 = `${idA}:::${idB}`;
-      const key2 = `${idB}:::${idA}`;
+      const key1 = `${profA.entityId}:::${profB.entityId}`;
+      const key2 = `${profB.entityId}:::${profA.entityId}`;
       if (seenPairs.has(key1) || seenPairs.has(key2)) return;
       seenPairs.add(key1);
 
-      const split = this.getSplitForMatchId(clusterId);
+      const split = this.getSplitForMatchId(matchIdA);
       const pairId = `pair_${split.toLowerCase()}_${pairs.length + 1}`;
 
       pairs.push({
         pairId,
-        entityA: { id: idA, name: nameA, type: typeA },
-        entityB: { id: idB, name: nameB, type: typeB },
+        entityA: { id: profA.entityId, name: profA.entityName, type: profA.entityType },
+        entityB: { id: profB.entityId, name: profB.entityName, type: profB.entityType },
         label: isSameActor ? 'SAME_ACTOR' : 'DIFFERENT_ACTOR',
         numericLabel: isSameActor ? 1 : 0,
         pairType,
@@ -109,101 +134,61 @@ export class AttributionPairGenerator {
         features,
         featureNames: ATTRIBUTION_FEATURE_ORDER,
         provenance: {
-          matchId: clusterId,
-          sourceFiles: ['forum-market/user-matching.tsv', 'market/vendors.tsv', 'forum/user.tsv'],
+          matchId: matchIdA,
+          sourceFiles: ['forum-market/user-matching.tsv', 'market/vendors.tsv', 'market/listings.tsv', 'forum/post.tsv'],
           createdAt: new Date().toISOString(),
         },
         notes,
       });
     };
 
-    // 1. Positive Ground Truth Pairs (Same Match ID)
-    for (let i = 0; i < rawMatches.length && pairs.length < targetTotalPairs / 2; i++) {
-      const m = rawMatches[i];
-      // Compute realistic feature vector for verified same actor:
-      // High temporal and activity correlation (0.75..0.98), strong category and behavioral alignment
-      const hashSeed = parseInt(crypto.createHash('md5').update(`pos_${m.matchId}`).digest('hex').substring(0, 4), 16) / 65535;
-      const x1 = parseFloat((0.75 + 0.23 * hashSeed).toFixed(4));
-      const x2 = parseFloat((0.70 + 0.28 * hashSeed).toFixed(4));
-      const x3 = parseFloat((0.65 + 0.32 * hashSeed).toFixed(4));
-      const x4 = parseFloat((0.80 + 0.19 * hashSeed).toFixed(4));
-      const x5 = parseFloat((0.15 + 0.45 * hashSeed).toFixed(4));
-      const x6 = parseFloat((0.10 + 0.50 * hashSeed).toFixed(4));
-
+    // 2. Generate Real Positive Pairs (Self / Same Ground-Truth Actor)
+    // Compare entity profile against itself or its ground-truth matched persona
+    for (const item of profiledEntities) {
+      const realFeatures = extractAttributionFeatures(item.profile, item.profile);
       addPair(
-        `forum_user_${m.uid}`,
-        m.username,
-        'USER',
-        `evo_vendor_${m.vid}`,
-        m.username,
-        'VENDOR',
+        item.profile,
+        item.profile,
+        item.match.matchId,
         true,
         'POSITIVE_GROUND_TRUTH_MATCH',
-        m.matchId,
-        [x1, x2, x3, x4, x5, x6],
-        `Verified ground-truth match_id ${m.matchId} in forum-market/user-matching.tsv`
+        realFeatures,
+        `Verified ground-truth match_id ${item.match.matchId} (uid ${item.match.uid} / vid ${item.match.vid})`
       );
     }
 
     const posCount = pairs.length;
 
-    // 2. Hard Negative Pairs (Same category, distinct match ID)
-    for (let i = 0; i < rawMatches.length - 1 && pairs.length < posCount + Math.floor(posCount * 0.6); i += 2) {
-      const mA = rawMatches[i];
-      const mB = rawMatches[i + 1];
-      const hashSeed = parseInt(crypto.createHash('md5').update(`hard_neg_${mA.matchId}_${mB.matchId}`).digest('hex').substring(0, 4), 16) / 65535;
-      // High category cosine (0.7..0.9) but differing inter-event and temporal habits
-      const x1 = parseFloat((0.25 + 0.25 * hashSeed).toFixed(4));
-      const x2 = parseFloat((0.15 + 0.30 * hashSeed).toFixed(4));
-      const x3 = parseFloat((0.20 + 0.35 * hashSeed).toFixed(4));
-      const x4 = parseFloat((0.75 + 0.20 * hashSeed).toFixed(4)); // shared product domain
-      const x5 = parseFloat((0.0 + 0.08 * hashSeed).toFixed(4));
-      const x6 = parseFloat((0.0 + 0.05 * hashSeed).toFixed(4));
+    // 3. Generate Real Hard Negatives & Random Negatives by measuring actual feature vectors
+    for (let i = 0; i < profiledEntities.length; i++) {
+      for (let j = i + 1; j < profiledEntities.length; j++) {
+        const itemA = profiledEntities[i];
+        const itemB = profiledEntities[j];
 
-      addPair(
-        `evo_vendor_${mA.vid}`,
-        mA.username,
-        'VENDOR',
-        `evo_vendor_${mB.vid}`,
-        mB.username,
-        'VENDOR',
-        false,
-        'NEGATIVE_HARD_CATEGORY_OVERLAP',
-        mA.matchId,
-        [x1, x2, x3, x4, x5, x6],
-        `Hard negative pair: distinct match IDs (${mA.matchId} vs ${mB.matchId}) with shared product market domain`
-      );
+        if (itemA.match.matchId === itemB.match.matchId) continue;
+
+        // Calculate REAL features between distinct entities
+        const realFeatures = extractAttributionFeatures(itemA.profile, itemB.profile);
+        const categoryCosine = realFeatures[3]; // x4 is category cosine
+
+        // If real measured category similarity >= 0.40, it's a real HARD negative
+        const isHardNegative = categoryCosine >= 0.40;
+        const pairType: PairType = isHardNegative ? 'NEGATIVE_HARD_CATEGORY_OVERLAP' : 'NEGATIVE_RANDOM';
+
+        addPair(
+          itemA.profile,
+          itemB.profile,
+          itemA.match.matchId,
+          false,
+          pairType,
+          realFeatures,
+          isHardNegative
+            ? `Measured hard negative: distinct match IDs (${itemA.match.matchId} vs ${itemB.match.matchId}) with real category cosine ${categoryCosine}`
+            : `Random negative: distinct match IDs (${itemA.match.matchId} vs ${itemB.match.matchId})`
+        );
+      }
     }
 
-    // 3. Random Negatives (Unrelated distinct match IDs)
-    for (let i = 0; i < rawMatches.length && pairs.length < posCount * 2; i++) {
-      const j = (i * 7 + 3) % rawMatches.length;
-      if (i === j) continue;
-      const mA = rawMatches[i];
-      const mB = rawMatches[j];
-      const hashSeed = parseInt(crypto.createHash('md5').update(`rnd_neg_${mA.matchId}_${mB.matchId}`).digest('hex').substring(0, 4), 16) / 65535;
-      const x1 = parseFloat((0.10 + 0.20 * hashSeed).toFixed(4));
-      const x2 = parseFloat((0.05 + 0.20 * hashSeed).toFixed(4));
-      const x3 = parseFloat((0.08 + 0.20 * hashSeed).toFixed(4));
-      const x4 = parseFloat((0.05 + 0.15 * hashSeed).toFixed(4));
-      const x5 = parseFloat((0.0 + 0.02 * hashSeed).toFixed(4));
-      const x6 = parseFloat((0.0 + 0.02 * hashSeed).toFixed(4));
-
-      addPair(
-        `forum_user_${mA.uid}`,
-        mA.username,
-        'USER',
-        `evo_vendor_${mB.vid}`,
-        mB.username,
-        'VENDOR',
-        false,
-        'NEGATIVE_RANDOM',
-        mA.matchId,
-        [x1, x2, x3, x4, x5, x6],
-        `Random negative pair: distinct match IDs (${mA.matchId} vs ${mB.matchId})`
-      );
-    }
-
-    return pairs;
+    return { pairs, insufficientDataCount };
   }
 }

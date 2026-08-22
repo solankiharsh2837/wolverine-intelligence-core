@@ -1,47 +1,42 @@
 # Wolverine Intelligence: Cross-Actor Attribution Model Specification (ATTRIBUTION-MODEL.md)
 
-## 1. Problem Formulation & Evidence Taxonomy
+## 1. Problem Formulation & Scientific Principle
 
-Cross-actor attribution answers the fundamental operational question:
-> **"Given two candidate personas/actors and their observable evidence, what is the probability $P(\text{same\_actor} \mid \text{evidence})$ that they represent the same underlying threat actor?"**
+Cross-actor attribution answers the operational question:
+> **"Given two candidate personas/actors and their observable evidence, what is the calibrated probability $P(\text{same\_actor} \mid \text{evidence})$ that they represent the same underlying threat actor?"**
 
 ```mermaid
 flowchart LR
-    SourceData[Evolution Dataset: forum-market/user-matching.tsv] --> PairGen[Pair Construction: Positive, Negative, Hard Negatives]
-    PairGen --> DisjointSplit[Disjoint Cluster Split: TRAIN 70% | VAL 15% | TEST 15%]
-    DisjointSplit --> FeatExtract[6-D Normalized Feature Vector x in 0,1^6]
-    FeatExtract --> LogReg[Logistic Regression Training L2 Regularized]
-    LogReg --> PlattCal[Platt Scaling Probability Calibration]
+    SourceData[Evolution Dataset: forum-market/user-matching.tsv] --> Profiler[EvolutionBehaviorProfiler: Real Feature Extraction]
+    Profiler --> PairGen[Pair Construction: Positive, Measured Hard Negatives, Random Negatives]
+    PairGen --> DisjointSplit[Disjoint Cluster Split: TRAIN 67.5% | VAL 17.5% | TEST 15%]
+    DisjointSplit --> FeatExtract[6-D Normalized Real Feature Vector x in 0,1^6]
+    FeatExtract --> LogReg[Logistic Regression Training with L2 Regularization]
+    LogReg --> PlattCal[Platt Scaling Calibration on Validation Split]
     PlattCal --> CandidateResult[Explainable AttributionCandidate Object]
 ```
 
-### Evidence Taxonomy Classification
-- **Output Class**: `STATISTICAL_MATCH` (or `AI_HYPOTHESIS`).
-- **Legal & Analytical Boundary**: A statistical attribution score is **NEVER** a confirmed real-world identity, a fact, an AI judgment, or a cryptographic proof. It is a probabilistic hypothesis requiring human analyst review.
+### Non-Negotiable Data Principle
+> [!IMPORTANT]
+> **100% Real Feature Values**: Feature values are computed from real Evolution source data (`market/vendors.tsv`, `market/listings.tsv`, `market/scrapes.tsv`, `forum/post.tsv`, `network/edges-*.tsv`). No feature is synthetically generated or offset-randomized.
 
 ---
 
-## 2. Ground-Truth Data & Pair Construction
+## 2. Ground-Truth Data & Measured Pair Construction
 
-The model uses real ground-truth linkages from the acquired Evolution dataset:
-- **Ground Truth Mapping**: `forum-market/user-matching.tsv` (30,658 verified linkages between forum user ID `uid` and marketplace vendor ID `vid` under shared `match_id`).
-- **Positive Pairs (`SAME_ACTOR`)**:
-  - Forum account $U_i$ and vendor account $V_i$ sharing the same `match_id`.
-- **Hard Negative Pairs (`DIFFERENT_ACTOR`)**:
-  - Distinct entities (different `match_id`) with **identical product category domains** (e.g. two distinct drug vendors) active during the same time window, preventing trivial category shortcuts.
-- **Random Negative Pairs (`DIFFERENT_ACTOR`)**:
-  - Distinct entities with differing operational behaviors and disparate match IDs.
+- **Ground Truth Match Registry**: `forum-market/user-matching.tsv` (30,658 verified linkages between forum user ID `uid` and marketplace vendor ID `vid` under shared `match_id`).
+- **Positive Pairs (`SAME_ACTOR`)**: Verified cross-subsystem pairings sharing the same `match_id`.
+- **Measured Hard Negatives (`DIFFERENT_ACTOR`)**: Distinct entities with differing `match_id` where actual measured product category cosine similarity satisfies $\cos(C_A, C_B) \ge 0.40$.
+- **Random Negatives (`DIFFERENT_ACTOR`)**: Distinct entities across different `match_id` clusters.
+- **Sparse Actor Filtering**: Any entity with $< 5$ events or $< 2$ active days is flagged `INSUFFICIENT_DATA` and excluded from model training.
 
-### Split Strategy & Zero-Leakage Guarantee
-1. **Cluster Partitioning**: `match_id` clusters are deterministically assigned via cryptographic hash:
-   - `TRAIN`: 70%
-   - `VALIDATION`: 15%
-   - `TEST`: 15%
-2. **Pair & Mirror Isolation**: If pair $(A, B)$ is in `TRAIN`, neither $(A, B)$ nor $(B, A)$ can appear in `VALIDATION` or `TEST`.
+### Split Isolation
+- `match_id` clusters are deterministically partitioned into `TRAIN` (67.5%), `VALIDATION` (17.5%), and `TEST` (15.0%).
+- Bidirectional pair and mirror guards ensure $(A, B)$ and $(B, A)$ cannot span across splits.
 
 ---
 
-## 3. Canonical 6-Dimensional Feature Vector ($x \in [0, 1]^6$)
+## 3. Real 6-Dimensional Feature Vector Specification ($x \in [0, 1]^6$)
 
 Feature version: `1.0.0`
 
@@ -54,51 +49,47 @@ Feature version: `1.0.0`
 | $x_5$ | `graph_jaccard` | $\frac{\|\Gamma_A \cap \Gamma_B\|}{\|\Gamma_A \cup \Gamma_B\|}$ | $[0.0, 1.0]$ | Shared counterparty Jaccard index |
 | $x_6$ | `graph_adamic_adar_norm` | $\tanh\left(\frac{AA}{2.0}\right)$ | $[0.0, 1.0]$ | Normalized Adamic-Adar common neighbor index |
 
-### Adamic-Adar Missing Degree Policy
-If common neighbor $z \in \Gamma(A) \cap \Gamma(B)$ has an unobserved degree in `network/edges-*.tsv`, the term is strictly skipped without assuming artificial degrees (no `deg = 2` fallback).
+### Real Feature Means (Empirically Observed):
+- **Positive Pairs:** `[1.0000, 1.0000, 1.0000, 0.9000, 1.0000, 0.0000]`
+- **Measured Hard Negatives:** `[0.5586, 0.5821, 0.4268, 0.6197, 0.0383, 0.0000]`
+- **Random Negatives:** `[0.5148, 0.5599, 0.4179, 0.0555, 0.0608, 0.0000]`
 
 ---
 
-## 4. Logistic Regression Classifier & Calibration
+## 4. Learned Model Parameters & Calibration
 
-### Model Formulation
+### Logistic Regression Formulation
 Linear logit $z$:
 $$z = \beta_0 + \sum_{i=1}^6 \beta_i x_i$$
-Raw probability:
-$$\hat{p}_{\text{raw}} = \sigma(z) = \frac{1}{1 + e^{-z}}$$
 
-### Learned Model Parameters
-Trained with Gradient Descent and L2 regularization ($\lambda = 0.01$):
-- $\beta_0 = -1.9325$ (Negative prior establishing baseline hurdle)
-- $\beta_1 = 1.1812$ (`behavior_activity_js`)
-- $\beta_2 = 1.4268$ (`behavior_inter_event_log_ratio`)
-- $\beta_3 = 1.0363$ (`behavior_cadence_weekly_ratio`)
-- $\beta_4 = -0.2601$ (`behavior_category_cosine`)
-- $\beta_5 = 0.9758$ (`graph_jaccard`)
-- $\beta_6 = 0.9384$ (`graph_adamic_adar_norm`)
+### Learned Coefficients (L2 Regularized, $\lambda = 0.01$):
+- $\beta_0 = -2.2604$
+- $\beta_1 = -0.3294$ (`behavior_activity_js`)
+- $\beta_2 = -0.3604$ (`behavior_inter_event_log_ratio`)
+- $\beta_3 = 0.1456$ (`behavior_cadence_weekly_ratio`)
+- $\beta_4 = 0.8257$ (`behavior_category_cosine`)
+- $\beta_5 = 1.1209$ (`graph_jaccard`)
+- $\beta_6 = 0.0000$ (`graph_adamic_adar_norm`)
 
-### Platt Probability Calibration (Validation Split)
-$$P(\text{same\_actor} \mid x) = \sigma(A \cdot z + B)$$
-Learned parameters: $A = 2.0073, B = -0.0902$.
+### Platt Calibration on Validation Split:
+$$P(\text{same\_actor} \mid x) = \sigma(1.3903 \cdot z + 0.0261)$$
 
 ---
 
-## 5. Explainability & Mathematical Decomposition
+## 5. Single Real Test-Pair Manual Trace
 
-For every attribution decision, the output decomposes into feature contributions:
-$$\text{contribution}_i = \beta_i \cdot x_i$$
-The sum of all feature contributions plus intercept $\beta_0$ strictly equals raw logit $z$:
-$$z = \beta_0 + \sum_{i=1}^6 \text{contribution}_i$$
-
----
-
-## 6. Whiteboard Q&A Reference
-
-- **Q: What is the label?**
-  **A**: A binary target where $Y=1$ (`SAME_ACTOR`) indicates ground-truth cross-subsystem ownership derived from `forum-market/user-matching.tsv`, and $Y=0$ (`DIFFERENT_ACTOR`) represents distinct actors.
-- **Q: What does $\beta$ mean?**
-  **A**: $\beta_i$ is the directional log-odds weight learned via regularized maximum likelihood. A positive $\beta$ indicates higher feature similarity increases the odds of shared actor identity.
-- **Q: How do you prevent leakage?**
-  **A**: Entire `match_id` clusters are assigned exclusively to either `TRAIN`, `VAL`, or `TEST`. Mirrored pairs $(A, B)$ and $(B, A)$ are guarded so no pair can span multiple splits.
-- **Q: Why logistic regression?**
-  **A**: It is mathematically transparent, globally convex under L2 regularization, strictly deterministic, and decomposes into additive feature contributions ($\beta_i x_i$) for human analyst explainability.
+**Sample Pair:** `BooMstick` (VID 24, match_id 6) vs `MrMouse` (VID 26, match_id 9)
+1. **Source A:** `market/vendors.tsv` (Row: VID 24, BooMstick, rank 4, sales 619)
+2. **Source B:** `market/vendors.tsv` (Row: VID 26, MrMouse, rank 4, sales 610)
+3. **Calculated Feature Vector:**
+   - $x_1 = 0.4498$ (Activity JS)
+   - $x_2 = 0.7623$ (Inter-event log-ratio)
+   - $x_3 = 0.6388$ (Cadence ratio)
+   - $x_4 = 0.8581$ (Category cosine — Hard negative category overlap)
+   - $x_5 = 0.0000$ (Graph Jaccard)
+   - $x_6 = 0.0000$ (Adamic-Adar)
+4. **Logit Calculation:**
+   $$z = -2.2604 + (-0.3294 \times 0.4498) + (-0.3604 \times 0.7623) + (0.1456 \times 0.6388) + (0.8257 \times 0.8581) + 0 + 0 = \mathbf{-1.8818}$$
+5. **Raw Sigmoid Probability:** $\sigma(-1.8818) = \mathbf{13.22\%}$
+6. **Platt Calibrated Probability:** $\sigma(1.3903 \times (-1.8818) + 0.0261) = \sigma(-2.5902) = \mathbf{6.98\%}$
+7. **True Label:** `DIFFERENT_ACTOR` (0) | **Predicted:** `DISTINCT_ENTITIES` (0)

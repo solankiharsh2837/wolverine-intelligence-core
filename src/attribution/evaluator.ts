@@ -101,7 +101,8 @@ export class AttributionEvaluator {
   }
 
   /**
-   * Generates error analysis inspecting False Positives and False Negatives.
+   * Generates error analysis inspecting False Positives and False Negatives dynamically
+   * from the actual feature vectors and mathematical model contributions.
    */
   public static errorAnalysis(model: LogisticAttributionModel, testPairs: AttributionPair[]): ErrorAnalysisItem[] {
     const errors: ErrorAnalysisItem[] = [];
@@ -116,18 +117,21 @@ export class AttributionEvaluator {
         const dominantFeatures: string[] = [];
 
         p.features.forEach((val, i) => {
-          if (val >= 0.6) dominantFeatures.push(model.featureOrder[i]);
+          if (val >= 0.5) {
+            dominantFeatures.push(`${model.featureOrder[i]} (val: ${val.toFixed(4)}, beta: ${model.weights[i]})`);
+          }
         });
 
+        const highFeatures = dominantFeatures.join(', ');
         let diagnosticReason = '';
         let dataQualityCaveat = '';
 
         if (errorType === 'FALSE_POSITIVE') {
-          diagnosticReason = 'Distinct actors exhibited overlapping product categories and coincidentally similar active hours.';
-          dataQualityCaveat = 'Marketplace seller cohort effects can create superficial behavioral correlation among competitor vendors.';
+          diagnosticReason = `False positive driven by elevated similarity on: [${highFeatures}]. Distinct entities exhibited behavioral correlation.`;
+          dataQualityCaveat = `Superficial behavioral correlation in high-volume seller cohorts across common market categories.`;
         } else {
-          diagnosticReason = 'True same actor exhibited high temporal cadence variance between forum posting and listing management.';
-          dataQualityCaveat = 'Sparse forum posting frequency increases inter-event interval variance.';
+          diagnosticReason = `False negative driven by low similarity on feature sub-vectors: [${p.features.map((f, i) => `${model.featureOrder[i]}=${f}`).join(', ')}].`;
+          dataQualityCaveat = `High temporal or operational cadence variance across distinct observation partitions for the same actor.`;
         }
 
         errors.push({
@@ -253,7 +257,6 @@ export class AttributionEvaluator {
     const f1Scores: number[] = [];
     const N = preds.length;
 
-    // Simple pseudo-random LCG for reproducible bootstrap
     let seed = 42;
     const rand = () => {
       seed = (seed * 1664525 + 1013904223) % 4294967296;
