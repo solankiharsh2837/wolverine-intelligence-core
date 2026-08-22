@@ -1,0 +1,52 @@
+{
+  "featureVersion": "1.0.0-behavior",
+  "features": [
+    {
+      "name": "activityHours24",
+      "dimension": 24,
+      "type": "PROBABILITY_DISTRIBUTION",
+      "timeBasis": "UTC",
+      "formula": "h_k = count(hour(t_i) == k) / N for k in 0..23",
+      "constraints": "sum(h_k) == 1.0, h_k >= 0.0",
+      "inputColumns": ["forum/post.tsv:time", "market/scrapes.tsv:scrape_year,scrape_month,scrape_day"],
+      "missingHandling": "Normalized to uniform if empty, or labeled INSUFFICIENT_DATA"
+    },
+    {
+      "name": "interEventStats",
+      "dimension": 9,
+      "type": "INTERVAL_STATISTICS",
+      "units": "hours",
+      "formula": "Delta_i = (t_i - t_{i-1}) / 3600",
+      "metrics": ["mean", "std", "median", "min", "max", "p25", "p75", "p95", "logNormalMu", "logNormalSigma"],
+      "inputColumns": ["forum/post.tsv", "market/listings.tsv"],
+      "missingHandling": "Requires at least 2 events; zero if single event"
+    },
+    {
+      "name": "cadence",
+      "dimension": 5,
+      "type": "RATE_STATISTICS",
+      "metrics": ["totalEvents", "activeDaysCount", "activeWeeksCount", "eventsPerActiveWeek", "activeDaysPerActiveWeek", "inactivityGapMaxDays"],
+      "formula": "C_active = totalEvents / activeWeeksCount",
+      "inputColumns": ["forum/post.tsv", "market/listings.tsv"],
+      "missingHandling": "0 if no events"
+    },
+    {
+      "name": "categoryDistribution",
+      "dimension": "variable_normalized_map",
+      "type": "PROBABILITY_DISTRIBUTION",
+      "formula": "c_k = count(listing_cid == k) / totalListings",
+      "constraints": "sum(c_k) == 1.0",
+      "inputColumns": ["market/listings.tsv:cid", "market/categories.tsv:category"],
+      "missingHandling": "Empty dict if no marketplace listings"
+    },
+    {
+      "name": "graphTelemetry",
+      "dimension": 3,
+      "type": "TOPOLOGY_METRICS",
+      "metrics": ["degree", "weightedDegree", "counterparties"],
+      "formula": "degree = |{unique counterparties in network/edges-*.tsv}|",
+      "inputColumns": ["network/edges-*.tsv:Source,Target,Weight"],
+      "missingHandling": "degree = 0 if unobserved in communication network"
+    }
+  ]
+}

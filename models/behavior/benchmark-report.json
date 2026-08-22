@@ -1,0 +1,188 @@
+{
+  "benchmarkVersion": "1.0.0-behavior",
+  "generatedAt": "2026-08-22T16:55:57.406Z",
+  "sourceDataset": {
+    "id": "evolution-2014-2015",
+    "version": "1.0.0",
+    "doi": "10.5281/zenodo.10156522"
+  },
+  "profiledEntities": [
+    {
+      "id": "evo_vendor_1",
+      "name": "Verto",
+      "eventsCount": 1231,
+      "activeDays": 237,
+      "activeWeeks": 55,
+      "primaryCategory": "Other",
+      "status": "VALID_PROFILE"
+    },
+    {
+      "id": "evo_vendor_363",
+      "name": "fake",
+      "eventsCount": 60365,
+      "activeDays": 232,
+      "activeWeeks": 60,
+      "primaryCategory": "Other",
+      "status": "VALID_PROFILE"
+    },
+    {
+      "id": "evo_vendor_448",
+      "name": "passman",
+      "eventsCount": 12946,
+      "activeDays": 110,
+      "activeWeeks": 56,
+      "primaryCategory": "Fraud",
+      "status": "VALID_PROFILE"
+    },
+    {
+      "id": "evo_vendor_3194",
+      "name": "profesorhouse",
+      "eventsCount": 32013,
+      "activeDays": 100,
+      "activeWeeks": 49,
+      "primaryCategory": "Other",
+      "status": "VALID_PROFILE"
+    },
+    {
+      "id": "evo_vendor_5230",
+      "name": "Hackyboy",
+      "eventsCount": 4887,
+      "activeDays": 89,
+      "activeWeeks": 44,
+      "primaryCategory": "CC &amp; CVV",
+      "status": "VALID_PROFILE"
+    }
+  ],
+  "pairwiseComparisons": [
+    {
+      "entityA": "Verto",
+      "entityB": "fake",
+      "activityHourJSD": 0.511711,
+      "activityHourSimilarity": 0.2847,
+      "categoryCosineSimilarity": 0.5502,
+      "interEventLogRatioSimilarity": 0.1458,
+      "cadenceWeeklyRatioSimilarity": 0.0222,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "Verto",
+      "entityB": "passman",
+      "activityHourJSD": 0.527893,
+      "activityHourSimilarity": 0.2734,
+      "categoryCosineSimilarity": 0.3702,
+      "interEventLogRatioSimilarity": 0.3118,
+      "cadenceWeeklyRatioSimilarity": 0.0968,
+      "graphCounterpartyJaccard": 1,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "Verto",
+      "entityB": "profesorhouse",
+      "activityHourJSD": 0.522727,
+      "activityHourSimilarity": 0.277,
+      "categoryCosineSimilarity": 0.8971,
+      "interEventLogRatioSimilarity": 0.1878,
+      "cadenceWeeklyRatioSimilarity": 0.0343,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "Verto",
+      "entityB": "Hackyboy",
+      "activityHourJSD": 0.521124,
+      "activityHourSimilarity": 0.2781,
+      "categoryCosineSimilarity": 0.2964,
+      "interEventLogRatioSimilarity": 0.4894,
+      "cadenceWeeklyRatioSimilarity": 0.2015,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "fake",
+      "entityB": "passman",
+      "activityHourJSD": 0.002074,
+      "activityHourSimilarity": 0.9545,
+      "categoryCosineSimilarity": 0.5032,
+      "interEventLogRatioSimilarity": 0.4678,
+      "cadenceWeeklyRatioSimilarity": 0.2298,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "fake",
+      "entityB": "profesorhouse",
+      "activityHourJSD": 0.001603,
+      "activityHourSimilarity": 0.96,
+      "categoryCosineSimilarity": 0.661,
+      "interEventLogRatioSimilarity": 0.7766,
+      "cadenceWeeklyRatioSimilarity": 0.6494,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "fake",
+      "entityB": "Hackyboy",
+      "activityHourJSD": 0.001387,
+      "activityHourSimilarity": 0.9628,
+      "categoryCosineSimilarity": 0.4902,
+      "interEventLogRatioSimilarity": 0.298,
+      "cadenceWeeklyRatioSimilarity": 0.1104,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "passman",
+      "entityB": "profesorhouse",
+      "activityHourJSD": 0.000667,
+      "activityHourSimilarity": 0.9742,
+      "categoryCosineSimilarity": 0.3875,
+      "interEventLogRatioSimilarity": 0.6024,
+      "cadenceWeeklyRatioSimilarity": 0.3538,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "passman",
+      "entityB": "Hackyboy",
+      "activityHourJSD": 0.001084,
+      "activityHourSimilarity": 0.9671,
+      "categoryCosineSimilarity": 0.6254,
+      "interEventLogRatioSimilarity": 0.637,
+      "cadenceWeeklyRatioSimilarity": 0.4804,
+      "graphCounterpartyJaccard": 0,
+      "graphAdamicAdarIndex": 0,
+      "isSparseComparison": false,
+      "notes": []
+    },
+    {
+      "entityA": "profesorhouse",
+      "entityB": "Hackyboy",
+      "activityHourJSD": 0.000746,
+      "activityHourSimilarity": 0.9727,
+      "categoryCosineSimilarity": 0.2991,
+      "interEventLogRatioSimilarity": 0.3837,
+      "cadenceWeeklyRatioSimilarity": 0.17,
+      "graphCounterpartyJaccard": 0.0167,
+      "graphAdamicAdarIndex": 4.3281,
+      "isSparseComparison": false,
+      "notes": []
+    }
+  ]
+}

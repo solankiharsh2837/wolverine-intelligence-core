@@ -1,0 +1,34 @@
+{
+  "modelId": "wolverine-behavior-profiler",
+  "versionTag": "1.0.0-behavior",
+  "modelType": "DESCRIPTIVE_BEHAVIORAL_PROFILE",
+  "description": "Explainable multi-dimensional behavioral profiling model for darknet threat entities derived from the Evolution 2014-2015 dataset.",
+  "task": "BEHAVIORAL_PROFILING",
+  "author": "Google DeepMind Advanced Agentic Coding",
+  "sourceDataset": {
+    "id": "evolution-2014-2015",
+    "version": "1.0.0",
+    "doi": "10.5281/zenodo.10156522",
+    "sourceFiles": [
+      "market/vendors.tsv",
+      "market/listings.tsv",
+      "market/scrapes.tsv",
+      "forum/post.tsv",
+      "network/edges-*.tsv"
+    ]
+  },
+  "featureVersion": "1.0.0-behavior",
+  "featureDefinitions": "feature-definition.json",
+  "similarityMetrics": {
+    "activityHourDistribution": "Jensen-Shannon Similarity (1 - sqrt(JSD))",
+    "categoryDistribution": "Cosine Similarity",
+    "interEventTime": "Log-Ratio Similarity",
+    "cadenceWeekly": "Min-Max Ratio",
+    "graphCounterparties": "Jaccard Index & Adamic-Adar Index"
+  },
+  "sparseThresholds": {
+    "minEvents": 5,
+    "minActiveDays": 2,
+    "insufficientDataLabel": "INSUFFICIENT_DATA"
+  }
+}

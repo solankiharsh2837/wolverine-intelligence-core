@@ -17,11 +17,16 @@
     "db:restore": "powershell -ExecutionPolicy Bypass -File scripts/db_restore.ps1",
     "db:test": "tsx --test --test-concurrency=1 tests/database/*.test.ts",
     "test:research": "tsx --test --test-concurrency=1 tests/research-data/*.test.ts",
+    "test:behavior": "tsx --test --test-concurrency=1 tests/behavior/*.test.ts",
     "dataset:status": "tsx scripts/dataset_status.ts",
     "dataset:verify": "tsx scripts/dataset_verify.ts",
     "dataset:profile": "tsx scripts/dataset_profile.ts",
     "features:extract": "tsx scripts/features/extract_features.ts",
-    "test": "npm run db:test && npm run test:research",
+    "behavior:profile": "tsx scripts/behavior_profile.ts",
+    "behavior:compare": "tsx scripts/behavior_compare.ts",
+    "behavior:benchmark": "tsx scripts/behavior_benchmark.ts",
+    "behavior:status": "tsx scripts/behavior_status.ts",
+    "test": "npm run db:test && npm run test:research && npm run test:behavior",
     "build": "tsc"
   },
   "prisma": {
@@ -33,7 +38,8 @@
     "attribution",
     "prisma",
     "wolverine",
-    "research-data"
+    "research-data",
+    "behavior-profiling"
   ],
   "author": "Google DeepMind Advanced Agentic Coding",
   "license": "UNLICENSED",
