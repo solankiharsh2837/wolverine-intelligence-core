@@ -1,21 +1,22 @@
 {
   "datasetId": "veridark-authorship",
   "datasetVersion": "1.0.0",
-  "manifestVersion": "1.0.0",
-  "generatedAt": "2026-08-22T16:19:22.546Z",
+  "status": "ACCESS_RESTRICTED",
+  "manifestVersion": "2.0.0",
+  "generatedAt": "2026-08-22T16:32:48.092Z",
   "files": [
     {
       "filename": "sample-authorship-pairs.json",
+      "fileType": "SYNTHETIC_TEST_FIXTURE",
       "relativePath": "fixtures/sample-authorship-pairs.json",
-      "sizeBytes": 2031,
-      "sha256": "sha256-432df2d00d7ee214a1526a95033fbaae97854d7f54bc65de4e2a0d47016acccc",
+      "sizeBytes": 2374,
+      "sha256": "sha256-efd0c108b7bfc11c3d88e07832dd2ab642e6af684ff66d2fedc4c800d82aa78b",
       "mimeType": "application/json",
-      "compression": "none",
-      "retrievedAt": "2026-08-22T16:19:22.546Z",
-      "sourceUrl": "https://veridark.nlp.corpus/v1",
+      "retrievedAt": "2026-08-22T16:29:21.752Z",
+      "sourceUrl": "https://zenodo.org/record/6998371",
       "verified": true
     }
   ],
-  "parserVersion": "1.0.0",
-  "profileVersion": "1.0.0"
+  "parserVersion": "2.0.0",
+  "profileVersion": "2.0.0"
 }

@@ -1,27 +1,60 @@
 {
   "datasetId": "evolution-2014-2015",
-  "name": "Evolution Marketplace Archive (2014-2015)",
+  "name": "A large-scale longitudinal structured dataset of the dark web cryptomarket Evolution (2014-2015)",
   "version": "1.0.0",
-  "status": "ACQUIRED_BENCHMARK_FIXTURE",
-  "license": "Research Use / Public Historical Archive",
-  "sourceUrl": "https://gwern.net/dnb-evolution",
-  "schema": {
-    "listings": {
-      "item_id": "string",
-      "vendor_name": "string",
-      "category": "string",
-      "description": "string",
-      "price_btc": "number",
-      "timestamp": "ISO8601"
+  "status": "ACQUIRED_RAW_ARCHIVE",
+  "license": "CC-BY-4.0",
+  "doi": "10.5281/zenodo.10156522",
+  "sourceUrl": "https://zenodo.org/records/10156522",
+  "downloadUrl": "https://zenodo.org/api/records/10156522/files/data-and-readme.zip/content",
+  "rawArchive": {
+    "filename": "evolution_zenodo_10156522.zip",
+    "sizeBytes": 300565000,
+    "sha256": "sha256-70d6cacc6a04792213b6ff3d1586be248bc26e9b31d796a6b443e9e177ccc42a"
+  },
+  "tables": {
+    "market/listings.tsv": {
+      "sha256": "sha256-3f186b59bfee12e86690436f1834423bf7baf02d3a077c005cc5189c7afbded7",
+      "fields": [
+        "lid",
+        "vid",
+        "mscrape_id",
+        "title",
+        "price",
+        "description",
+        "cid",
+        "ships_from",
+        "ships_to",
+        "product_class",
+        "listing_available",
+        "return_policy"
+      ]
     },
-    "vendors": {
-      "vendor_id": "string",
-      "vendor_name": "string",
-      "pgp_fingerprint": "string",
-      "btc_address": "string",
-      "positive_feedback": "number",
-      "negative_feedback": "number",
-      "registered_date": "ISO8601"
+    "market/vendors.tsv": {
+      "sha256": "sha256-865ecd74087fdf4c6de5daa9aa3c65d639b0f01c90030bd5a53c7f880b1a03d7",
+      "fields": [
+        "vid",
+        "mscrape_id",
+        "username",
+        "rank",
+        "sales",
+        "approval_rating",
+        "positive_feedback",
+        "neutral_feedback",
+        "negative_feedback",
+        "legacy_sales",
+        "pgp_key",
+        "return_policy",
+        "disabled"
+      ]
+    },
+    "market/categories.tsv": {
+      "sha256": "sha256-af3868909bcf4acc401ccdaac29596b75e24f59c5e3ead3cee5ea868d28bef58",
+      "fields": [
+        "cid",
+        "category",
+        "parent_cid"
+      ]
     }
   }
 }

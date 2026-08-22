@@ -1,32 +1,44 @@
 {
   "datasetId": "evolution-2014-2015",
   "datasetVersion": "1.0.0",
-  "manifestVersion": "1.0.0",
-  "generatedAt": "2026-08-22T16:19:22.542Z",
+  "status": "ACQUIRED_RAW_ARCHIVE",
+  "manifestVersion": "2.0.0",
+  "generatedAt": "2026-08-22T16:32:48.089Z",
   "files": [
     {
+      "filename": "evolution_zenodo_10156522.zip",
+      "fileType": "RAW_ARCHIVE",
+      "relativePath": "raw/evolution_zenodo_10156522.zip",
+      "sizeBytes": 300565000,
+      "sha256": "sha256-70d6cacc6a04792213b6ff3d1586be248bc26e9b31d796a6b443e9e177ccc42a",
+      "mimeType": "application/zip",
+      "retrievedAt": "2026-08-22T16:30:52.262Z",
+      "sourceUrl": "https://zenodo.org/api/records/10156522/files/data-and-readme.zip/content",
+      "verified": true
+    },
+    {
       "filename": "sample-listings.json",
+      "fileType": "REAL_DATASET_DERIVED_FIXTURE",
       "relativePath": "fixtures/sample-listings.json",
-      "sizeBytes": 1794,
-      "sha256": "sha256-aa0750c056025b6f98076a93df8baab04d5ecc049b392ec6fa22f6131042f52a",
+      "sizeBytes": 4430,
+      "sha256": "sha256-827c1334e205434298736df5fe7c01020b67354ca4ac949b4146a7020868c0df",
       "mimeType": "application/json",
-      "compression": "none",
-      "retrievedAt": "2026-08-22T16:19:22.541Z",
-      "sourceUrl": "https://gwern.net/dnb-evolution",
+      "retrievedAt": "2026-08-22T16:32:11.858Z",
+      "sourceUrl": "https://zenodo.org/records/10156522",
       "verified": true
     },
     {
       "filename": "sample-vendors.json",
+      "fileType": "REAL_DATASET_DERIVED_FIXTURE",
       "relativePath": "fixtures/sample-vendors.json",
-      "sizeBytes": 940,
-      "sha256": "sha256-159fa1148d0300928cfc0b2bee7a9cc370d163c8169e8586966b3107fe340386",
+      "sizeBytes": 1365,
+      "sha256": "sha256-26b107102e6f8c8b9b29a2a4eb6ec8199b4791bb816221525446b49e9f4fd657",
       "mimeType": "application/json",
-      "compression": "none",
-      "retrievedAt": "2026-08-22T16:19:22.542Z",
-      "sourceUrl": "https://gwern.net/dnb-evolution",
+      "retrievedAt": "2026-08-22T16:32:11.859Z",
+      "sourceUrl": "https://zenodo.org/records/10156522",
       "verified": true
     }
   ],
-  "parserVersion": "1.0.0",
-  "profileVersion": "1.0.0"
+  "parserVersion": "2.0.0",
+  "profileVersion": "2.0.0"
 }

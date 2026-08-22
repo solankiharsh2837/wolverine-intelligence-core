@@ -6,21 +6,21 @@ import path from 'node:path';
 test('5. Research Data Normalization Pipelines', async (t) => {
   const baseDir = path.resolve('research-data');
 
-  await t.test('Evolution listing normalizes into canonical research format', () => {
+  await t.test('Real Evolution listing normalizes into canonical research format', () => {
     const fixturePath = path.join(baseDir, 'evolution', 'fixtures', 'sample-listings.json');
     const rawListings = JSON.parse(fs.readFileSync(fixturePath, 'utf8'));
 
     const normalized = rawListings.map((l: any) => ({
-      researchId: `res_evo_${l.item_id}`,
-      vendor: l.vendor_name,
+      researchId: `res_evo_${l.lid}`,
+      vendorId: l.vid,
       priceBtc: l.price_btc,
-      observedTimestamp: l.timestamp,
+      title: l.title,
       isCleaned: true,
     }));
 
-    assert.equal(normalized.length, 3);
-    assert.equal(normalized[0].researchId, 'res_evo_evo_item_1042');
-    assert.equal(normalized[0].vendor, 'DarkPhoenix');
+    assert.equal(normalized.length, 5);
+    assert.equal(normalized[0].researchId, 'res_evo_3');
+    assert.equal(normalized[0].vendorId, 12);
   });
 
   await t.test('VeriDark pairs normalize into paired training examples', () => {

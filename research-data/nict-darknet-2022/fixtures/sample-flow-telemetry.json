@@ -1,41 +1,35 @@
 [
   {
-    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "fixture_type": "SYNTHETIC_TEST_FIXTURE",
     "datasetId": "nict-darknet-2022",
     "datasetVersion": "1.0.0",
-    "flow_id": "nict_flow_2022_001",
-    "timestamp": "2022-04-12T03:14:22Z",
-    "src_ip_anonymized": "anon_src_subnet_192_02",
-    "dst_port": 443,
-    "protocol": "TCP_SYN",
-    "packet_count": 1,
-    "byte_count": 64,
-    "scan_signature": "MASS_SCAN_PORT_SWEEP"
+    "note": "Synthetic fixture matching official NICT 2022 schema for pipeline testing; raw data requires NICT NDA",
+    "timestamp": 1649733262,
+    "hash[ip.src.upper16]": "8f48a5c8e1e7a2b9",
+    "hash[ip.src.32]": "e2a1b9487c53d91f802194c8e178129487192847",
+    "ip.dst.lower16": 4129,
+    "tcp.dstport": 443
   },
   {
-    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "fixture_type": "SYNTHETIC_TEST_FIXTURE",
     "datasetId": "nict-darknet-2022",
     "datasetVersion": "1.0.0",
-    "flow_id": "nict_flow_2022_002",
-    "timestamp": "2022-04-12T03:14:23Z",
-    "src_ip_anonymized": "anon_src_subnet_192_02",
-    "dst_port": 80,
-    "protocol": "TCP_SYN",
-    "packet_count": 1,
-    "byte_count": 64,
-    "scan_signature": "MASS_SCAN_PORT_SWEEP"
+    "note": "Synthetic fixture matching official NICT 2022 schema for pipeline testing; raw data requires NICT NDA",
+    "timestamp": 1649733263,
+    "hash[ip.src.upper16]": "8f48a5c8e1e7a2b9",
+    "hash[ip.src.32]": "e2a1b9487c53d91f802194c8e178129487192847",
+    "ip.dst.lower16": 4130,
+    "tcp.dstport": 80
   },
   {
-    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "fixture_type": "SYNTHETIC_TEST_FIXTURE",
     "datasetId": "nict-darknet-2022",
     "datasetVersion": "1.0.0",
-    "flow_id": "nict_flow_2022_003",
-    "timestamp": "2022-04-12T04:22:10Z",
-    "src_ip_anonymized": "anon_src_subnet_104_18",
-    "dst_port": 8080,
-    "protocol": "TCP_SYN",
-    "packet_count": 3,
-    "byte_count": 192,
-    "scan_signature": "MIRAI_PROBING_PATTERN"
+    "note": "Synthetic fixture matching official NICT 2022 schema for pipeline testing; raw data requires NICT NDA",
+    "timestamp": 1649737330,
+    "hash[ip.src.upper16]": "3c91a782f9104b21",
+    "hash[ip.src.32]": "491823abce910481284729183748291048291048",
+    "ip.dst.lower16": 1284,
+    "tcp.dstport": 8080
   }
 ]

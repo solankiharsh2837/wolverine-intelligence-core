@@ -3,17 +3,21 @@
   "name": "NICT Darknet Dataset 2022",
   "version": "1.0.0",
   "status": "ACCESS_RESTRICTED",
-  "license": "Strict Academic Non-Commercial NDA",
+  "officialSource": "National Institute of Information and Communications Technology (NICT), Japan",
   "sourceUrl": "https://www.nict.go.jp/en/cyber/darknet/",
-  "accessProcedure": "Submit formal research proposal via NICT Cybersecurity Research Center. Access requires institutional signing of non-disclosure and secure data transfer protocols.",
-  "schema": {
-    "flow_id": "string",
-    "timestamp": "ISO8601",
-    "src_ip_anonymized": "string",
-    "dst_port": "number",
-    "protocol": "string",
-    "packet_count": "number",
-    "byte_count": "number",
-    "scan_signature": "string"
-  }
+  "accessProcedure": "Submit formal email request to nicter-sec@ml.nict.go.jp agreeing to Terms of Use; institutional NDA required.",
+  "modality": "TCP-SYN packet-level darknet sensor traffic (CSV)",
+  "officialSchema": {
+    "timestamp": "number (UNIX time)",
+    "hash[ip.src.upper16]": "string (hash of upper 16-bits of source IP)",
+    "hash[ip.src.32]": "string (hash of full 32-bit source IP)",
+    "ip.dst.lower16": "number (lower 16-bits of destination IP in darknet)",
+    "tcp.dstport": "number (16-bit TCP destination port)"
+  },
+  "rawStatus": "UNAVAILABLE_NDA_RESTRICTED",
+  "primaryRoles": [
+    "transport_scanning_profiling",
+    "port_distribution_analysis",
+    "packet_timing_calibration"
+  ]
 }

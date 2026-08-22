@@ -1,55 +1,20 @@
 {
-  "calibrationType": "MARKETPLACE_BEHAVIOR_DISTRIBUTION",
+  "calibrationType": "MARKETPLACE_REAL_DATA_DISTRIBUTION",
   "datasetId": "evolution-2014-2015",
   "datasetVersion": "1.0.0",
-  "featureVersion": "1.0.0-behavior",
-  "calculationVersion": "1.0.0",
-  "calculatedAt": "2026-08-22T21:50:00Z",
+  "sourceFile": "market/listings.tsv",
+  "sourceFileSha256": "sha256-3f186b59bfee12e86690436f1834423bf7baf02d3a077c005cc5189c7afbded7",
+  "calculatedAt": "2026-08-22T16:32:11.872Z",
+  "sampleSize": 48912,
   "distributions": {
-    "listingsPerVendor": {
-      "mean": 4.85,
-      "std": 3.42,
-      "median": 3,
-      "min": 1,
-      "p95": 16
-    },
     "priceBtc": {
-      "min": 0.01,
-      "median": 0.08,
-      "mean": 0.118,
-      "max": 2.5
-    },
-    "activityHoursUtc24": [
-      0.0137,
-      0.0091,
-      0.0055,
-      0.0046,
-      0.0055,
-      0.0091,
-      0.0228,
-      0.041,
-      0.0593,
-      0.0775,
-      0.0912,
-      0.0957,
-      0.0912,
-      0.082,
-      0.0775,
-      0.0684,
-      0.0593,
-      0.0501,
-      0.041,
-      0.0319,
-      0.0228,
-      0.0182,
-      0.0137,
-      0.0089
-    ],
-    "interEventTimeHours": {
-      "mean": 19.45,
-      "std": 14.12,
-      "median": 16.5
-    },
-    "feedbackRatioPositive": 0.982
+      "min": 0.0001,
+      "median": 0.0321,
+      "mean": 1.779,
+      "max": 9999,
+      "p25": 0.0146,
+      "p75": 0.1001,
+      "p95": 0.661
+    }
   }
 }

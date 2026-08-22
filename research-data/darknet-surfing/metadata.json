@@ -3,14 +3,13 @@
   "name": "Darknet Surfing Corpus",
   "version": "1.0.0",
   "status": "PENDING_INSTITUTIONAL_ACCESS",
-  "license": "Academic Research License",
+  "officialSource": "Darknet Surfing Research Initiative",
   "sourceUrl": "https://darknetsurfing.org/archive",
-  "schema": {
-    "onion_address": "string",
-    "site_title": "string",
-    "category": "string",
-    "inbound_links": "array(string)",
-    "outbound_links": "array(string)",
-    "crawled_at": "ISO8601"
-  }
+  "accessProcedure": "Institutional repository access pending verification.",
+  "modality": "Tor hidden service HTML bodies & hyperlink connectivity graph",
+  "rawStatus": "UNAVAILABLE_PENDING_ACCESS",
+  "primaryRoles": [
+    "ecosystem_topology_mapping",
+    "link_graph_connectivity"
+  ]
 }

@@ -1,8 +1,9 @@
 [
   {
-    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "fixture_type": "SYNTHETIC_TEST_FIXTURE",
     "datasetId": "darknet-surfing-corpus",
     "datasetVersion": "1.0.0",
+    "note": "Synthetic topology fixture for link graph algorithm verification",
     "onion_address": "darkmkt777onion.onion",
     "site_title": "DarkMarket Marketplace Gateway",
     "category": "Marketplace",
@@ -11,9 +12,10 @@
     "crawled_at": "2026-01-10T12:00:00Z"
   },
   {
-    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "fixture_type": "SYNTHETIC_TEST_FIXTURE",
     "datasetId": "darknet-surfing-corpus",
     "datasetVersion": "1.0.0",
+    "note": "Synthetic topology fixture for link graph algorithm verification",
     "onion_address": "vendorforum333.onion",
     "site_title": "Tor Vendor Discussion & Review Forum",
     "category": "Forum",

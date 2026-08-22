@@ -1,7 +1,7 @@
 {
   "dataset": "veridark",
   "fixtureFile": "sample-authorship-pairs.json",
-  "profiledAt": "2026-08-22T16:19:48.220Z",
+  "profiledAt": "2026-08-22T16:32:58.125Z",
   "rowCount": 3,
   "fields": {
     "fixture_type": {
@@ -19,6 +19,13 @@
       ]
     },
     "datasetVersion": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "note": {
       "presentCount": 3,
       "nullRate": "0.0000",
       "types": [
@@ -83,9 +90,9 @@
     }
   },
   "textMetrics": {
-    "minCharacters": 91,
+    "minCharacters": 83,
     "maxCharacters": 173,
-    "avgCharacters": "132.7"
+    "avgCharacters": "131.3"
   },
   "temporalMetrics": {
     "firstTimestamp": null,

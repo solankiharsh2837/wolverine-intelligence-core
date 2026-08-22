@@ -1,31 +1,27 @@
-# Dependencies
-node_modules/
-dist/
-build/
-
-# Environment Variables & Secrets
+# Environment variables
 .env
 .env.local
-.env.*.local
-*.pem
-*.key
 
-# Database artifacts
-*.db
-*.sqlite
-backups/*.dump
-backups/*.sql
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Node modules & build artifacts
+node_modules/
+dist/
 *.log
 
-# OS / IDE
+# Prisma generated artifacts
+prisma/*.db
+prisma/*.db-journal
+
+# Database dumps and backups
+backups/*.sql
+
+# Research Data Lake raw archives and extracted corpora (large files >100MB)
+research-data/*/raw/*.zip
+research-data/*/raw/*.tar.gz
+research-data/*/raw/*.pcap
+research-data/*/extracted/
+
+# OS and IDE files
 .DS_Store
 Thumbs.db
+.vscode/
 .idea/
-.vscode/*
-!.vscode/settings.json
-!.vscode/extensions.json

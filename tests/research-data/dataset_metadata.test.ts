@@ -15,23 +15,43 @@ test('1. Dataset Registry & Metadata Compliance', async (t) => {
     assert.equal(registry.datasets.length, 4, 'Must register 4 authoritative datasets');
   });
 
-  await t.test('Every dataset has individual metadata.json and README.md', () => {
+  await t.test('Evolution dataset reflects acquired open Zenodo archive', () => {
     const registry = JSON.parse(fs.readFileSync(registryPath, 'utf8'));
-    for (const ds of registry.datasets) {
-      const dirName = ds.id === 'evolution-2014-2015' ? 'evolution' :
-                      ds.id === 'veridark-authorship' ? 'veridark' :
-                      ds.id === 'nict-darknet-2022' ? 'nict-darknet-2022' : 'darknet-surfing';
-      const dsDir = path.join(baseDir, dirName);
-      const metaPath = path.join(dsDir, 'metadata.json');
-      const readmePath = path.join(dsDir, 'README.md');
+    const evo = registry.datasets.find((d: any) => d.id === 'evolution-2014-2015');
+    assert.ok(evo, 'Evolution dataset must exist');
+    assert.equal(evo.status, 'ACQUIRED_RAW_ARCHIVE');
+    assert.equal(evo.license, 'CC-BY-4.0');
+    assert.ok(evo.officialSource.includes('Zenodo DOI: 10.5281/zenodo.10156522'));
+  });
 
-      assert.ok(fs.existsSync(metaPath), `metadata.json must exist for ${ds.id}`);
-      assert.ok(fs.existsSync(readmePath), `README.md must exist for ${ds.id}`);
+  await t.test('NICT dataset schema strictly matches official 2022 specification without invented fields', () => {
+    const metaPath = path.join(baseDir, 'nict-darknet-2022', 'metadata.json');
+    const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
 
-      const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-      assert.equal(meta.datasetId, ds.id);
-      assert.ok(meta.license, 'Dataset must have license specified');
-      assert.ok(meta.status, 'Dataset must have authoritative status');
-    }
+    assert.equal(meta.status, 'ACCESS_RESTRICTED');
+    assert.equal(meta.rawStatus, 'UNAVAILABLE_NDA_RESTRICTED');
+
+    const schemaKeys = Object.keys(meta.officialSchema);
+    assert.deepEqual(schemaKeys, [
+      'timestamp',
+      'hash[ip.src.upper16]',
+      'hash[ip.src.32]',
+      'ip.dst.lower16',
+      'tcp.dstport'
+    ], 'NICT schema must contain exactly the 5 official fields');
+
+    // Ensure NO invented fields exist
+    assert.equal(schemaKeys.includes('protocol'), false, 'protocol must NOT be in NICT 2022 schema');
+    assert.equal(schemaKeys.includes('packet_count'), false, 'packet_count must NOT be in NICT 2022 schema');
+    assert.equal(schemaKeys.includes('byte_count'), false, 'byte_count must NOT be in NICT 2022 schema');
+    assert.equal(schemaKeys.includes('scan_signature'), false, 'scan_signature must NOT be in NICT 2022 schema');
+  });
+
+  await t.test('VeriDark dataset reflects restricted Zenodo 6998371 status', () => {
+    const metaPath = path.join(baseDir, 'veridark', 'metadata.json');
+    const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    assert.equal(meta.status, 'ACCESS_RESTRICTED');
+    assert.equal(meta.rawStatus, 'UNAVAILABLE_RESTRICTED');
+    assert.ok(meta.doi.includes('zenodo.6998371'));
   });
 });

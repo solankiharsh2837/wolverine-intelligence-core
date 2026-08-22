@@ -26,4 +26,15 @@ test('2. Manifest Structure & Tracking', async (t) => {
       }
     });
   }
+
+  await t.test('Evolution manifest tracks actual raw archive and its SHA-256', () => {
+    const manifestPath = path.join(baseDir, 'evolution', 'manifest.json');
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+    const rawEntry = manifest.files.find((f: any) => f.fileType === 'RAW_ARCHIVE');
+
+    assert.ok(rawEntry, 'Evolution manifest must track RAW_ARCHIVE');
+    assert.equal(rawEntry.filename, 'evolution_zenodo_10156522.zip');
+    assert.equal(rawEntry.sizeBytes, 300565000);
+    assert.equal(rawEntry.sha256, 'sha256-70d6cacc6a04792213b6ff3d1586be248bc26e9b31d796a6b443e9e177ccc42a');
+  });
 });

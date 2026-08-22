@@ -1,101 +1,136 @@
 {
   "dataset": "evolution",
   "fixtureFile": "sample-listings.json",
-  "profiledAt": "2026-08-22T16:19:48.217Z",
-  "rowCount": 3,
+  "profiledAt": "2026-08-22T16:32:58.122Z",
+  "rowCount": 5,
   "fields": {
     "fixture_type": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
     },
     "datasetId": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
     },
     "datasetVersion": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
     },
     "sourceFile": {
-      "presentCount": 3,
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "sourceFileSha256": {
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
     },
     "sourceRow": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "number"
       ]
     },
-    "item_id": {
-      "presentCount": 3,
+    "lid": {
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
-        "string"
+        "number"
       ]
     },
-    "vendor_name": {
-      "presentCount": 3,
+    "vid": {
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
-        "string"
+        "number"
       ]
     },
-    "category": {
-      "presentCount": 3,
+    "mscrape_id": {
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
-        "string"
+        "number"
       ]
     },
     "title": {
-      "presentCount": 3,
-      "nullRate": "0.0000",
-      "types": [
-        "string"
-      ]
-    },
-    "description": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
     },
     "price_btc": {
-      "presentCount": 3,
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "number"
       ]
     },
-    "timestamp": {
-      "presentCount": 3,
+    "description": {
+      "presentCount": 5,
       "nullRate": "0.0000",
       "types": [
         "string"
       ]
+    },
+    "cid": {
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "ships_from": {
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "ships_to": {
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "product_class": {
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "listing_available": {
+      "presentCount": 5,
+      "nullRate": "0.0000",
+      "types": [
+        "boolean"
+      ]
     }
   },
   "textMetrics": {
-    "minCharacters": 52,
-    "maxCharacters": 142,
-    "avgCharacters": "85.2"
+    "minCharacters": 41,
+    "maxCharacters": 300,
+    "avgCharacters": "170.8"
   },
   "temporalMetrics": {
-    "firstTimestamp": "2014-11-15T14:20:00Z",
-    "lastTimestamp": "2015-01-10T09:12:00Z"
+    "firstTimestamp": null,
+    "lastTimestamp": null
   }
 }

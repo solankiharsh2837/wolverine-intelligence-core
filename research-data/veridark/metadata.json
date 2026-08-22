@@ -1,18 +1,18 @@
 {
   "datasetId": "veridark-authorship",
-  "name": "VeriDark Authorship Verification Dataset",
+  "name": "VeriDark Authorship Verification Benchmark (SilkRoad1/Agora/DarkReddit+)",
   "version": "1.0.0",
-  "status": "ACQUIRED_BENCHMARK_FIXTURE",
-  "license": "CC BY-NC 4.0",
-  "sourceUrl": "https://veridark.nlp.corpus/v1",
-  "schema": {
-    "pair_id": "string",
-    "author_a": "string",
-    "author_b": "string",
-    "text_sample_a": "string",
-    "text_sample_b": "string",
-    "same_author": "boolean",
-    "forum_source_a": "string",
-    "forum_source_b": "string"
-  }
+  "status": "ACCESS_RESTRICTED",
+  "officialSource": "Manolache et al., NeurIPS 2022 (arXiv:2207.03477)",
+  "sourceUrl": "https://zenodo.org/record/6998371",
+  "doi": "10.5281/zenodo.6998371",
+  "accessProcedure": "Submit access request via Zenodo record 6998371 to Bitdefender & University of Bucharest authors.",
+  "license": "Restricted Research Access",
+  "modality": "Dark web forum message pairs with binary same-author labels",
+  "rawStatus": "UNAVAILABLE_RESTRICTED",
+  "primaryRoles": [
+    "stylometric_feature_extraction",
+    "authorship_verification",
+    "author_disjoint_evaluation"
+  ]
 }

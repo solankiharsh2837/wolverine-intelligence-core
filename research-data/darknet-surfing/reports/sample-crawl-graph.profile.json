@@ -1,7 +1,7 @@
 {
   "dataset": "darknet-surfing",
   "fixtureFile": "sample-crawl-graph.json",
-  "profiledAt": "2026-08-22T16:19:48.223Z",
+  "profiledAt": "2026-08-22T16:32:58.129Z",
   "rowCount": 2,
   "fields": {
     "fixture_type": {
@@ -19,6 +19,13 @@
       ]
     },
     "datasetVersion": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "note": {
       "presentCount": 2,
       "nullRate": "0.0000",
       "types": [

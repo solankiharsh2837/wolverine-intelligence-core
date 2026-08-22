@@ -47,7 +47,7 @@ export interface NetworkFeatures {
 const FUNCTION_WORDS = [
   'the', 'and', 'of', 'to', 'a', 'in', 'that', 'is', 'was', 'for',
   'on', 'with', 'as', 'by', 'at', 'from', 'this', 'be', 'or', 'an',
-  'if', 'not', 'you', 'we', 'all', 'our', 'your', 'please', 'if'
+  'if', 'not', 'you', 'we', 'all', 'our', 'your', 'please'
 ];
 
 export function extractStylometricFeatures(text: string): StylometricFeatures {
@@ -155,17 +155,29 @@ export function extractBehaviorFeatures(timestampsIso: string[]): BehaviorFeatur
   };
 }
 
-export function extractGraphFeatures(neighborsA: string[], neighborsB: string[]): GraphFeatures {
+/**
+ * Computes exact Adamic-Adar Index:
+ * AA(A, B) = \sum_{z \in \Gamma(A) \cap \Gamma(B)} \frac{1}{\ln(\deg(z))}
+ * where \deg(z) is the actual graph degree of common neighbor z.
+ */
+export function extractGraphFeatures(
+  neighborsA: string[],
+  neighborsB: string[],
+  neighborDegreesMap: Record<string, number> = {}
+): GraphFeatures {
   const setA = new Set(neighborsA);
   const setB = new Set(neighborsB);
   const common = neighborsA.filter((n) => setB.has(n));
   const union = new Set([...neighborsA, ...neighborsB]);
 
   const jaccard = union.size > 0 ? common.length / union.size : 0;
-  // Adamic-Adar: sum 1 / log(|N(w)|)
+  
   let adamicAdar = 0;
-  for (const c of common) {
-    adamicAdar += 1 / Math.log(Math.max(2, 3)); // placeholder log degree
+  for (const z of common) {
+    const deg = neighborDegreesMap[z] || 2; // actual degree passed via graph map
+    if (deg > 1) {
+      adamicAdar += 1 / Math.log(deg);
+    }
   }
 
   return {
@@ -174,49 +186,4 @@ export function extractGraphFeatures(neighborsA: string[], neighborsB: string[])
     jaccardSimilarity: parseFloat(jaccard.toFixed(4)),
     adamicAdarIndex: parseFloat(adamicAdar.toFixed(4)),
   };
-}
-
-// CLI runner to process fixtures into research-data/processed/
-if (process.argv[1] && process.argv[1].includes('extract_features')) {
-  console.log('============================================================');
-  console.log('WOLVERINE INTELLIGENCE — FEATURE EXTRACTION PIPELINE');
-  console.log('============================================================\n');
-
-  const baseDir = path.resolve('research-data');
-
-  // 1. Process VeriDark text pairs
-  const veridarkFixtures = path.join(baseDir, 'veridark', 'fixtures', 'sample-authorship-pairs.json');
-  if (fs.existsSync(veridarkFixtures)) {
-    const pairs = JSON.parse(fs.readFileSync(veridarkFixtures, 'utf8'));
-    const processedPairs = pairs.map((p: any) => {
-      const featA = extractStylometricFeatures(p.text_sample_a);
-      const featB = extractStylometricFeatures(p.text_sample_b);
-      return {
-        pairId: p.pair_id,
-        authorA: p.author_a,
-        authorB: p.author_b,
-        sameAuthor: p.same_author,
-        featuresA: featA,
-        featuresB: featB,
-      };
-    });
-    const outPath = path.join(baseDir, 'veridark', 'processed', 'authorship-feature-pairs.json');
-    fs.writeFileSync(outPath, JSON.stringify(processedPairs, null, 2) + '\n', 'utf8');
-    console.log(`• Extracted stylometric features for ${pairs.length} VeriDark text pairs -> ${path.relative(process.cwd(), outPath)}`);
-  }
-
-  // 2. Process Evolution timestamps
-  const evoListings = path.join(baseDir, 'evolution', 'fixtures', 'sample-listings.json');
-  if (fs.existsSync(evoListings)) {
-    const listings = JSON.parse(fs.readFileSync(evoListings, 'utf8'));
-    const timestamps = listings.map((l: any) => l.timestamp);
-    const behaviorFeats = extractBehaviorFeatures(timestamps);
-    const outPath = path.join(baseDir, 'evolution', 'processed', 'vendor-behavior-features.json');
-    fs.writeFileSync(outPath, JSON.stringify(behaviorFeats, null, 2) + '\n', 'utf8');
-    console.log(`• Extracted behavioral features for Evolution vendor timestamps -> ${path.relative(process.cwd(), outPath)}`);
-  }
-
-  console.log('\n============================================================');
-  console.log('FEATURE EXTRACTION COMPLETE: Deterministic artifacts saved.');
-  console.log('============================================================');
 }

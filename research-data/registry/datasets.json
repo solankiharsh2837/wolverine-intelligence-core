@@ -1,49 +1,49 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "domain": "RESEARCH_DATA_LAKE",
   "datasets": [
     {
       "id": "evolution-2014-2015",
-      "name": "Evolution Marketplace Archive (2014-2015)",
+      "name": "A large-scale longitudinal structured dataset of the dark web cryptomarket Evolution (2014-2015)",
       "version": "1.0.0",
-      "status": "ACQUIRED_BENCHMARK_FIXTURE",
-      "officialSource": "Gwern Branwen Darknet Market Archives (2011-2015) / Academic Dumps",
-      "sourceUrl": "https://gwern.net/dnb-evolution",
-      "accessMethod": "Academic torrent archive and public research mirrored dumps",
-      "license": "Research Use / Public Historical Archive",
-      "format": "JSON / CSV / SQLite",
-      "modality": "Marketplace listings, vendor feedback, price histories, buyer feedback",
+      "status": "ACQUIRED_RAW_ARCHIVE",
+      "officialSource": "Boekhout, Blokland, Takes (Universiteit Leiden / NSCR), Zenodo DOI: 10.5281/zenodo.10156522",
+      "sourceUrl": "https://zenodo.org/records/10156522",
+      "downloadUrl": "https://zenodo.org/api/records/10156522/files/data-and-readme.zip/content",
+      "license": "CC-BY-4.0",
+      "format": "ZIP / CSV / Network Snapshot",
+      "modality": "Marketplace listings, vendor feedback, communication network",
       "primaryUses": [
-        "behavioral_profiling",
+        "marketplace_behavior_profiling",
         "temporal_activity_distribution",
-        "marketplace_graph_linkage",
+        "vendor_communication_graph",
         "synthetic_calibration"
       ],
-      "limitations": "Historical data (2014-2015), single marketplace schema, anonymized transaction amounts",
-      "privacyConcerns": "Potential residual PII in unstructured buyer feedback and listing descriptions",
-      "leakageMitigation": "Vendor-disjoint splits and temporal cutoff windows"
+      "limitations": "Evolution market timeframe (2014-2015); vendor aliases are historical",
+      "privacyConcerns": "Public historical darknet archive; carding and illicit listings",
+      "leakageMitigation": "Vendor-disjoint splits and forward temporal cutoff windows"
     },
     {
       "id": "veridark-authorship",
-      "name": "VeriDark Authorship Verification Dataset",
+      "name": "VeriDark Authorship Verification Benchmark (SilkRoad1/Agora/DarkReddit+)",
       "version": "1.0.0",
-      "status": "ACQUIRED_BENCHMARK_FIXTURE",
-      "officialSource": "Darknet Forum Stylometry Research Corpus",
-      "sourceUrl": "https://veridark.nlp.corpus/v1",
-      "accessMethod": "Academic NLP and cyber threat intelligence research repositories",
-      "license": "CC BY-NC 4.0",
+      "status": "ACCESS_RESTRICTED",
+      "officialSource": "Manolache, Brad, Barbalau, Ionescu, Popescu (Bitdefender / Univ. of Bucharest), NeurIPS 2022",
+      "sourceUrl": "https://zenodo.org/record/6998371",
+      "doi": "10.5281/zenodo.6998371",
+      "accessProcedure": "Submit access request via Zenodo record 6998371; governed by restricted research access",
+      "license": "Restricted Research License",
       "format": "JSONL / Text Pairs",
-      "modality": "Forum posts, message threads, author ID pairs",
+      "modality": "Forum post pairs, author verification ground-truth labels",
       "primaryUses": [
         "stylometric_feature_extraction",
         "authorship_verification",
-        "classical_baseline_training",
-        "cross_author_split_evaluation"
+        "author_disjoint_split_evaluation"
       ],
-      "limitations": "English and Cyrillic transliterated text dominance, varying text sample lengths",
-      "privacyConcerns": "Scraped darknet forum posts; strict redaction of handle identities during feature extraction",
-      "leakageMitigation": "Strict author-level disjoint partitioning (train authors != test authors)"
+      "limitations": "Restricted raw dataset on Zenodo requiring author approval",
+      "privacyConcerns": "Darknet forum text scraped from historical underground boards",
+      "leakageMitigation": "Strict author-disjoint splits (train authors != test authors)"
     },
     {
       "id": "nict-darknet-2022",
@@ -52,38 +52,44 @@
       "status": "ACCESS_RESTRICTED",
       "officialSource": "National Institute of Information and Communications Technology (NICT), Japan",
       "sourceUrl": "https://www.nict.go.jp/en/cyber/darknet/",
-      "accessMethod": "Formal application submitted to NICT Cybersecurity Nexus; requires Institutional NDA",
+      "accessProcedure": "Formal email application to nicter-sec@ml.nict.go.jp; requires Institutional NDA",
       "license": "Strict Academic Non-Commercial NDA",
-      "format": "PCAP (packet headers) / Flow CSV summaries",
+      "format": "CSV (TCP-SYN packets)",
       "modality": "Telescope darknet passive sensor network traffic",
+      "officialSchema": [
+        "timestamp",
+        "hash[ip.src.upper16]",
+        "hash[ip.src.32]",
+        "ip.dst.lower16",
+        "tcp.dstport"
+      ],
       "primaryUses": [
         "infrastructure_scanning_profiling",
-        "network_telemetry_feature_engineering",
+        "port_distribution_analysis",
         "temporal_scan_cadence_calibration"
       ],
-      "limitations": "Strictly transport-layer network packets; zero application-layer content, zero actor identities",
-      "privacyConcerns": "Payload stripped; IP addresses anonymized by NICT prior to distribution",
-      "leakageMitigation": "Temporal-window partitioning across distinct sensor subnet ranges"
+      "limitations": "Zero application-layer content, zero actor identities, raw IP addresses hashed by NICT",
+      "privacyConcerns": "Strictly hashed source IP prefixes; no unredacted telemetry",
+      "leakageMitigation": "Sensor subnet and time-window partitioning"
     },
     {
       "id": "darknet-surfing-corpus",
       "name": "Darknet Surfing Corpus",
       "version": "1.0.0",
       "status": "PENDING_INSTITUTIONAL_ACCESS",
-      "officialSource": "Academic Tor Web-Crawl Link Topology Initiative",
+      "officialSource": "Darknet Surfing Research Initiative",
       "sourceUrl": "https://darknetsurfing.org/archive",
-      "accessMethod": "Direct researcher credential application / institutional repository transfer",
+      "accessProcedure": "Institutional credential verification pending",
       "license": "Academic Research License",
       "format": "JSON Lines (JSONL)",
-      "modality": "Hidden service HTML bodies, inbound/outbound onion hyperlink graph",
+      "modality": "Hidden service HTML bodies, onion hyperlink graph",
       "primaryUses": [
         "ecosystem_topology_mapping",
-        "infrastructure_link_analysis",
-        "lexical_vocabulary_profiling"
+        "infrastructure_link_analysis"
       ],
-      "limitations": "Static snapshots of dynamic onion services; dead links on deprecated v2 onions",
-      "privacyConcerns": "Unfiltered web crawls; risk of containing illicit material requiring hash-only retention",
-      "leakageMitigation": "Connected-component disjoint graph partitioning"
+      "limitations": "Static snapshot of dynamic hidden services",
+      "privacyConcerns": "Unfiltered crawl data requiring hash-only retention",
+      "leakageMitigation": "Connected-component graph partitioning"
     }
   ]
 }

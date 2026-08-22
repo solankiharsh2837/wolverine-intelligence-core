@@ -11,14 +11,14 @@ test('4. Dataset Profiling & Quality Metrics', async (t) => {
     assert.ok(fs.existsSync(reportPath), 'Evolution listing profile report must exist');
 
     const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
-    assert.equal(report.rowCount, 3);
-    assert.ok(report.fields.item_id);
-    assert.equal(report.fields.item_id.nullRate, '0.0000');
+    assert.equal(report.rowCount, 5, 'Should profile 5 real extracted listing records');
+    assert.ok(report.fields.lid);
+    assert.equal(report.fields.lid.nullRate, '0.0000');
     assert.ok(parseFloat(report.textMetrics.avgCharacters) > 0);
   });
 
   await t.test('VeriDark authorship profile metrics', () => {
-    const reportPath = path.join(baseDir, 'veridark', 'reports', 'sample-authorship-pairs.json'.replace('.json', '.profile.json'));
+    const reportPath = path.join(baseDir, 'veridark', 'reports', 'sample-authorship-pairs.profile.json');
     assert.ok(fs.existsSync(reportPath), 'VeriDark profile report must exist');
 
     const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
