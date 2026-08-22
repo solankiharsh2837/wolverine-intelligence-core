@@ -1,0 +1,37 @@
+{
+  "calibrationType": "STYLOMETRIC_TEXT_DISTRIBUTION",
+  "datasetId": "veridark-authorship",
+  "datasetVersion": "1.0.0",
+  "featureVersion": "1.0.0-stylometry",
+  "calculationVersion": "1.0.0",
+  "calculatedAt": "2026-08-22T21:50:00Z",
+  "distributions": {
+    "wordsPerPost": {
+      "mean": 44.8,
+      "std": 26.5,
+      "median": 38,
+      "min": 12,
+      "max": 310
+    },
+    "sentenceLengthChars": {
+      "mean": 82.4,
+      "std": 34.1
+    },
+    "topFunctionWords": {
+      "the": 0.052,
+      "to": 0.038,
+      "and": 0.035,
+      "is": 0.029,
+      "for": 0.025,
+      "you": 0.024,
+      "in": 0.021,
+      "of": 0.019
+    },
+    "punctuationDensity": {
+      "comma": 0.0185,
+      "period": 0.0240,
+      "exclamation": 0.0035,
+      "question": 0.0028
+    }
+  }
+}

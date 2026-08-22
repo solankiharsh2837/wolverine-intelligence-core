@@ -1,0 +1,24 @@
+[
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "darknet-surfing-corpus",
+    "datasetVersion": "1.0.0",
+    "onion_address": "darkmkt777onion.onion",
+    "site_title": "DarkMarket Marketplace Gateway",
+    "category": "Marketplace",
+    "inbound_links": ["oniondir888xyz.onion", "hiddenlinks999.onion"],
+    "outbound_links": ["escrowserv444.onion", "vendorforum333.onion"],
+    "crawled_at": "2026-01-10T12:00:00Z"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "darknet-surfing-corpus",
+    "datasetVersion": "1.0.0",
+    "onion_address": "vendorforum333.onion",
+    "site_title": "Tor Vendor Discussion & Review Forum",
+    "category": "Forum",
+    "inbound_links": ["darkmkt777onion.onion", "oniondir888xyz.onion"],
+    "outbound_links": ["darkmkt777onion.onion", "pgpkeyserver55.onion"],
+    "crawled_at": "2026-01-10T12:30:00Z"
+  }
+]

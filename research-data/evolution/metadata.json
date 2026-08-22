@@ -1,0 +1,27 @@
+{
+  "datasetId": "evolution-2014-2015",
+  "name": "Evolution Marketplace Archive (2014-2015)",
+  "version": "1.0.0",
+  "status": "ACQUIRED_BENCHMARK_FIXTURE",
+  "license": "Research Use / Public Historical Archive",
+  "sourceUrl": "https://gwern.net/dnb-evolution",
+  "schema": {
+    "listings": {
+      "item_id": "string",
+      "vendor_name": "string",
+      "category": "string",
+      "description": "string",
+      "price_btc": "number",
+      "timestamp": "ISO8601"
+    },
+    "vendors": {
+      "vendor_id": "string",
+      "vendor_name": "string",
+      "pgp_fingerprint": "string",
+      "btc_address": "string",
+      "positive_feedback": "number",
+      "negative_feedback": "number",
+      "registered_date": "ISO8601"
+    }
+  }
+}

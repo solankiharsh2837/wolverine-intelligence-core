@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "domain": "RESEARCH_DATA_LAKE",
+  "datasets": [
+    {
+      "id": "evolution-2014-2015",
+      "name": "Evolution Marketplace Archive (2014-2015)",
+      "version": "1.0.0",
+      "status": "ACQUIRED_BENCHMARK_FIXTURE",
+      "officialSource": "Gwern Branwen Darknet Market Archives (2011-2015) / Academic Dumps",
+      "sourceUrl": "https://gwern.net/dnb-evolution",
+      "accessMethod": "Academic torrent archive and public research mirrored dumps",
+      "license": "Research Use / Public Historical Archive",
+      "format": "JSON / CSV / SQLite",
+      "modality": "Marketplace listings, vendor feedback, price histories, buyer feedback",
+      "primaryUses": [
+        "behavioral_profiling",
+        "temporal_activity_distribution",
+        "marketplace_graph_linkage",
+        "synthetic_calibration"
+      ],
+      "limitations": "Historical data (2014-2015), single marketplace schema, anonymized transaction amounts",
+      "privacyConcerns": "Potential residual PII in unstructured buyer feedback and listing descriptions",
+      "leakageMitigation": "Vendor-disjoint splits and temporal cutoff windows"
+    },
+    {
+      "id": "veridark-authorship",
+      "name": "VeriDark Authorship Verification Dataset",
+      "version": "1.0.0",
+      "status": "ACQUIRED_BENCHMARK_FIXTURE",
+      "officialSource": "Darknet Forum Stylometry Research Corpus",
+      "sourceUrl": "https://veridark.nlp.corpus/v1",
+      "accessMethod": "Academic NLP and cyber threat intelligence research repositories",
+      "license": "CC BY-NC 4.0",
+      "format": "JSONL / Text Pairs",
+      "modality": "Forum posts, message threads, author ID pairs",
+      "primaryUses": [
+        "stylometric_feature_extraction",
+        "authorship_verification",
+        "classical_baseline_training",
+        "cross_author_split_evaluation"
+      ],
+      "limitations": "English and Cyrillic transliterated text dominance, varying text sample lengths",
+      "privacyConcerns": "Scraped darknet forum posts; strict redaction of handle identities during feature extraction",
+      "leakageMitigation": "Strict author-level disjoint partitioning (train authors != test authors)"
+    },
+    {
+      "id": "nict-darknet-2022",
+      "name": "NICT Darknet Dataset 2022",
+      "version": "1.0.0",
+      "status": "ACCESS_RESTRICTED",
+      "officialSource": "National Institute of Information and Communications Technology (NICT), Japan",
+      "sourceUrl": "https://www.nict.go.jp/en/cyber/darknet/",
+      "accessMethod": "Formal application submitted to NICT Cybersecurity Nexus; requires Institutional NDA",
+      "license": "Strict Academic Non-Commercial NDA",
+      "format": "PCAP (packet headers) / Flow CSV summaries",
+      "modality": "Telescope darknet passive sensor network traffic",
+      "primaryUses": [
+        "infrastructure_scanning_profiling",
+        "network_telemetry_feature_engineering",
+        "temporal_scan_cadence_calibration"
+      ],
+      "limitations": "Strictly transport-layer network packets; zero application-layer content, zero actor identities",
+      "privacyConcerns": "Payload stripped; IP addresses anonymized by NICT prior to distribution",
+      "leakageMitigation": "Temporal-window partitioning across distinct sensor subnet ranges"
+    },
+    {
+      "id": "darknet-surfing-corpus",
+      "name": "Darknet Surfing Corpus",
+      "version": "1.0.0",
+      "status": "PENDING_INSTITUTIONAL_ACCESS",
+      "officialSource": "Academic Tor Web-Crawl Link Topology Initiative",
+      "sourceUrl": "https://darknetsurfing.org/archive",
+      "accessMethod": "Direct researcher credential application / institutional repository transfer",
+      "license": "Academic Research License",
+      "format": "JSON Lines (JSONL)",
+      "modality": "Hidden service HTML bodies, inbound/outbound onion hyperlink graph",
+      "primaryUses": [
+        "ecosystem_topology_mapping",
+        "infrastructure_link_analysis",
+        "lexical_vocabulary_profiling"
+      ],
+      "limitations": "Static snapshots of dynamic onion services; dead links on deprecated v2 onions",
+      "privacyConcerns": "Unfiltered web crawls; risk of containing illicit material requiring hash-only retention",
+      "leakageMitigation": "Connected-component disjoint graph partitioning"
+    }
+  ]
+}

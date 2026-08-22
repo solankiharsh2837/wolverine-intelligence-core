@@ -1,0 +1,41 @@
+[
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "nict-darknet-2022",
+    "datasetVersion": "1.0.0",
+    "flow_id": "nict_flow_2022_001",
+    "timestamp": "2022-04-12T03:14:22Z",
+    "src_ip_anonymized": "anon_src_subnet_192_02",
+    "dst_port": 443,
+    "protocol": "TCP_SYN",
+    "packet_count": 1,
+    "byte_count": 64,
+    "scan_signature": "MASS_SCAN_PORT_SWEEP"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "nict-darknet-2022",
+    "datasetVersion": "1.0.0",
+    "flow_id": "nict_flow_2022_002",
+    "timestamp": "2022-04-12T03:14:23Z",
+    "src_ip_anonymized": "anon_src_subnet_192_02",
+    "dst_port": 80,
+    "protocol": "TCP_SYN",
+    "packet_count": 1,
+    "byte_count": 64,
+    "scan_signature": "MASS_SCAN_PORT_SWEEP"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "nict-darknet-2022",
+    "datasetVersion": "1.0.0",
+    "flow_id": "nict_flow_2022_003",
+    "timestamp": "2022-04-12T04:22:10Z",
+    "src_ip_anonymized": "anon_src_subnet_104_18",
+    "dst_port": 8080,
+    "protocol": "TCP_SYN",
+    "packet_count": 3,
+    "byte_count": 192,
+    "scan_signature": "MIRAI_PROBING_PATTERN"
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "veridark-authorship",
+    "datasetVersion": "1.0.0",
+    "pair_id": "pair_vd_001",
+    "author_a": "auth_phoenix_tor",
+    "author_b": "auth_phoenix_i2p",
+    "same_author": true,
+    "forum_source_a": "Evolution Market Forums",
+    "forum_source_b": "ShadowChat I2P Board",
+    "text_sample_a": "Our bulletproof proxy nodes are guaranteed 99.9% uptime. If you encounter connectivity degradation, please refresh your SOCKS5 handshake configuration immediately.",
+    "text_sample_b": "As stated previously on our original infrastructure threads, all bulletproof proxy nodes maintain guaranteed 99.9% uptime. Always verify your SOCKS5 handshake configuration."
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "veridark-authorship",
+    "datasetVersion": "1.0.0",
+    "pair_id": "pair_vd_002",
+    "author_a": "auth_phoenix_tor",
+    "author_b": "auth_kestrel_freenet",
+    "same_author": false,
+    "forum_source_a": "Evolution Market Forums",
+    "forum_source_b": "Frost Freenet Message Board",
+    "text_sample_a": "Our bulletproof proxy nodes are guaranteed 99.9% uptime. If you encounter connectivity degradation, please refresh your SOCKS5 handshake configuration immediately.",
+    "text_sample_b": "yo guys check out my new pastebin link for free shell scripts lol works 100% no cap tested on debian 11"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "veridark-authorship",
+    "datasetVersion": "1.0.0",
+    "pair_id": "pair_vd_003",
+    "author_a": "auth_kestrel_freenet",
+    "author_b": "auth_kestrel_zeronet",
+    "same_author": true,
+    "forum_source_a": "Frost Freenet Message Board",
+    "forum_source_b": "ZeroTalk P2P Board",
+    "text_sample_a": "yo guys check out my new pastebin link for free shell scripts lol works 100% no cap tested on debian 11",
+    "text_sample_b": "hey guys drop by my zeronet zite for new shell scripts lol 100% working tested on ubuntu 22"
+  }
+]

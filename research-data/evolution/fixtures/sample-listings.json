@@ -1,0 +1,44 @@
+[
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "sourceFile": "evolution_listings_2014_dump.csv",
+    "sourceRow": 1042,
+    "item_id": "evo_item_1042",
+    "vendor_name": "DarkPhoenix",
+    "category": "Digital / Security Services",
+    "title": "Bulletproof Fast-Flux VPN & SOCKS5 Proxy Cluster - 30 Day Access",
+    "description": "High anonymity bulletproof proxies. Zero logs kept. Encrypted configuration delivered via PGP key 0x98A172BC9B78EF12. 99.9% guaranteed uptime.",
+    "price_btc": 0.045,
+    "timestamp": "2014-11-15T14:20:00Z"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "sourceFile": "evolution_listings_2014_dump.csv",
+    "sourceRow": 2189,
+    "item_id": "evo_item_2189",
+    "vendor_name": "DarkPhoenix",
+    "category": "Digital / Security Services",
+    "title": "Automated Tor Hidden Service Deployment Scripts & Hardened Nginx",
+    "description": "Automated server setup script with hardened sysctl and custom cryptographic configs. Contact via PGP for bulk discounts.",
+    "price_btc": 0.080,
+    "timestamp": "2014-12-02T18:45:00Z"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "sourceFile": "evolution_listings_2014_dump.csv",
+    "sourceRow": 3410,
+    "item_id": "evo_item_3410",
+    "vendor_name": "ShadowVendorX",
+    "category": "Hardware / Security Tokens",
+    "title": "Hardened Hardware Security Keys with Custom Firmware",
+    "description": "Tamper-evident hardware keys. Ships worldwide with stealth packaging.",
+    "price_btc": 0.150,
+    "timestamp": "2015-01-10T09:12:00Z"
+  }
+]

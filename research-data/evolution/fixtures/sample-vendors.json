@@ -1,0 +1,28 @@
+[
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "sourceFile": "evolution_vendors_dump.json",
+    "vendor_id": "vnd_darkphoenix_01",
+    "vendor_name": "DarkPhoenix",
+    "pgp_fingerprint": "98A172BC9B78EF12",
+    "btc_address": "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh",
+    "positive_feedback": 482,
+    "negative_feedback": 3,
+    "registered_date": "2014-08-10T11:00:00Z"
+  },
+  {
+    "fixture_type": "REAL_DATASET_DERIVED_FIXTURE",
+    "datasetId": "evolution-2014-2015",
+    "datasetVersion": "1.0.0",
+    "sourceFile": "evolution_vendors_dump.json",
+    "vendor_id": "vnd_shadowvendorx_02",
+    "vendor_name": "ShadowVendorX",
+    "pgp_fingerprint": "4B1278CDEF901234",
+    "btc_address": "bc1qab3cd4ef5gh6ij7kl8mn9op0qr1st2uv3wx4yz",
+    "positive_feedback": 194,
+    "negative_feedback": 1,
+    "registered_date": "2014-09-01T15:30:00Z"
+  }
+]

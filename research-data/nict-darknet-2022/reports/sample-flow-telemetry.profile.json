@@ -1,0 +1,94 @@
+{
+  "dataset": "nict-darknet-2022",
+  "fixtureFile": "sample-flow-telemetry.json",
+  "profiledAt": "2026-08-22T16:19:48.222Z",
+  "rowCount": 3,
+  "fields": {
+    "fixture_type": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetId": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetVersion": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "flow_id": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "timestamp": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "src_ip_anonymized": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "dst_port": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "protocol": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "packet_count": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "byte_count": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "scan_signature": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    }
+  },
+  "textMetrics": {
+    "minCharacters": 0,
+    "maxCharacters": 0,
+    "avgCharacters": 0
+  },
+  "temporalMetrics": {
+    "firstTimestamp": "2022-04-12T03:14:22Z",
+    "lastTimestamp": "2022-04-12T04:22:10Z"
+  }
+}

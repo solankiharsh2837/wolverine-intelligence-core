@@ -1,0 +1,36 @@
+{
+  "featureVersion": "1.0.0-behavior",
+  "timeOfDayHistogram24": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0.3333,
+    0,
+    0,
+    0,
+    0,
+    0.3333,
+    0,
+    0,
+    0,
+    0.3333,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "interEventStatsHours": {
+    "mean": 669.43,
+    "std": 257.02,
+    "min": 412.42,
+    "max": 926.45
+  },
+  "cadenceWeekly": 0.38
+}

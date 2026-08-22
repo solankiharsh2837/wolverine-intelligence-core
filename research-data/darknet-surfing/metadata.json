@@ -1,0 +1,16 @@
+{
+  "datasetId": "darknet-surfing-corpus",
+  "name": "Darknet Surfing Corpus",
+  "version": "1.0.0",
+  "status": "PENDING_INSTITUTIONAL_ACCESS",
+  "license": "Academic Research License",
+  "sourceUrl": "https://darknetsurfing.org/archive",
+  "schema": {
+    "onion_address": "string",
+    "site_title": "string",
+    "category": "string",
+    "inbound_links": "array(string)",
+    "outbound_links": "array(string)",
+    "crawled_at": "ISO8601"
+  }
+}

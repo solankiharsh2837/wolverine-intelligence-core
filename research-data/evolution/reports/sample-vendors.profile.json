@@ -1,0 +1,94 @@
+{
+  "dataset": "evolution",
+  "fixtureFile": "sample-vendors.json",
+  "profiledAt": "2026-08-22T16:19:48.219Z",
+  "rowCount": 2,
+  "fields": {
+    "fixture_type": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetId": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetVersion": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "sourceFile": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "vendor_id": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "vendor_name": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "pgp_fingerprint": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "btc_address": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "positive_feedback": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "negative_feedback": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "registered_date": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    }
+  },
+  "textMetrics": {
+    "minCharacters": 0,
+    "maxCharacters": 0,
+    "avgCharacters": 0
+  },
+  "temporalMetrics": {
+    "firstTimestamp": "2014-08-10T11:00:00Z",
+    "lastTimestamp": "2014-09-01T15:30:00Z"
+  }
+}

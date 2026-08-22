@@ -44,27 +44,22 @@ npm run db:generate
 npm run db:seed
 ```
 
-### Step 7: Run Automated Verification Tests
+### Step 7: Research Data Lake Verification & Profiling
 ```bash
-npm run db:test
+npm run dataset:status
+npm run dataset:verify
+npm run dataset:profile
+npm run features:extract
 ```
 
-### Step 8: Inspect Database Records & Master Trace
+### Step 8: Run Complete Automated Test Suite
 ```bash
-npm run db:inspect
+npm test
+# Runs both tests/database/*.test.ts and tests/research-data/*.test.ts
 ```
 
 ### Step 9: Launch Prisma Studio GUI
 ```bash
 npm run db:studio
 # Open browser at http://localhost:5555
-```
-
----
-
-## 3. Database Reset (Clean Slate)
-To reset the development database to a clean state:
-```bash
-npx prisma migrate reset --force
-npm run db:seed
 ```

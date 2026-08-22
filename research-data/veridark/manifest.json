@@ -1,0 +1,21 @@
+{
+  "datasetId": "veridark-authorship",
+  "datasetVersion": "1.0.0",
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-08-22T16:19:22.546Z",
+  "files": [
+    {
+      "filename": "sample-authorship-pairs.json",
+      "relativePath": "fixtures/sample-authorship-pairs.json",
+      "sizeBytes": 2031,
+      "sha256": "sha256-432df2d00d7ee214a1526a95033fbaae97854d7f54bc65de4e2a0d47016acccc",
+      "mimeType": "application/json",
+      "compression": "none",
+      "retrievedAt": "2026-08-22T16:19:22.546Z",
+      "sourceUrl": "https://veridark.nlp.corpus/v1",
+      "verified": true
+    }
+  ],
+  "parserVersion": "1.0.0",
+  "profileVersion": "1.0.0"
+}

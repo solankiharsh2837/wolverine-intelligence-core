@@ -1,0 +1,94 @@
+{
+  "dataset": "veridark",
+  "fixtureFile": "sample-authorship-pairs.json",
+  "profiledAt": "2026-08-22T16:19:48.220Z",
+  "rowCount": 3,
+  "fields": {
+    "fixture_type": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetId": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetVersion": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "pair_id": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "author_a": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "author_b": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "same_author": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "boolean"
+      ]
+    },
+    "forum_source_a": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "forum_source_b": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "text_sample_a": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "text_sample_b": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    }
+  },
+  "textMetrics": {
+    "minCharacters": 91,
+    "maxCharacters": 173,
+    "avgCharacters": "132.7"
+  },
+  "temporalMetrics": {
+    "firstTimestamp": null,
+    "lastTimestamp": null
+  }
+}

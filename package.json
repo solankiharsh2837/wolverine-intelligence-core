@@ -16,7 +16,12 @@
     "db:backup": "powershell -ExecutionPolicy Bypass -File scripts/db_backup.ps1",
     "db:restore": "powershell -ExecutionPolicy Bypass -File scripts/db_restore.ps1",
     "db:test": "tsx --test --test-concurrency=1 tests/database/*.test.ts",
-    "test": "npm run db:test",
+    "test:research": "tsx --test --test-concurrency=1 tests/research-data/*.test.ts",
+    "dataset:status": "tsx scripts/dataset_status.ts",
+    "dataset:verify": "tsx scripts/dataset_verify.ts",
+    "dataset:profile": "tsx scripts/dataset_profile.ts",
+    "features:extract": "tsx scripts/features/extract_features.ts",
+    "test": "npm run db:test && npm run test:research",
     "build": "tsc"
   },
   "prisma": {
@@ -27,7 +32,8 @@
     "darknet",
     "attribution",
     "prisma",
-    "wolverine"
+    "wolverine",
+    "research-data"
   ],
   "author": "Google DeepMind Advanced Agentic Coding",
   "license": "UNLICENSED",

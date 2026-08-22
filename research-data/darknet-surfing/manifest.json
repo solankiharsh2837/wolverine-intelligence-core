@@ -1,0 +1,21 @@
+{
+  "datasetId": "darknet-surfing-corpus",
+  "datasetVersion": "1.0.0",
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-08-22T16:19:22.551Z",
+  "files": [
+    {
+      "filename": "sample-crawl-graph.json",
+      "relativePath": "fixtures/sample-crawl-graph.json",
+      "sizeBytes": 900,
+      "sha256": "sha256-29891383eca7490b7c5ed002b5366292a7aacb572d8db2b2aad9ea690fabc199",
+      "mimeType": "application/json",
+      "compression": "none",
+      "retrievedAt": "2026-08-22T16:19:22.551Z",
+      "sourceUrl": "https://darknetsurfing.org/archive",
+      "verified": true
+    }
+  ],
+  "parserVersion": "1.0.0",
+  "profileVersion": "1.0.0"
+}

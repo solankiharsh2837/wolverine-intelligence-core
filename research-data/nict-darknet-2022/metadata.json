@@ -1,0 +1,19 @@
+{
+  "datasetId": "nict-darknet-2022",
+  "name": "NICT Darknet Dataset 2022",
+  "version": "1.0.0",
+  "status": "ACCESS_RESTRICTED",
+  "license": "Strict Academic Non-Commercial NDA",
+  "sourceUrl": "https://www.nict.go.jp/en/cyber/darknet/",
+  "accessProcedure": "Submit formal research proposal via NICT Cybersecurity Research Center. Access requires institutional signing of non-disclosure and secure data transfer protocols.",
+  "schema": {
+    "flow_id": "string",
+    "timestamp": "ISO8601",
+    "src_ip_anonymized": "string",
+    "dst_port": "number",
+    "protocol": "string",
+    "packet_count": "number",
+    "byte_count": "number",
+    "scan_signature": "string"
+  }
+}

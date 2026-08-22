@@ -1,0 +1,80 @@
+{
+  "dataset": "darknet-surfing",
+  "fixtureFile": "sample-crawl-graph.json",
+  "profiledAt": "2026-08-22T16:19:48.223Z",
+  "rowCount": 2,
+  "fields": {
+    "fixture_type": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetId": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetVersion": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "onion_address": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "site_title": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "category": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "inbound_links": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "object"
+      ]
+    },
+    "outbound_links": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "object"
+      ]
+    },
+    "crawled_at": {
+      "presentCount": 2,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    }
+  },
+  "textMetrics": {
+    "minCharacters": 30,
+    "maxCharacters": 36,
+    "avgCharacters": "33.0"
+  },
+  "temporalMetrics": {
+    "firstTimestamp": null,
+    "lastTimestamp": null
+  }
+}

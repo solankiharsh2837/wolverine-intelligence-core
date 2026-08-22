@@ -1,0 +1,21 @@
+{
+  "datasetId": "nict-darknet-2022",
+  "datasetVersion": "1.0.0",
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-08-22T16:19:22.548Z",
+  "files": [
+    {
+      "filename": "sample-flow-telemetry.json",
+      "relativePath": "fixtures/sample-flow-telemetry.json",
+      "sizeBytes": 1197,
+      "sha256": "sha256-2089f32dfa7263d77eff7f2db8782b8c45189276dee5bb8f4769d1042ffc2918",
+      "mimeType": "application/json",
+      "compression": "none",
+      "retrievedAt": "2026-08-22T16:19:22.548Z",
+      "sourceUrl": "https://www.nict.go.jp/en/cyber/darknet/",
+      "verified": true
+    }
+  ],
+  "parserVersion": "1.0.0",
+  "profileVersion": "1.0.0"
+}

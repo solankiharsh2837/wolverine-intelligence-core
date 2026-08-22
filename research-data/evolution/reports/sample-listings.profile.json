@@ -1,0 +1,101 @@
+{
+  "dataset": "evolution",
+  "fixtureFile": "sample-listings.json",
+  "profiledAt": "2026-08-22T16:19:48.217Z",
+  "rowCount": 3,
+  "fields": {
+    "fixture_type": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetId": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "datasetVersion": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "sourceFile": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "sourceRow": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "item_id": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "vendor_name": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "category": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "title": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "description": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    },
+    "price_btc": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "number"
+      ]
+    },
+    "timestamp": {
+      "presentCount": 3,
+      "nullRate": "0.0000",
+      "types": [
+        "string"
+      ]
+    }
+  },
+  "textMetrics": {
+    "minCharacters": 52,
+    "maxCharacters": 142,
+    "avgCharacters": "85.2"
+  },
+  "temporalMetrics": {
+    "firstTimestamp": "2014-11-15T14:20:00Z",
+    "lastTimestamp": "2015-01-10T09:12:00Z"
+  }
+}

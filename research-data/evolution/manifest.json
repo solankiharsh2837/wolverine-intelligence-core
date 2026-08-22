@@ -1,0 +1,32 @@
+{
+  "datasetId": "evolution-2014-2015",
+  "datasetVersion": "1.0.0",
+  "manifestVersion": "1.0.0",
+  "generatedAt": "2026-08-22T16:19:22.542Z",
+  "files": [
+    {
+      "filename": "sample-listings.json",
+      "relativePath": "fixtures/sample-listings.json",
+      "sizeBytes": 1794,
+      "sha256": "sha256-aa0750c056025b6f98076a93df8baab04d5ecc049b392ec6fa22f6131042f52a",
+      "mimeType": "application/json",
+      "compression": "none",
+      "retrievedAt": "2026-08-22T16:19:22.541Z",
+      "sourceUrl": "https://gwern.net/dnb-evolution",
+      "verified": true
+    },
+    {
+      "filename": "sample-vendors.json",
+      "relativePath": "fixtures/sample-vendors.json",
+      "sizeBytes": 940,
+      "sha256": "sha256-159fa1148d0300928cfc0b2bee7a9cc370d163c8169e8586966b3107fe340386",
+      "mimeType": "application/json",
+      "compression": "none",
+      "retrievedAt": "2026-08-22T16:19:22.542Z",
+      "sourceUrl": "https://gwern.net/dnb-evolution",
+      "verified": true
+    }
+  ],
+  "parserVersion": "1.0.0",
+  "profileVersion": "1.0.0"
+}

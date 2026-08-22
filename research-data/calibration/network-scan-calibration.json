@@ -1,0 +1,24 @@
+{
+  "calibrationType": "NETWORK_TELEMETRY_DISTRIBUTION",
+  "datasetId": "nict-darknet-2022",
+  "datasetVersion": "1.0.0",
+  "featureVersion": "1.0.0-network",
+  "calculationVersion": "1.0.0",
+  "calculatedAt": "2026-08-22T21:50:00Z",
+  "distributions": {
+    "targetedPortDistribution": {
+      "443": 0.415,
+      "80": 0.308,
+      "8080": 0.138,
+      "22": 0.075,
+      "23": 0.042,
+      "other": 0.022
+    },
+    "protocolShare": {
+      "TCP_SYN": 0.942,
+      "UDP": 0.048,
+      "ICMP": 0.010
+    },
+    "burstPacketCountMean": 1.45
+  }
+}

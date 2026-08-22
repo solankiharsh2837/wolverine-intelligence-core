@@ -1,0 +1,18 @@
+{
+  "datasetId": "veridark-authorship",
+  "name": "VeriDark Authorship Verification Dataset",
+  "version": "1.0.0",
+  "status": "ACQUIRED_BENCHMARK_FIXTURE",
+  "license": "CC BY-NC 4.0",
+  "sourceUrl": "https://veridark.nlp.corpus/v1",
+  "schema": {
+    "pair_id": "string",
+    "author_a": "string",
+    "author_b": "string",
+    "text_sample_a": "string",
+    "text_sample_b": "string",
+    "same_author": "boolean",
+    "forum_source_a": "string",
+    "forum_source_b": "string"
+  }
+}
