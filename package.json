@@ -33,6 +33,7 @@
     "attribution:explain": "tsx scripts/attribution_explain.ts",
     "attribution:status": "tsx scripts/attribution_status.ts",
     "attribution:4d:audit": "tsx scripts/attribution_4d_audit.ts",
+    "attribution:4d:sensitivity": "tsx scripts/attribution_4d_sensitivity.ts",
     "test": "npm run db:test && npm run test:research && npm run test:behavior && npm run test:attribution",
     "build": "tsc"
   },
