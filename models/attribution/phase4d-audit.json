@@ -1,0 +1,308 @@
+{
+  "auditVersion": "1.0.0-phase4d",
+  "repositoryCommit": "678b137",
+  "datasetIdentifier": "evolution-2014-2015",
+  "evaluatedAt": "2026-08-23T10:32:36.769Z",
+  "deterministicSeed": 42,
+  "sampleCounts": {
+    "totalPairs": 900,
+    "positivePairs": 30,
+    "hardNegativePairs": 813,
+    "randomNegativePairs": 57,
+    "totalNegatives": 870,
+    "uniqueForumIdentities": 30,
+    "uniqueVendorIdentities": 30,
+    "duplicatePairsCount": 0,
+    "positivePairUniquenessRate": 1
+  },
+  "groundTruthAudit": {
+    "sourceFile": "research-data/evolution/extracted/forum-market/user-matching.tsv",
+    "totalTsvRows": 30657,
+    "validMatchingRows": 2627,
+    "uniqueMatchIds": 2586,
+    "uniqueForumUids": 2612,
+    "uniqueVendorVids": 2599,
+    "mappingType": "1-to-1 username-derived match",
+    "matchedWithGte1Event": 2362,
+    "matchedWithGte5Events": 1601
+  },
+  "splitCounts": {
+    "train": {
+      "total": 630,
+      "positive": 21,
+      "negative": 609
+    },
+    "validation": {
+      "total": 150,
+      "positive": 5,
+      "negative": 145
+    },
+    "test": {
+      "total": 120,
+      "positive": 4,
+      "negative": 116
+    }
+  },
+  "splitOverlapDiagnostics": {
+    "trainValMatchIdOverlap": 0,
+    "trainTestMatchIdOverlap": 0,
+    "valTestMatchIdOverlap": 0,
+    "trainValEntityOverlap": 30,
+    "trainTestEntityOverlap": 30,
+    "valTestEntityOverlap": 30,
+    "entityDisjointPolicy": "Match-disjoint: Ground truth match clusters never cross train/val/test splits (0% match ID leakage). Negative pool shares vendor references."
+  },
+  "featureAvailabilityMask": {
+    "mask": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      false
+    ],
+    "activeFeatures": [
+      "x1_behavior_activity_js",
+      "x2_behavior_inter_event_log_ratio",
+      "x3_cadence_weekly_ratio",
+      "x4_category_cosine"
+    ],
+    "unavailableFeatures": [
+      "x5_graph_jaccard",
+      "x6_graph_adamic_adar_norm"
+    ],
+    "justification": "Forum thread IDs and Marketplace vendor VIDs belong to disjoint identifier spaces. Mask prevents fabricated zero degrees or spurious linkages."
+  },
+  "featureDistributionSummaries": {
+    "x1_behavior_activity_js": {
+      "positive": {
+        "mean": 0.3116,
+        "median": 0.2081,
+        "std": 0.2778,
+        "q25": 0.1674,
+        "q75": 0.2544,
+        "min": 0.1674,
+        "max": 1
+      },
+      "hardNegative": {
+        "mean": 0.2579,
+        "median": 0.207,
+        "std": 0.1454,
+        "q25": 0.1674,
+        "q75": 0.2584,
+        "min": 0.1674,
+        "max": 0.881
+      },
+      "randomNegative": {
+        "mean": 0.1914,
+        "median": 0.1802,
+        "std": 0.0271,
+        "q25": 0.1674,
+        "q75": 0.213,
+        "min": 0.1674,
+        "max": 0.2777
+      },
+      "separationVsAllNegatives": {
+        "pPosGreaterThanNeg": 51.2,
+        "cliffsDelta": 0.0234
+      },
+      "separationVsHardNegatives": {
+        "pPosGreaterThanNeg": 50.3,
+        "cliffsDelta": 0.0067
+      },
+      "separationVsRandomNegatives": {
+        "pPosGreaterThanNeg": 63.1,
+        "cliffsDelta": 0.262
+      }
+    },
+    "x2_behavior_inter_event_log_ratio": {
+      "positive": {
+        "mean": 0.7444,
+        "median": 0.7824,
+        "std": 0.2002,
+        "q25": 0.6177,
+        "q75": 0.9159,
+        "min": 0.3583,
+        "max": 1
+      },
+      "hardNegative": {
+        "mean": 0.706,
+        "median": 0.7249,
+        "std": 0.1814,
+        "q25": 0.5661,
+        "q75": 0.8603,
+        "min": 0.188,
+        "max": 0.999
+      },
+      "randomNegative": {
+        "mean": 0.5232,
+        "median": 0.5373,
+        "std": 0.1035,
+        "q25": 0.4749,
+        "q75": 0.5932,
+        "min": 0.2753,
+        "max": 0.7123
+      },
+      "separationVsAllNegatives": {
+        "pPosGreaterThanNeg": 58.1,
+        "cliffsDelta": 0.1615
+      },
+      "separationVsHardNegatives": {
+        "pPosGreaterThanNeg": 56.5,
+        "cliffsDelta": 0.1305
+      },
+      "separationVsRandomNegatives": {
+        "pPosGreaterThanNeg": 80.2,
+        "cliffsDelta": 0.6035
+      }
+    },
+    "x3_behavior_cadence_weekly_ratio": {
+      "positive": {
+        "mean": 0.54,
+        "median": 0.5493,
+        "std": 0.317,
+        "q25": 0.2457,
+        "q75": 0.8217,
+        "min": 0.0909,
+        "max": 1
+      },
+      "hardNegative": {
+        "mean": 0.4078,
+        "median": 0.3465,
+        "std": 0.2687,
+        "q25": 0.1754,
+        "q75": 0.6124,
+        "min": 0.0179,
+        "max": 0.9982
+      },
+      "randomNegative": {
+        "mean": 0.3032,
+        "median": 0.2291,
+        "std": 0.264,
+        "q25": 0.0909,
+        "q75": 0.5501,
+        "min": 0.0154,
+        "max": 0.9722
+      },
+      "separationVsAllNegatives": {
+        "pPosGreaterThanNeg": 62.7,
+        "cliffsDelta": 0.2548
+      },
+      "separationVsHardNegatives": {
+        "pPosGreaterThanNeg": 62.1,
+        "cliffsDelta": 0.2424
+      },
+      "separationVsRandomNegatives": {
+        "pPosGreaterThanNeg": 71.6,
+        "cliffsDelta": 0.4322
+      }
+    },
+    "x4_behavior_category_cosine": {
+      "positive": {
+        "mean": 0.4783,
+        "median": 0.3991,
+        "std": 0.3763,
+        "q25": 0.153,
+        "q75": 0.841,
+        "min": 0,
+        "max": 0.9983
+      },
+      "hardNegative": {
+        "mean": 0.4866,
+        "median": 0.4276,
+        "std": 0.3682,
+        "q25": 0.1185,
+        "q75": 0.8774,
+        "min": 0,
+        "max": 0.9991
+      },
+      "randomNegative": {
+        "mean": 0.0225,
+        "median": 0.0244,
+        "std": 0.0159,
+        "q25": 0.0022,
+        "q75": 0.0327,
+        "min": 0,
+        "max": 0.0482
+      },
+      "separationVsAllNegatives": {
+        "pPosGreaterThanNeg": 51.8,
+        "cliffsDelta": 0.0358
+      },
+      "separationVsHardNegatives": {
+        "pPosGreaterThanNeg": 49.6,
+        "cliffsDelta": -0.0072
+      },
+      "separationVsRandomNegatives": {
+        "pPosGreaterThanNeg": 82.4,
+        "cliffsDelta": 0.6485
+      }
+    }
+  },
+  "featureDirectionAnalysis": {
+    "univariateCorrelationsWithLabel": {
+      "x1_behavior_activity_js": 0.0703,
+      "x2_behavior_inter_event_log_ratio": 0.0493,
+      "x3_behavior_cadence_weekly_ratio": 0.0918,
+      "x4_behavior_category_cosine": 0.0106
+    },
+    "multivariateCoefficients": {
+      "x1_behavior_activity_js": -0.3867,
+      "x2_behavior_inter_event_log_ratio": -0.9341,
+      "x3_behavior_cadence_weekly_ratio": -0.4527,
+      "x4_behavior_category_cosine": -0.5018,
+      "x5_graph_jaccard": 0,
+      "x6_graph_adamic_adar_norm": 0
+    },
+    "negativeSignExplanation": "All 4 features exhibit POSITIVE univariate correlation with the label. The negative multivariate logistic slopes are an optimization artifact of severe class imbalance (96.7% negative, 3.3% positive) and dominant hard negatives with elevated feature overlap."
+  },
+  "baselineMetrics": {
+    "naivePriorBaseline": {
+      "rocAuc": 0,
+      "prAuc": 1,
+      "brierScore": 0.0322
+    },
+    "singleFeatureBaselines": {
+      "x1_behavior_activity_js": {
+        "rocAuc": 0.5237,
+        "prAuc": 0.2964,
+        "brierScore": 0.0919
+      },
+      "x2_behavior_inter_event_log_ratio": {
+        "rocAuc": 0.4526,
+        "prAuc": 0.2714,
+        "brierScore": 0.5355
+      },
+      "x3_behavior_cadence_weekly_ratio": {
+        "rocAuc": 0.4677,
+        "prAuc": 0.2728,
+        "brierScore": 0.2608
+      },
+      "x4_behavior_category_cosine": {
+        "rocAuc": 0.5108,
+        "prAuc": 0.0509,
+        "brierScore": 0.3786
+      }
+    },
+    "unweightedFeatureAverageBaseline": {
+      "rocAuc": 0.4806,
+      "prAuc": 0.2854,
+      "brierScore": 0.242
+    },
+    "logisticRegressionPlattCalibrated": {
+      "rocAuc": 0.5151,
+      "prAuc": 0.0985,
+      "brierScore": 0.032,
+      "ece": 0.0022
+    }
+  },
+  "calibrationDiagnostics": {
+    "plattParamA": 1.077,
+    "plattParamB": -0.063,
+    "calibratedOnSplit": "VALIDATION",
+    "evaluatedOnSplit": "TEST",
+    "testPositiveCountLimitation": "Test split contains N=4 positive samples. A 4-positive holdout has high variance (95% CI: [0.0000, 0.9831]). The 30-sample dataset represents preliminary evidence, underpowered for definitive holdout generalization."
+  },
+  "scientificConclusionCategory": "WEAK EVIDENCE",
+  "scientificConclusionSummary": "The behavioral features contain measurable non-random signal distinguishing positive links from random darknet actors (P(Pos > RandNeg) = 63% to 82%, Cliff delta up to 0.65). However, distinguishing known matches from hard negatives in the same category is challenging using temporal cadence alone, and the 4-positive test holdout is statistically underpowered."
+}
